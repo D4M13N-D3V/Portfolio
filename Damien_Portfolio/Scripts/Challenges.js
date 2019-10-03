@@ -117,3 +117,274 @@ function exerciseFour() {
 
 
 
+
+
+
+/*================================ Columnar Cipher Challenge ==============================*/
+const exerciseFiveInputOne = document.getElementById("exerciseFiveInputTwo");
+const exerciseFiveInputTwo = document.getElementById("exerciseFiveInputOne");
+const exerciseFiveOutput = document.getElementById("exerciseFiveOutput");
+const library = "abcdefghijklmnopqrstuvwxyz";
+document.getElementById("exerciseFiveEncrypt").addEventListener("click", encrypt)
+document.getElementById("exerciseFiveDecrypt").addEventListener("click", encrypt)
+function encrypt() {
+    var message = cleanWord(exerciseFiveInputOne.value);
+    var keyword = cleanWord(exerciseFiveInputTwo.value);
+    if (keyword.length < 2) { DisplayError(1); return; }
+    if (message.length < 2) { DisplayError(2); return; }
+    var keywordLength = keyword.length;
+    while (message.length % keywordLength != 0) { message = message + "x" }
+    var text = "";
+    alphabet = 0;
+    for (i = 0; i < keywordLength; i++) {
+        while (alphabet < 26) {
+            libraryKey = keyword.indexOf(library.charAt(alphabet));
+            keywordArray = keyword.split("");
+            keywordArray[libraryKey] = "_";
+            keyword = keywordArray.join("");
+            if (libraryKey >= 0) break;
+            else alphabet++;
+        }
+        for (j = 0; j < message.length / keywordLength; j++) {
+            text += message.charAt(j * keywordLength + libraryKey);
+        }
+    }
+    exerciseFiveOutput.value = text;
+}
+function decrypt() {
+    var message = cleanWord(exerciseFiveInputOne.value);
+    var keyword = cleanWord(exerciseFiveInputTwo.value);
+    if (keyword.length < 2) { DisplayError(1); return; }
+    if (message.length < 2) { DisplayError(2); return; }
+    var keywordLength = keyword.length;
+    while (message.length % keywordLength != 0) { message = message + "x" }
+    var text = "";
+    var unorderedColumns = new Array(keywordLength);
+    var newColumns = new Array(keywordLength);
+    var outputText = "";
+    var columnLengths = message.length / keywordLength;
+    for (i = 0; i < keywordLength; i++) {
+        unorderedColumns[i] = message.substr(i * columnLengths, columnLengths);
+    }
+    alphabet = 0;
+    for (i = 0; i < keywordLength; i++) {
+        while (alphabet < 26) {
+            libraryKey = keyword.indexOf(library.charAt(alphabet));
+            if (libraryKey >= 0) {
+                newColumns[alphabet] = unorderedColumns[i++];
+                keywordArray = keyword.split("");
+                keywordArray[libraryKey] = "_";
+                keyword = keywordArray.join("");
+            }
+            else alphabet++;
+        }
+        for (j = 0; j < message.length / keywordLength; j++) {
+            text += message.charAt(j * keywordLength + libraryKey);
+        }
+    }
+    exerciseFiveOutput.value = text;
+}
+function cleanWord(word){
+    return word.toLowerCase().replace(/[^a-z]/g, "")
+}
+/*=========================================================================================*/
+
+function DisplayError(type) {
+    switch (type) {
+        case 1:
+            alert("Invalid Input")
+            break;
+        case 2:
+            alert("Message incorrect, is missing padding")
+            break;
+    }
+}
+
+
+
+
+
+/*===================== Blackjack Challenge========================*/
+
+
+
+
+
+
+var players = []
+var cards = ["2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K", "A"]
+var cardValues = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 11]
+var suits = ["♥️", "♦️", "♣️","♠️"]
+var deck = []
+var cardsVisible = false;
+var cardsDealt = false;
+const playerCount = 6;
+
+
+
+
+/*classes*/
+function Card(value, suit, weight) {
+    this.Owner = undefined
+    this.Value = value;
+    this.Suit = suit;
+    this.Weight = weight;
+    this.HTML = undefined
+    this.Draw = function () {
+        let cardSuitIndex = suits.indexOf(card.Suit)
+        let labelClass = "label-success"
+        let labelContent = ""
+        if (this.Owner.Hand.Cards.length < 1) {
+            if (cardSuitIndex == 0 || cardSuitIndex == 1) labelClass = "label-danger"
+            if (cardSuitIndex == 2 || cardSuitIndex == 3) labelClass = "label-default"
+            labelContent = this.Suit + " " + this.Value
+        }
+        else {
+            if (this.Owner.Id == 0) {
+                if (cardSuitIndex == 0 || cardSuitIndex == 1) labelClass = "label-danger"
+                if (cardSuitIndex == 2 || cardSuitIndex == 3) labelClass = "label-default"
+                labelContent = this.Suit + " " + this.Value
+            }
+            else labelContent = "x"
+        }
+        console.log(this.Owner)
+        this.HTML = `<div class="row" > <span class="label ${labelClass}" id="Player${this.Owner.Id}"Card${this.Owner.Hand.Cards.indexOf(this)}>${labelContent}</span></div >`;
+        document.getElementById(`Player${this.Owner.Id}`).insertAdjacentHTML("beforeend", this.HTML)
+    }
+}
+
+function PlayerHand(player) {
+    this.Player = player
+    this.Cards = []
+    this.Weight = 0;
+    this.dealCard = function () {
+        var card = getNextCard(false);
+        this.Weight += card.Weight;
+        card.Owner = this.Player;
+        card.Draw()
+        this.Cards.push(card)
+        deck.splice(0, 1)
+        if (this.Weight > 21) Bust()
+        if (this.Weight == 21) Blackjack();
+    }
+}
+
+function Player(id, user, dealer) {
+    this.User = user;
+    this.Dealer = dealer
+    this.Hand = new PlayerHand(this)
+    this.Id = id
+    this.GetWeight = function () {
+        var weight = 0;
+        for (i = 0; i < Hand.cards; i++) {
+            weight += cards[i].Weight;
+        }
+        return weight;
+    }
+}
+/*=========*/
+
+window.addEventListener("load", createDeck)
+window.addEventListener("load", SetupPlayers)
+
+function SetupPlayers() {
+    for (i = 0; i < 6; i++) {
+        if (i == 0) players[i] = new Player(i,true,false)
+        else if (i == 6) players[i] = new Player(i,false,true)
+        else players[i] = new Player(i,false,false)
+    }
+}
+
+function createDeck() {
+    deck=[]
+    for (i = 0; i < cards.length; i++) {
+        for (k = 0; k < suits.length; k++) {
+            var weight = parseInt(cardValues[i])
+            var card = new Card(cards[i], suits[k], weight)
+            deck.push(card)
+        }
+    }
+}
+function shuffleDeck() {
+    shuffle(deck);
+}
+function getNextCard(remove) {
+    card = deck[0]
+    if (remove == true) deck.splice(0, 1)
+    return card;
+}
+
+function dealCards() {
+    createDeck();
+    shuffleDeck();
+    var currentPlayer = 0;
+    var currCard = 0;
+    for (i = 0; i < 10; i++) {
+        player = players[currentPlayer].Hand.dealCard()
+        currentPlayer = currentPlayer + 1;
+        if (currentPlayer == 5) currentPlayer = 0
+    }
+}
+function Bust() {
+    alert("BUST!")
+    resetGame();
+}
+function Blacjack() {
+    alert("BLACKJACK!")
+    resetGame();
+}
+function stand() {
+
+}
+function resetGame() {
+    for (i = 0; i < 6; i++) {
+        cardsDealt = false;
+        players[i].Hand.Cards = []
+        players[i].Hand.Weight = 0
+        var htmlElement = document.getElementById(`Player${players[i].Id}`);
+        while (htmlElement.children.length>1) {
+            htmlElement.removeChild(htmlElement.children[1]);
+        }
+    }
+}
+function dealButton() {
+    if (cardsDealt == false) {
+        dealCards();
+        cardsDealt = true;
+    }
+}
+function hitButton() {
+    if (cardsDealt == true) {
+        players[0].Hand.dealCard()
+    }
+}
+function standButton() {
+    if (cardsDealt == true) {
+    }
+}
+
+document.getElementById("exerciseSixDeal").addEventListener("click", dealButton)
+document.getElementById("exerciseSixHit").addEventListener("click", hitButton)
+/*==================================================================*/
+
+/*UTILS*/
+var shuffle = function (array) {
+
+    var currentIndex = array.length;
+    var temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+
+};

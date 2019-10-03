@@ -429,7 +429,7 @@ function standButton() {
 
 document.getElementById("exerciseSixDeal").addEventListener("click", dealButton)
 document.getElementById("exerciseSixHit").addEventListener("click", hitButton)
-document.getElementById("exerciseSixStand").addEventListener("click", hitButton)
+document.getElementById("exerciseSixStand").addEventListener("click", standButton)
 /*==================================================================*/
 
 /*UTILS*/

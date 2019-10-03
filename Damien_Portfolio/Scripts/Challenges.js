@@ -11,13 +11,23 @@
 /*============ Exercise One, Least,Greatest,Mean,Sum,Product Calculator=================*/
 document.getElementById("exerciseOneCalculateButton").addEventListener("click", exerciseOne);
 document.getElementById("exerciseOneGenerateButton").addEventListener("click", GenerateNumbers);
-const exerciseOneInputs = [document.getElementById("exerciseOneInputOne"), document.getElementById("exerciseOneInputTwo"), document.getElementById("exerciseOneInputThree"),
-document.getElementById("exerciseOneInputFour"), document.getElementById("exerciseOneInputFive")]
-const exerciseOneOutputs = [document.getElementById("exerciseOneOutputOne"), document.getElementById("exerciseOneOutputTwo"), document.getElementById("exerciseOneOutputThree"),
-document.getElementById("exerciseOneOutputFour"),document.getElementById("exerciseOneOutputFive")]
+const exerciseOneInputs = [document.getElementById("exerciseOneInputOne"),
+                           document.getElementById("exerciseOneInputTwo"), 
+                           document.getElementById("exerciseOneInputThree"),
+                           document.getElementById("exerciseOneInputFour"), 
+                           document.getElementById("exerciseOneInputFive")]
+
+const exerciseOneOutputs = [document.getElementById("exerciseOneOutputOne"),
+                            document.getElementById("exerciseOneOutputTwo"),
+                            document.getElementById("exerciseOneOutputThree"),
+                            document.getElementById("exerciseOneOutputFour"),
+                            document.getElementById("exerciseOneOutputFive")]
 function exerciseOne() {
-    var inputs = [parseInt(exerciseOneInputs[0].value), parseInt(exerciseOneInputs[1].value),
-        parseInt(exerciseOneInputs[2].value), parseInt(exerciseOneInputs[3].value), parseInt(exerciseOneInputs[4].value)];
+    var inputs = [parseInt(exerciseOneInputs[0].value),
+                  parseInt(exerciseOneInputs[1].value),
+                  parseInt(exerciseOneInputs[2].value), 
+                  parseInt(exerciseOneInputs[3].value), 
+                  parseInt(exerciseOneInputs[4].value)];
     inputs.sort(function (a, b) { return a - b });
     for (i = 0; i < inputs.length; i++) {
         if (inputs[i] == undefined || inputs[i]=="") {
@@ -210,7 +220,7 @@ function DisplayError(type) {
 
 
 
-
+const informationElement = document.getElementById("blackjackInfo")
 var players = []
 var cards = ["2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K", "A"]
 var cardValues = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 11]
@@ -218,6 +228,7 @@ var suits = ["♥️", "♦️", "♣️","♠️"]
 var deck = []
 var cardsVisible = false;
 var cardsDealt = false;
+var gameOver = false;
 const playerCount = 6;
 
 
@@ -230,8 +241,9 @@ function Card(value, suit, weight) {
     this.Suit = suit;
     this.Weight = weight;
     this.HTML = undefined
+    this.Element = undefined;
     this.Draw = function () {
-        let cardSuitIndex = suits.indexOf(card.Suit)
+        let cardSuitIndex = suits.indexOf(this.Suit)
         let labelClass = "label-success"
         let labelContent = ""
         if (this.Owner.Hand.Cards.length < 1) {
@@ -247,9 +259,21 @@ function Card(value, suit, weight) {
             }
             else labelContent = "x"
         }
-        console.log(this.Owner)
-        this.HTML = `<div class="row" > <span class="label ${labelClass}" id="Player${this.Owner.Id}"Card${this.Owner.Hand.Cards.indexOf(this)}>${labelContent}</span></div >`;
+        this.HTML = `<div class="row" > <span class="label ${labelClass}" id="Player${this.Owner.Id}Card${this.Owner.Hand.Cards.length}">${labelContent}</span></div >`;
+        console.log(`Player${this.Owner.Id}`)
         document.getElementById(`Player${this.Owner.Id}`).insertAdjacentHTML("beforeend", this.HTML)
+        this.Element = document.getElementById(`Player${this.Owner.Id}Card${this.Owner.Hand.Cards.length}`)
+    }
+    this.Show = function () {
+        let cardSuitIndex = suits.indexOf(this.Suit)
+        let labelClass = "label-success"
+        let labelContent = ""
+        if (cardSuitIndex == 0 || cardSuitIndex == 1) labelClass = "label-danger"
+        if (cardSuitIndex == 2 || cardSuitIndex == 3) labelClass = "label-default"
+        labelContent = this.Suit + " " + this.Value
+        this.Element.classList.remove("label-success")
+        this.Element.classList.add(labelClass)
+        this.Element.innerHTML = labelContent
     }
 }
 
@@ -264,8 +288,8 @@ function PlayerHand(player) {
         card.Draw()
         this.Cards.push(card)
         deck.splice(0, 1)
-        if (this.Weight > 21) Bust()
-        if (this.Weight == 21) Blackjack();
+        if (this.Weight > 21 && this.Player.Id == 0) Bust()
+        if (this.Weight == 21 && this.Player.Id == 0) Blackjack();
     }
 }
 
@@ -324,37 +348,72 @@ function dealCards() {
         currentPlayer = currentPlayer + 1;
         if (currentPlayer == 5) currentPlayer = 0
     }
+    for (i = 0; i < 4; i++) {
+        while (players[i].Hand.Weight <= 14) {
+            players[i].Hand.dealCard()
+        }
+    }
 }
 function Bust() {
-    alert("BUST!")
-    resetGame();
+    endGame(1);
 }
-function Blacjack() {
-    alert("BLACKJACK!")
-    resetGame();
+function Blackjack() {
+    endGame(2);
 }
-function stand() {
+function Stand() {
+    endGame(3)
+}
+function endGame(endstate) {
+    gameOver = true;
+    let dealerBusted = false;
+    let dealerScore = players[4].Hand.Weight;
 
+    for (i = 1; i < 5; i++) {
+        for (k = 1; k < players[i].Hand.Cards.length; k++) {
+            players[i].Hand.Cards[k].Show()
+        }
+    }
+    for (i = 0; i < 4; i++) {
+        if (21 < players[i].Hand.Weight) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row" > <span class="label label-warning">Bust</span></div >`);
+        }
+        else if (dealerScore < players[i].Hand.Weight) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row" > <span class="label label-warning">Won</span></div >`);
+        }
+        else if (dealerScore > players[i].Hand.Weight && dealerBusted == false) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row" > <span class="label label-warning">Lost</span></div >`);
+        }
+        else if (dealerScore > players[i].Hand.Weight && dealerBusted == true) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row" > <span class="label label-warning">Won</span></div >`);
+        }
+        else if (dealerScore == players[i].Hand.Weight && dealerBusted == false) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row" > <span class="label label-warning">Lost</span></div >`);
+        }
+    }
+    setTimeout(function () {
+        clearCards()
+        gameOver = false;
+    }, 2000)
 }
-function resetGame() {
-    for (i = 0; i < 6; i++) {
+function clearCards() {
+    for (i = 0; i < 5; i++) {
         cardsDealt = false;
         players[i].Hand.Cards = []
         players[i].Hand.Weight = 0
-        var htmlElement = document.getElementById(`Player${players[i].Id}`);
-        while (htmlElement.children.length>1) {
+        var htmlElement = document.getElementById(`Player${i}`);
+        while (htmlElement.children.length > 1) {
             htmlElement.removeChild(htmlElement.children[1]);
         }
     }
 }
 function dealButton() {
-    if (cardsDealt == false) {
+    if (cardsDealt == false && gameOver == false) {
         dealCards();
         cardsDealt = true;
     }
 }
 function hitButton() {
-    if (cardsDealt == true) {
+    if (cardsDealt == true && gameOver==false) {
         players[0].Hand.dealCard()
     }
 }
@@ -388,3 +447,42 @@ var shuffle = function (array) {
     return array;
 
 };
+
+
+
+/* BUTTON HANDLES FOR VIEWING CODE */
+
+oneCode = document.getElementById("exerciseOneCode")
+document.getElementById("exerciseOneToggle").addEventListener("click", function () {
+    if (oneCode.style.display == "none") oneCode.style.display = "block";
+    else oneCode.style.display = "none"
+})
+twoCode = document.getElementById("exerciseTwoCode")
+document.getElementById("exerciseTwoToggle").addEventListener("click", function () {
+    if (twoCode.style.display == "none") twoCode.style.display = "block";
+    else twoCode.style.display = "none"
+})
+threeCode = document.getElementById("exerciseThreeCode")
+document.getElementById("exerciseThreeToggle").addEventListener("click", function () {
+    if (threeCode.style.display == "none") threeCode.style.display = "block";
+    else threeCode.style.display = "none"
+})
+fourCode = document.getElementById("exerciseFourCode")
+document.getElementById("exerciseFourToggle").addEventListener("click", function () {
+    if (fourCode.style.display == "none") fourCode.style.display = "block";
+    else fourCode.style.display = "none"
+})
+fiveCode = document.getElementById("exerciseFiveCode")
+document.getElementById("exerciseFiveToggle").addEventListener("click", function () {
+    if (fiveCode.style.display == "none") fiveCode.style.display = "block";
+    else fiveCode.style.display = "none"
+})
+sixCode = document.getElementById("exerciseSixCode")
+document.getElementById("exerciseSixToggle").addEventListener("click", function () {
+    if (sixCode.style.display == "none") sixCode.style.display = "block";
+    else sixCode.style.display = "none"
+})
+
+exerciseonet
+
+/*=================================*/

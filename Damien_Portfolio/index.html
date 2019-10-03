@@ -13,8 +13,8 @@
 
     <!-- Custom Code Pen Image Hovers -->
     <link href="content/codepen-imagehovers.css" rel="stylesheet" media="screen">
-    <link href="content/default.css" rel="stylesheet" media="screen">
-
+    <link href="content/default.css" rel="stylesheet" media="screen">>
+    <link href="Content/prism.css" rel="stylesheet" />
     <link rel="icon" href="Images/Icons/favicon.ico" />
 </head>
 
@@ -71,7 +71,7 @@
                         <div class="carousel-background"><img src="Images/intro/2.jpg" alt=""></div>
                         <div class="carousel-container">
                             <div class="carousel-content">
-                                <h2 class="animated fadeInDown">Examples of Work</span></h2>
+                                <h2 class="animated fadeInDown">Examples of Work</h2>
                                 <a href="#portfolio" class="btn-get-started animated fadeInUp">View My Past Projects</a>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                         <div class="carousel-background"><img src="Images/intro/3.jpg" alt=""></div>
                         <div class="carousel-container">
                             <div class="carousel-content">
-                                <h2 class="animated fadeInDown">Contact</span></h2>
+                                <h2 class="animated fadeInDown">Contact</h2>
                                 <a href="#contact" class="btn-get-started animated fadeInUp">Get In Touch</a>
                             </div>
                         </div>
@@ -394,7 +394,7 @@
         </div>
     </footer>
 
-    <!--Modals-->
+    <!--Modals-->    <!--Modals-->
     <div class="modal fade" id="spectralDazeInfo" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
@@ -404,36 +404,33 @@
                     <h2 class="modal-title">Project : Spectral Daze</h2>
                 </div>
                 <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4>Summary</h4>
-                                <p>
-                                    This project was a small prototype for a video game that I was working on within the Unity3D engine. I deployed tools for the designers on my team to be able
-                                    to create things without knowing how to program. These tools included json based editor menus to be able to create items, characters, enemies, and dialogue without
-                                    having to touch a line of code.
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <h4>Demo Video</h4>
-                                <video controls="controls" height="100%" width="100%">
-                                    <source src="Images/projects/demo_video.mp4" type="video/mp4" />
-                                </video>
-                                <a href="Images/demo_video.mp4" target="popup"><button>Click Here To Watch Video!</button></a>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Summary</h4>
+                            <p>
+                                This project was a small prototype for a video game that I was working on within the Unity3D engine. I deployed tools for the designers on my team to be able
+                                to create things without knowing how to program. These tools included json based editor menus to be able to create items, characters, enemies, and dialogue without
+                                having to touch a line of code.
+                            </p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>
-                                    There werer also many gameplay systems that were implemented by me. I created systems for managing things like particles, lights, sounds and any other
-                                    elements that would cosntantly being created and destroyed. I created a object pooling system from scratch to help ease performance spikes caused by unity deleting and creating items. I also deployed input systems and enemy AI systems that were able to be manipulated by changing values. Everything within the project was obsifcutated so you were able to test and use any system on its own
-                                    without having to deploy the rest, making it extremely easy to update and work on them, and test to make sure they were working, without loading up everything else. This was a .NET project.
-                                    Some of the tools I used were Rider, VS Studio, and Unity3D. Blender was used for the art.
-                                </p>
-                            </div>
+                        <div class="col-md-6">
+                            <h4>Demo Video</h4>
+                            <video controls="controls" height="100%" width="100%">
+                                <source src="Images/projects/demo_video.mp4" type="video/mp4" />
+                            </video>
+                            <a href="Images/projects/demo_video.mp4" target="popup"><button>Click Here To Watch Video!</button></a>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                There werer also many gameplay systems that were implemented by me. I created systems for managing things like particles, lights, sounds and any other
+                                elements that would cosntantly being created and destroyed. I created a object pooling system from scratch to help ease performance spikes caused by unity deleting and creating items. I also deployed input systems and enemy AI systems that were able to be manipulated by changing values. Everything within the project was obsifcutated so you were able to test and use any system on its own
+                                without having to deploy the rest, making it extremely easy to update and work on them, and test to make sure they were working, without loading up everything else. This was a .NET project.
+                                Some of the tools I used were Rider, VS Studio, and Unity3D. Blender was used for the art.
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -535,38 +532,70 @@
                             </p>
                         </div>
                     </div>
+                    <div class="row">
+                        <pre id="exerciseOneCode" style="display:none">
+                        </pre>
+                    </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal" data-target="#exerciseOneCode">View Code</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <div class="row">
+                            <button type="button" class="btn btn-warning" id="exerciseOneToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                        <div class="row">
+                            
+                            <code class="language-js">
+document.getElementById("exerciseOneCalculateButton").addEventListener("click", exerciseOne);
+document.getElementById("exerciseOneGenerateButton").addEventListener("click", GenerateNumbers);
+const exerciseOneInputs = [document.getElementById("exerciseOneInputOne"),
+                           document.getElementById("exerciseOneInputTwo"), 
+                           document.getElementById("exerciseOneInputThree"),
+                           document.getElementById("exerciseOneInputFour"), 
+                           document.getElementById("exerciseOneInputFive")]
+
+const exerciseOneOutputs = [document.getElementById("exerciseOneOutputOne"),
+                            document.getElementById("exerciseOneOutputTwo"),
+                            document.getElementById("exerciseOneOutputThree"),
+                            document.getElementById("exerciseOneOutputFour"),
+                            document.getElementById("exerciseOneOutputFive")]
+function exerciseOne() {
+    var inputs = [parseInt(exerciseOneInputs[0].value),
+                  parseInt(exerciseOneInputs[1].value),
+                  parseInt(exerciseOneInputs[2].value), 
+                  parseInt(exerciseOneInputs[3].value), 
+                  parseInt(exerciseOneInputs[4].value)];
+    inputs.sort(function (a, b) { return a - b });
+    for (i = 0; i < inputs.length; i++) {
+        if (inputs[i] == undefined || inputs[i]=="") {
+            DisplayError(1)
+            return;
+        }
+    }
+    var mean = math.mean(inputs)
+    var total = inputs.reduce(totalFunc)
+    var product = inputs.reduce(productFunc)
+    exerciseOneOutputs[0].value = "Least [" + inputs[0] + "]";
+    exerciseOneOutputs[1].value = "Greatest [" + inputs[inputs.length - 1] + "]";
+    exerciseOneOutputs[2].value = "Mean [" + mean + "]";
+    exerciseOneOutputs[3].value = "Total [" + total + "]";
+    exerciseOneOutputs[4].value = "Product [" + product + "]";
+}
+function totalFunc(total, num) {
+    return total + num;
+}
+function productFunc(total, num) {
+    return total * num;
+}
+function GenerateNumbers() {
+    for (i = 0; i < 5; i++) {
+        exerciseOneInputs[i].value = Math.floor(Math.random() * 100) + 1;
+    }
+}
+                            </code>
+                        </div>
                     </div>
                 </div>
 
             </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exerciseOneCode" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Calculations Code</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="pre-scrollable" style="text-align:left">
-                        test
-                        test
-                        test
-                        test
-                        test
-                        test
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
         </div>
     </div>
     <div class="modal fade" id="exerciseTwo" role="dialog">
@@ -594,35 +623,38 @@
                             </p>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
                     <div class="row">
-                        <div class="col-md-12">
-                        </div>
+                        <button type="button" class="btn btn-warning" id="exerciseTwoToggle">View Code</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal" data-target="#exerciseTwoCode">View Code</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
+                    <div class="row">
+                        <pre id="exerciseTwoCode" style="display:none">
+                        <code class="language-js">
+/*========================= Exercise Two, Factorial Calculator ===========================*/
+const exerciseTwoInput = document.getElementById("exerciseTwoInput");
+const exerciseTwoOutputOne = document.getElementById("exerciseTwoOutputOne");
+const exerciseTwoOutputTwo = document.getElementById("exerciseTwoOutputTwo");
+document.getElementById("exerciseTwoCalculate").addEventListener("click", exerciseTwo)
+function exerciseTwo() {
+    var startingNumber = exerciseTwoInput.value;
+    var total = 1
+    var string = ""
+    for (i = startingNumber; i > 0; i--) {
+        string = string + i + "*"
+        total = total * i;
+    }
+    var string = string.substring(0, string.length - 1);
+    var string = string + "=" + total;
+    exerciseTwoOutputTwo.innerHTML = math.floor(total);
+    exerciseTwoOutputOne.value = string;
 
-        </div>
-    </div>
-    <div class="modal fade" id="exerciseTwoCode" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Factorials Code</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="pre-scrollable" style="text-align:left">
-                        <code>
+}
+/*=========================================================================================*/
                         </code>
+                        </pre>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
 
@@ -654,31 +686,47 @@
                             </p>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal" data-target="#exerciseThreeCode">View Code</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="modal fade" id="exerciseThreeCode" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">BuzzFizz Code</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="pre-scrollable" style="text-align:left">
-                        <code>
-                        </code>
+                    
+                    <div class="row">
+                        <button type="button" class="btn btn-warning" id="exerciseThreeToggle">View Code</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="row">
+                        <pre id="exerciseThreeCode" style="display:none">
+                        <code class="language-js">
+/*========================= Exercise Three, Fizz/Buzz ============================*/
+const exerciseThreeInputOne = document.getElementById("exerciseThreeInputOne");
+const exerciseThreeInputTwo = document.getElementById("exerciseThreeInputTwo");
+const exerciseThreeOutput = document.getElementById("exerciseThreeOutput");
+document.getElementById("exerciseThreeCalculate").addEventListener("click", exerciseThree)
+window.addEventListener("load", exerciseThree)
+function exerciseThree() {
+    exerciseThreeOutput.innerHTML = ""
+    var rows = []
+    var inputOne = exerciseThreeInputOne.value;
+    var inputTwo = exerciseThreeInputTwo.value;
+    for (i = 0; i < 10; i++) {
+        exerciseThreeOutput.i
+        exerciseThreeOutput.insertAdjacentHTML("beforeend", "<row id='exerciseThreeOutputRow" + i + "'> </row>")
+        rows[i] = document.getElementById("exerciseThreeOutputRow" + i)
+    }
+    var text = "<p>"
+    for (i = 1; i < 101; i++) {
+        if (i % inputOne == 0 && i % inputTwo == 0) { text = text +"<span class='h4' style='color:red'>FizzBuzz</span>, " }
+        else if (i % inputTwo == 0) { text = text +"<span class='h5' style='color:green'>Buzz</span>, " }
+        else if (i % inputOne == 0) { text = text +"<span class='h5' style='color:blue'>Fizz</span>, " }
+        else { text = text + "<span class='text-secondary'>" + i + "</span>, " }
+    }
+    text = text.substr(0, text.length-2) + "</p>"
+    exerciseThreeOutput.insertAdjacentHTML("beforeend", text)
+}
+/*=========================================================================================*/
+                        </code>
+                        </pre>
+                    </div>
                 </div>
             </div>
 
@@ -708,41 +756,32 @@
                             </p>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer">
                     <div class="row">
-                        <div class="col-md-12">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal" data-target="#exerciseFourCode">View Code</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="modal fade" id="exerciseFourCode" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Palindromes Code</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="pre-scrollable" style="text-align:left">
-                        <code>
-                            test
-                            test
-                            test
-                            test
-                            test
-                            test
+                        <button type="button" class="btn btn-warning" id="exerciseFourToggle">View Code</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>                        <div class="row">
+                        <pre id="exerciseFourCode" style="display:none">
+                        <code class="language-js">
+/*========================= Exercise Four, Palindrome Detector ============================*/
+const exerciseFourInput = document.getElementById("exerciseFourInput");
+const exerciseFourOutput = document.getElementById("exerciseFourOutput");
+document.getElementById("exerciseFourCalculate").addEventListener("click", exerciseFour)
+function exerciseFour() {
+    var word = exerciseFourInput.value;
+    if (word.length)
+    if (word === word.split("").reverse().join("")) {
+        exerciseFourOutput.value = "The supplied world '" + word + "' is an Palindrome!";
+    }
+    else {
+        exerciseFourOutput.value = "The supplied world '" + word + "' is not an Palindrome!";
+    }
+}
+/*=========================================================================================*/
                         </code>
+                        </pre>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
 
@@ -770,14 +809,18 @@
                             <textarea class="form-control" id="exerciseFiveOutput" rows="3" disabled></textarea>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                        </div>
-                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal" data-target="#exerciseFiveCode">View Code</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="row">
+                        <button type="button" class="btn btn-warning" id="exerciseFiveToggle">View Code</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="row">
+                        <pre id="exerciseFiveCode" style="display:none">
+                        <code class="language-js">
+                        </code>
+                        </pre>
+                    </div>
                 </div>
             </div>
 
@@ -800,7 +843,7 @@
                                 <button type="button" id="exerciseSixStand" class="btn btn-secondary btn-sm" style="width:50%">Stand!</button>
                             </div>
                             <div class="col-md-3" id="Player4">
-                                <div class="row"><span class="label label-warning">Dealer</span></div>  
+                                <div class="row"><span class="label label-warning">Dealer</span></div>
                             </div>
                             <div class="col-md-3" id="Player0">
                                 <div class="row"><span class="label label-info">You</span></div>
@@ -818,19 +861,252 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                        </div>
-                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal" data-target="#exerciseFiveCode">View Code</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="row">
+                        <button type="button" class="btn btn-warning" id="exerciseSixToggle">View Code</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+
+                    <div class="row">
+                        <pre id="exerciseSixCode" style="display:none">
+                        <code class="language-js">
+const informationElement = document.getElementById("blackjackInfo")
+var players = []
+var cards = ["2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K", "A"]
+var cardValues = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 11]
+var suits = ["♥️", "♦️", "♣️","♠️"]
+var deck = []
+var cardsVisible = false;
+var cardsDealt = false;
+var gameOver = false;
+const playerCount = 6;
+
+
+
+
+/*classes*/
+function Card(value, suit, weight) {
+    this.Owner = undefined
+    this.Value = value;
+    this.Suit = suit;
+    this.Weight = weight;
+    this.HTML = undefined
+    this.Element = undefined;
+    this.Draw = function () {
+        let cardSuitIndex = suits.indexOf(this.Suit)
+        let labelClass = "label-success"
+        let labelContent = ""
+        if (this.Owner.Hand.Cards.length < 1) {
+            if (cardSuitIndex == 0 || cardSuitIndex == 1) labelClass = "label-danger"
+            if (cardSuitIndex == 2 || cardSuitIndex == 3) labelClass = "label-default"
+            labelContent = this.Suit + " " + this.Value
+        }
+        else {
+            if (this.Owner.Id == 0) {
+                if (cardSuitIndex == 0 || cardSuitIndex == 1) labelClass = "label-danger"
+                if (cardSuitIndex == 2 || cardSuitIndex == 3) labelClass = "label-default"
+                labelContent = this.Suit + " " + this.Value
+            }
+            else labelContent = "x"
+        }
+        this.HTML = `<div class="row"> <span class="label ${labelClass}" id="Player${this.Owner.Id}Card${this.Owner.Hand.Cards.length}">${labelContent}</span></div>`;
+        console.log(`Player${this.Owner.Id}`)
+        document.getElementById(`Player${this.Owner.Id}`).insertAdjacentHTML("beforeend", this.HTML)
+        this.Element = document.getElementById(`Player${this.Owner.Id}Card${this.Owner.Hand.Cards.length}`)
+    }
+    this.Show = function () {
+        let cardSuitIndex = suits.indexOf(this.Suit)
+        let labelClass = "label-success"
+        let labelContent = ""
+        if (cardSuitIndex == 0 || cardSuitIndex == 1) labelClass = "label-danger"
+        if (cardSuitIndex == 2 || cardSuitIndex == 3) labelClass = "label-default"
+        labelContent = this.Suit + " " + this.Value
+        this.Element.classList.remove("label-success")
+        this.Element.classList.add(labelClass)
+        this.Element.innerHTML = labelContent
+    }
+}
+
+function PlayerHand(player) {
+    this.Player = player
+    this.Cards = []
+    this.Weight = 0;
+    this.dealCard = function () {
+        var card = getNextCard(false);
+        this.Weight += card.Weight;
+        card.Owner = this.Player;
+        card.Draw()
+        this.Cards.push(card)
+        deck.splice(0, 1)
+        if (this.Weight > 21 && this.Player.Id == 0) Bust()
+        if (this.Weight == 21 && this.Player.Id == 0) Blackjack();
+    }
+}
+
+function Player(id, user, dealer) {
+    this.User = user;
+    this.Dealer = dealer
+    this.Hand = new PlayerHand(this)
+    this.Id = id
+    this.GetWeight = function () {
+        var weight = 0;
+        for (i = 0; i < Hand.cards; i++) {
+            weight += cards[i].Weight;
+        }
+        return weight;
+    }
+}
+/*=========*/
+
+window.addEventListener("load", createDeck)
+window.addEventListener("load", SetupPlayers)
+
+function SetupPlayers() {
+    for (i = 0; i < 6; i++) {
+        if (i == 0) players[i] = new Player(i,true,false)
+        else if (i == 6) players[i] = new Player(i,false,true)
+        else players[i] = new Player(i,false,false)
+    }
+}
+
+function createDeck() {
+    deck=[]
+    for (i = 0; i < cards.length; i++) {
+        for (k = 0; k < suits.length; k++) {
+            var weight = parseInt(cardValues[i])
+            var card = new Card(cards[i], suits[k], weight)
+            deck.push(card)
+        }
+    }
+}
+function shuffleDeck() {
+    shuffle(deck);
+}
+function getNextCard(remove) {
+    card = deck[0]
+    if (remove == true) deck.splice(0, 1)
+    return card;
+}
+
+function dealCards() {
+    createDeck();
+    shuffleDeck();
+    var currentPlayer = 0;
+    var currCard = 0;
+    for (i = 0; i < 10; i++) {
+        player = players[currentPlayer].Hand.dealCard()
+        currentPlayer = currentPlayer + 1;
+        if (currentPlayer == 5) currentPlayer = 0
+    }
+    for (i = 0; i < 4; i++) {
+        while (players[i].Hand.Weight <= 14) {
+            players[i].Hand.dealCard()
+        }
+    }
+}
+function Bust() {
+    endGame(1);
+}
+function Blackjack() {
+    endGame(2);
+}
+function Stand() {
+    endGame(3)
+}
+function endGame(endstate) {
+    gameOver = true;
+    let dealerBusted = false;
+    let dealerScore = players[4].Hand.Weight;
+
+    for (i = 1; i < 5; i++) {
+        for (k = 1; k < players[i].Hand.Cards.length; k++) {
+            players[i].Hand.Cards[k].Show()
+        }
+    }
+    for (i = 0; i < 4; i++) {
+        if (21 < players[i].Hand.Weight) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row"> <span class="label label-warning">Bust</span></div>`);
+        }
+        else if (dealerScore < players[i].Hand.Weight) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row"> <span class="label label-warning">Won</span></div>`);
+        }
+        else if (dealerScore > players[i].Hand.Weight && dealerBusted == false) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row"> <span class="label label-warning">Lost</span></div>`);
+        }
+        else if (dealerScore > players[i].Hand.Weight && dealerBusted == true) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row"> <span class="label label-warning">Won</span></div>`);
+        }
+        else if (dealerScore == players[i].Hand.Weight && dealerBusted == false) {
+            document.getElementById(`Player${i}`).insertAdjacentHTML("beforeend", `<div class="row"> <span class="label label-warning">Lost</span></div>`);
+        }
+    }
+    setTimeout(function () {
+        clearCards()
+        gameOver = false;
+    }, 2000)
+}
+function clearCards() {
+    for (i = 0; i < 5; i++) {
+        cardsDealt = false;
+        players[i].Hand.Cards = []
+        players[i].Hand.Weight = 0
+        var htmlElement = document.getElementById(`Player${i}`);
+        while (htmlElement.children.length > 1) {
+            htmlElement.removeChild(htmlElement.children[1]);
+        }
+    }
+}
+function dealButton() {
+    if (cardsDealt == false && gameOver == false) {
+        dealCards();
+        cardsDealt = true;
+    }
+}
+function hitButton() {
+    if (cardsDealt == true && gameOver==false) {
+        players[0].Hand.dealCard()
+    }
+}
+function standButton() {
+    if (cardsDealt == true) {
+    }
+}
+
+document.getElementById("exerciseSixDeal").addEventListener("click", dealButton)
+document.getElementById("exerciseSixHit").addEventListener("click", hitButton)
+/*==================================================================*/
+
+/*UTILS*/
+var shuffle = function (array) {
+
+    var currentIndex = array.length;
+    var temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+
+};
+                        </code>
+                        </pre>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
+    
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
     <!-- js -->
@@ -844,13 +1120,16 @@
     <script src="Scripts/grid.js"></script>
     <script src="Scripts/stellar.js"></script>
     <script src="Scripts/math.min.js"></script>
+    <script src="Scripts/prism.js"></script>
     <!--Custom Temporary Example Github API Call-->
     <script src="Scripts/github_load.js"></script>
     <!-- Challenges -->
     <script src="Scripts/Challenges.js"></script>
     <!-- Template Custom Javascript File -->
     <script src="Scripts/custom.js"></script>
-
+    <script>
+        SyntaxHighlighter.all();
+    </script>
 </body>
 
 </html>

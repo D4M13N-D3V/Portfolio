@@ -339,6 +339,9 @@ function getNextCard(remove) {
 }
 
 function dealCards() {
+    document.getElementById("exerciseSixDeal").style.display = "none"
+    document.getElementById("exerciseSixHit").style.display = "inline-grid"
+    document.getElementById("exerciseSixStand").style.display = "inline-grid"
     createDeck();
     shuffleDeck();
     var currentPlayer = 0;
@@ -360,9 +363,7 @@ function Bust() {
 function Blackjack() {
     endGame(2);
 }
-function Stand() {
-    endGame(3)
-}
+
 function endGame(endstate) {
     gameOver = true;
     let dealerBusted = false;
@@ -393,6 +394,9 @@ function endGame(endstate) {
     setTimeout(function () {
         clearCards()
         gameOver = false;
+        document.getElementById("exerciseSixDeal").style.display = "inline-grid"
+        document.getElementById("exerciseSixHit").style.display = "none"
+        document.getElementById("exerciseSixStand").style.display = "none"
     }, 2000)
 }
 function clearCards() {
@@ -419,11 +423,13 @@ function hitButton() {
 }
 function standButton() {
     if (cardsDealt == true) {
+        endGame(3)
     }
 }
 
 document.getElementById("exerciseSixDeal").addEventListener("click", dealButton)
 document.getElementById("exerciseSixHit").addEventListener("click", hitButton)
+document.getElementById("exerciseSixStand").addEventListener("click", hitButton)
 /*==================================================================*/
 
 /*UTILS*/

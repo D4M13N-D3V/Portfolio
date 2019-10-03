@@ -532,18 +532,15 @@
                             </p>
                         </div>
                     </div>
-                    <div class="row">
-                        <pre id="exerciseOneCode" style="display:none">
-                        </pre>
-                    </div>
                     <div class="modal-footer">
                         <div class="row">
                             <button type="button" class="btn btn-warning" id="exerciseOneToggle">View Code</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                         <div class="row">
-                            
-                            <code class="language-js">
+                            <pre id="exerciseOneCode" style="display:none">
+                            <code class="language-js">           
+/*============ Exercise One, Least,Greatest,Mean,Sum,Product Calculator=================*/
 document.getElementById("exerciseOneCalculateButton").addEventListener("click", exerciseOne);
 document.getElementById("exerciseOneGenerateButton").addEventListener("click", GenerateNumbers);
 const exerciseOneInputs = [document.getElementById("exerciseOneInputOne"),
@@ -590,7 +587,9 @@ function GenerateNumbers() {
         exerciseOneInputs[i].value = Math.floor(Math.random() * 100) + 1;
     }
 }
+/* =======================================================================================*/
                             </code>
+                        </pre>
                         </div>
                     </div>
                 </div>

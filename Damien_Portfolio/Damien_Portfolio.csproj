@@ -73,6 +73,7 @@
     <Content Include="Content\default.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\githubRepoWidget.min.js" />
+    <Content Include="Scripts\math.min.js" />
     <Content Include="Content\overwrite.css" />
     <Content Include="Content\simpletextrotator.css" />
     <Content Include="Content\style.css" />
@@ -82,12 +83,16 @@
     <Content Include="Images\challenges\challenge3.png" />
     <Content Include="Images\challenges\challenge2.png" />
     <Content Include="Images\about-img.jpg" />
+    <Content Include="Images\tools\css.png" />
+    <Content Include="Images\tools\html.png" />
     <Content Include="Images\Icons\android-chrome-192x192.png" />
     <Content Include="Images\Icons\android-chrome-512x512.png" />
     <Content Include="Images\Icons\apple-touch-icon.png" />
     <Content Include="Images\Icons\favicon-16x16.png" />
     <Content Include="Images\Icons\favicon-32x32.png" />
     <Content Include="Images\Icons\favicon.ico" />
+    <Content Include="Images\tools\javascript.jpg" />
+    <Content Include="Images\tools\jquery.png" />
     <Content Include="Images\tools\bootstrap-4.png" />
     <Content Include="Images\tools\clogo.png" />
     <Content Include="Images\projects\demo2.png" />

@@ -19,45 +19,39 @@ function exerciseOne() {
     var inputs = [parseInt(exerciseOneInputs[0].value), parseInt(exerciseOneInputs[1].value),
         parseInt(exerciseOneInputs[2].value), parseInt(exerciseOneInputs[3].value), parseInt(exerciseOneInputs[4].value)];
     inputs.sort(function (a, b) { return a - b });
-    var mean = calculateMean(inputs)
-    var total = calculateTotal(inputs)
-    var product = calculateProduct(inputs)
+    for (i = 0; i < inputs.length; i++) {
+        if (inputs[i] == undefined || inputs[i]=="") {
+            DisplayError(1)
+            return;
+        }
+    }
+    var mean = math.mean(inputs)
+    var total = inputs.reduce(totalFunc)
+    var product = inputs.reduce(productFunc)
     exerciseOneOutputs[0].value = "Least [" + inputs[0] + "]";
     exerciseOneOutputs[1].value = "Greatest [" + inputs[inputs.length - 1] + "]";
     exerciseOneOutputs[2].value = "Mean [" + mean + "]";
     exerciseOneOutputs[3].value = "Total [" + total + "]";
     exerciseOneOutputs[4].value = "Product [" + product + "]";
 }
+function totalFunc(total, num) {
+    return total + num;
+}
+function productFunc(total, num) {
+    return total * num;
+}
 function GenerateNumbers() {
     for (i = 0; i < 5; i++) {
         exerciseOneInputs[i].value = Math.floor(Math.random() * 100) + 1;
     }
-}
-function calculateMean(numbers) {
-    var result = calculateTotal(numbers);
-    result = result / numbers.length;
-    return result;
-}
-function calculateTotal(numbers) {
-    var result = 0;
-    for (i = 0; i < numbers.length; i++) {
-        result = numbers[i] + result;
-    }
-    return result;
-}
-function calculateProduct(numbers) {
-    var result = 1;
-    for (i = 0; i < numbers.length; i++) {
-        result = numbers[i] * result;
-    }
-    return result;
 }
 /* =======================================================================================*/
 
 
 /*========================= Exercise Two, Factorial Calculator ===========================*/
 const exerciseTwoInput = document.getElementById("exerciseTwoInput");
-const exerciseTwoOutput = document.getElementById("exerciseTwoOutput");
+const exerciseTwoOutputOne = document.getElementById("exerciseTwoOutputOne");
+const exerciseTwoOutputTwo = document.getElementById("exerciseTwoOutputTwo");
 document.getElementById("exerciseTwoCalculate").addEventListener("click", exerciseTwo)
 function exerciseTwo() {
     var startingNumber = exerciseTwoInput.value;
@@ -69,7 +63,8 @@ function exerciseTwo() {
     }
     var string = string.substring(0, string.length - 1);
     var string = string + "=" + total;
-    exerciseTwoOutput.value = string;
+    exerciseTwoOutputTwo.innerHTML = math.floor(total);
+    exerciseTwoOutputOne.value = string;
 
 }
 /*=========================================================================================*/
@@ -93,12 +88,12 @@ function exerciseThree() {
     }
     var text = "<p>"
     for (i = 1; i < 101; i++) {
-        if (i % inputOne == 0 && i % inputTwo == 0) { text = text +"<span class='text-primary'>FizzBuzz</span>, " }
-        else if (i % inputTwo == 0) { text = text +"<span class='text-success'>Buzz</span>, " }
-        else if (i % inputOne == 0) { text = text +"<span class='text-danger'>Fizz</span>, " }
-        else { text = text + "<span class='text-secondary'>"+ i + "</span>, " }
+        if (i % inputOne == 0 && i % inputTwo == 0) { text = text +"<span class='h4' style='color:red'>FizzBuzz</span>, " }
+        else if (i % inputTwo == 0) { text = text +"<span class='h5' style='color:green'>Buzz</span>, " }
+        else if (i % inputOne == 0) { text = text +"<span class='h5' style='color:blue'>Fizz</span>, " }
+        else { text = text + "<span class='text-secondary'>" + i + "</span>, " }
     }
-    text = text + "</p>"
+    text = text.substr(0, text.length-2) + "</p>"
     exerciseThreeOutput.insertAdjacentHTML("beforeend", text)
 }
 /*=========================================================================================*/
@@ -109,6 +104,7 @@ const exerciseFourOutput = document.getElementById("exerciseFourOutput");
 document.getElementById("exerciseFourCalculate").addEventListener("click", exerciseFour)
 function exerciseFour() {
     var word = exerciseFourInput.value;
+    if (word.length)
     if (word === word.split("").reverse().join("")) {
         exerciseFourOutput.value = "The supplied world '" + word + "' is an Palindrome!";
     }
@@ -117,6 +113,7 @@ function exerciseFour() {
     }
 }
 /*=========================================================================================*/
+
 
 
 

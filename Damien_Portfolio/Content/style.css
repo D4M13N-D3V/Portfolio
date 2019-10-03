@@ -35,7 +35,13 @@ General
 
 
 
+.modal-backdrop {
+    z-index: 100000 !important;
+}
 
+.modal {
+    z-index: 100001 !important;
+}
 body{
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;

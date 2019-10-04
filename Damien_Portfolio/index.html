@@ -825,7 +825,7 @@ function exerciseFour() {
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <textarea class="form-control" id="exerciseFiveOutput" rows="3" disabled></textarea>
+                            <textarea class="form-control" id="exerciseFiveOutput" rows="3" value="Click To Copy Contents"></textarea>
                         </div>
                     </div>
                 </div>
@@ -840,7 +840,128 @@ function exerciseFour() {
                         <div class="row">
                             <pre id="exerciseFiveCode" style="display:none">
                             <code class="language-js">
+const exerciseFiveInputOne = document.getElementById("exerciseFiveInputTwo");
+const exerciseFiveInputTwo = document.getElementById("exerciseFiveInputOne");
+const exerciseFiveOutput = document.getElementById("exerciseFiveOutput");
+exerciseFiveOutput.addEventListener("click", function () {
+    exerciseFiveOutput.select();
+    Document.execCommand('copy');
+})
+const library = "abcdefghijklmnopqrstuvwxyz";
+document.getElementById("exerciseFiveEncrypt").addEventListener("click", encrypt)
+document.getElementById("exerciseFiveDecrypt").addEventListener("click", decrypt)
+function decrypt() {
+    let message = cleanWord(exerciseFiveInputOne.value);
+    let keyword = cleanWord(exerciseFiveInputTwo.value);
+    let keywordLength = keyword.length;
+    let messageLength = message.length;
+    if (keyword.length < 2) {
+        DisplayError(1); return;
+    }
+    if (message.length < 2) {
+        DisplayError(2); return;
+    }
+    if (messageLength % keywordLength != 0) {
+        DisplayError(4); return;
+    }
+    let grid = createGrid(message, keyword, keywordLength, messageLength)
+    grid = populateGridDecrypt(grid, keyword, message, keywordLength, messageLength);
+    let text = readDecryptedMessage(grid, keyword, keywordLength, messageLength)
+    console.log(grid)
+    exerciseFiveOutput.value = text;
+}
+function encrypt() {
+    let message = cleanWord(exerciseFiveInputOne.value);
+    let keyword = cleanWord(exerciseFiveInputTwo.value);
+    let keywordLength = keyword.length;
+    let messageLength = message.length;
+    if (keyword.length < 2) {
+        DisplayError(1); return;
+    }
+    if (message.length < 2) {
+        DisplayError(2); return;
+    }
+    while (message.length % keywordLength != 0) {
+        message = message+"x"
+    }
+    let grid = createGrid(message, keyword, keywordLength, messageLength)
+    grid = populateGridEncrypt(grid, message, keywordLength, messageLength);
+    let text = readEncryptedMessage(grid, keyword,keywordLength, messageLength)
+    exerciseFiveOutput.value = text;
+}
+function createGrid(message, keyword, keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
+    let grid = []
+    for (col = 0; col < rowAmount; col++) {
+        grid.push(new Array(colAmount))
+    }
+    return grid;
+}
+function populateGridEncrypt(grid, message, keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
+    let messageArray = message.split("")
+    for (i = 0; i < rowAmount; i++) {
+        for (k = 0; k < colAmount; k++) {
+            grid[i][k] = messageArray[0]
+            messageArray.shift()
+        }
+    }
+    return grid;
+}
+function readEncryptedMessage(grid, keyword,keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
 
+    let orderedIndexs = new Array()
+    let keywordArraySorted = keyword.split("")
+    let keywordArray = keyword.split("")
+    keywordArraySorted.sort()
+    for (index = 0; index < keywordLength; index++) {
+        orderedIndexs.push(keywordArray.indexOf(keywordArraySorted[index]))
+    }
+
+    let text = ""
+    for (i = 0; i < colAmount; i++) {
+        for (k = 0; k < rowAmount; k++) {
+            text += grid[k][keywordArray.indexOf(keywordArraySorted[i])]
+        }
+    }
+    return text;
+}
+function populateGridDecrypt(grid, keyword, message, keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
+    let messageArray = message.split("")
+    let orderedIndexs = new Array()
+    let keywordArraySorted = keyword.split("")
+    let keywordArray = keyword.split("")
+    keywordArraySorted.sort()
+    for (index = 0; index < keywordLength; index++) {
+        orderedIndexs.push(keywordArray.indexOf(keywordArraySorted[index]))
+    }
+
+    for (i = 0; i < colAmount; i++) {
+        for (k = 0; k < rowAmount; k++) {
+            grid[k][keywordArray.indexOf(keywordArraySorted[i])] = messageArray[0]
+            messageArray.shift()
+        }
+    }
+    return grid;
+}
+function readDecryptedMessage(grid, keyword, keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
+
+    let text = ""
+    for (k = 0; k < rowAmount; k++) {
+        for (i = 0; i < colAmount; i++) {
+            text += grid[k][i]
+        }
+    }
+    return text;
+}
                         </code>
                         </pre>
                         </div>
@@ -1153,6 +1274,7 @@ var shuffle = function (array) {
     <!-- Challenges -->
     <script src="Scripts/Challenges.js"></script>
     <!-- Template Custom Javascript File -->
+    <script src="Scripts/bootbox.all.min.js"></script>
     <script src="Scripts/custom.js"></script>
     <script>
         SyntaxHighlighter.all();

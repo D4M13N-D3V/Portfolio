@@ -127,6 +127,10 @@ function exerciseFour() {
 const exerciseFiveInputOne = document.getElementById("exerciseFiveInputTwo");
 const exerciseFiveInputTwo = document.getElementById("exerciseFiveInputOne");
 const exerciseFiveOutput = document.getElementById("exerciseFiveOutput");
+exerciseFiveOutput.addEventListener("click", function () {
+    exerciseFiveOutput.select();
+    Document.execCommand('copy');
+})
 const library = "abcdefghijklmnopqrstuvwxyz";
 document.getElementById("exerciseFiveEncrypt").addEventListener("click", encrypt)
 document.getElementById("exerciseFiveDecrypt").addEventListener("click", decrypt)
@@ -463,19 +467,22 @@ document.getElementById("exerciseSixStand").addEventListener("click", standButto
 
 
 
-/*UTILS*/
+/*UTILS*/let curError = undefined
 function DisplayError(type) {
     switch (type) {
         case 1:
-            alert("Invalid Input")
+            curError = bootbox.dialog({ message: "<span class='text-warning'>Invalid Input</span>", closeButton: false })
             break;
         case 2:
-            alert("Message incorrect")
+            curError = bootbox.dialog({ message:"<span class='text-warning'>Message incorrect</span>",closeButton: false})
             break;
         case 4:
-            alert("The amount of characters in the message must be divisible by the amount in the keyword!")
+            curError = bootbox.dialog({ message:"<span class='text-warning'>The amount of characters in the message must be divisible by the amount in the keyword!</span>",closeButton: false})
             break;
     }
+    setTimeout(function () {
+        curError.modal('hide')
+    },1500)
 }
 var shuffle = function (array) {
 
@@ -532,7 +539,4 @@ document.getElementById("exerciseSixToggle").addEventListener("click", function 
     if (sixCode.style.display == "none") sixCode.style.display = "block";
     else sixCode.style.display = "none"
 })
-
-exerciseonet
-
 /*=================================*/

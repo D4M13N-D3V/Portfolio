@@ -8,7 +8,7 @@
 
 
 
-/*============ Exercise One, Least,Greatest,Mean,Sum,Product Calculator=================*/
+// #region Calculation Challenge
 document.getElementById("exerciseOneCalculateButton").addEventListener("click", exerciseOne);
 document.getElementById("exerciseOneGenerateButton").addEventListener("click", GenerateNumbers);
 const exerciseOneInputs = [document.getElementById("exerciseOneInputOne"),
@@ -55,10 +55,10 @@ function GenerateNumbers() {
         exerciseOneInputs[i].value = Math.floor(Math.random() * 100) + 1;
     }
 }
-/* =======================================================================================*/
+// #endregion
 
 
-/*========================= Exercise Two, Factorial Calculator ===========================*/
+// #region Factorial Calculator
 const exerciseTwoInput = document.getElementById("exerciseTwoInput");
 const exerciseTwoOutputOne = document.getElementById("exerciseTwoOutputOne");
 const exerciseTwoOutputTwo = document.getElementById("exerciseTwoOutputTwo");
@@ -77,10 +77,9 @@ function exerciseTwo() {
     exerciseTwoOutputOne.value = string;
 
 }
-/*=========================================================================================*/
+// #endregion
 
-
-/*========================= Exercise Three, Fizz/Buzz ============================*/
+// #region FizzBuzz
 const exerciseThreeInputOne = document.getElementById("exerciseThreeInputOne");
 const exerciseThreeInputTwo = document.getElementById("exerciseThreeInputTwo");
 const exerciseThreeOutput = document.getElementById("exerciseThreeOutput");
@@ -106,9 +105,9 @@ function exerciseThree() {
     text = text.substr(0, text.length-2) + "</p>"
     exerciseThreeOutput.insertAdjacentHTML("beforeend", text)
 }
-/*=========================================================================================*/
+// #endregion
 
-/*========================= Exercise Four, Palindrome Detector ============================*/
+// #region Palindrome Detector
 const exerciseFourInput = document.getElementById("exerciseFourInput");
 const exerciseFourOutput = document.getElementById("exerciseFourOutput");
 document.getElementById("exerciseFourCalculate").addEventListener("click", exerciseFour)
@@ -122,104 +121,134 @@ function exerciseFour() {
         exerciseFourOutput.value = "The supplied world '" + word + "' is not an Palindrome!";
     }
 }
-/*=========================================================================================*/
+// #endregion
 
-
-
-
-
-
-
-/*================================ Columnar Cipher Challenge ==============================*/
+// #region Columndrum Cipher
 const exerciseFiveInputOne = document.getElementById("exerciseFiveInputTwo");
 const exerciseFiveInputTwo = document.getElementById("exerciseFiveInputOne");
 const exerciseFiveOutput = document.getElementById("exerciseFiveOutput");
 const library = "abcdefghijklmnopqrstuvwxyz";
 document.getElementById("exerciseFiveEncrypt").addEventListener("click", encrypt)
-document.getElementById("exerciseFiveDecrypt").addEventListener("click", encrypt)
-function encrypt() {
-    var message = cleanWord(exerciseFiveInputOne.value);
-    var keyword = cleanWord(exerciseFiveInputTwo.value);
-    if (keyword.length < 2) { DisplayError(1); return; }
-    if (message.length < 2) { DisplayError(2); return; }
-    var keywordLength = keyword.length;
-    while (message.length % keywordLength != 0) { message = message + "x" }
-    var text = "";
-    alphabet = 0;
-    for (i = 0; i < keywordLength; i++) {
-        while (alphabet < 26) {
-            libraryKey = keyword.indexOf(library.charAt(alphabet));
-            keywordArray = keyword.split("");
-            keywordArray[libraryKey] = "_";
-            keyword = keywordArray.join("");
-            if (libraryKey >= 0) break;
-            else alphabet++;
-        }
-        for (j = 0; j < message.length / keywordLength; j++) {
-            text += message.charAt(j * keywordLength + libraryKey);
-        }
-    }
-    exerciseFiveOutput.value = text;
-}
+document.getElementById("exerciseFiveDecrypt").addEventListener("click", decrypt)
 function decrypt() {
-    var message = cleanWord(exerciseFiveInputOne.value);
-    var keyword = cleanWord(exerciseFiveInputTwo.value);
-    if (keyword.length < 2) { DisplayError(1); return; }
-    if (message.length < 2) { DisplayError(2); return; }
-    var keywordLength = keyword.length;
-    while (message.length % keywordLength != 0) { message = message + "x" }
-    var text = "";
-    var unorderedColumns = new Array(keywordLength);
-    var newColumns = new Array(keywordLength);
-    var outputText = "";
-    var columnLengths = message.length / keywordLength;
-    for (i = 0; i < keywordLength; i++) {
-        unorderedColumns[i] = message.substr(i * columnLengths, columnLengths);
+    let message = cleanWord(exerciseFiveInputOne.value);
+    let keyword = cleanWord(exerciseFiveInputTwo.value);
+    let keywordLength = keyword.length;
+    let messageLength = message.length;
+    if (keyword.length < 2) {
+        DisplayError(1); return;
     }
-    alphabet = 0;
-    for (i = 0; i < keywordLength; i++) {
-        while (alphabet < 26) {
-            libraryKey = keyword.indexOf(library.charAt(alphabet));
-            if (libraryKey >= 0) {
-                newColumns[alphabet] = unorderedColumns[i++];
-                keywordArray = keyword.split("");
-                keywordArray[libraryKey] = "_";
-                keyword = keywordArray.join("");
-            }
-            else alphabet++;
-        }
-        for (j = 0; j < message.length / keywordLength; j++) {
-            text += message.charAt(j * keywordLength + libraryKey);
-        }
+    if (message.length < 2) {
+        DisplayError(2); return;
     }
+    if (messageLength % keywordLength != 0) {
+        DisplayError(4); return;
+    }
+    let grid = createGrid(message, keyword, keywordLength, messageLength)
+    grid = populateGridDecrypt(grid, keyword, message, keywordLength, messageLength);
+    let text = readDecryptedMessage(grid, keyword, keywordLength, messageLength)
+    console.log(grid)
     exerciseFiveOutput.value = text;
 }
+function encrypt() {
+    let message = cleanWord(exerciseFiveInputOne.value);
+    let keyword = cleanWord(exerciseFiveInputTwo.value);
+    let keywordLength = keyword.length;
+    let messageLength = message.length;
+    if (keyword.length < 2) {
+        DisplayError(1); return;
+    }
+    if (message.length < 2) {
+        DisplayError(2); return;
+    }
+    if (messageLength % keywordLength != 0) {
+        DisplayError(4); return;
+    }
+    let grid = createGrid(message, keyword, keywordLength, messageLength)
+    grid = populateGridEncrypt(grid, message, keywordLength, messageLength);
+    let text = readEncryptedMessage(grid, keyword,keywordLength, messageLength)
+    exerciseFiveOutput.value = text;
+}
+function createGrid(message, keyword, keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
+    let grid = []
+    for (col = 0; col < rowAmount; col++) {
+        grid.push(new Array(colAmount))
+    }
+    return grid;
+}
+function populateGridEncrypt(grid, message, keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
+    let messageArray = message.split("")
+    for (i = 0; i < rowAmount; i++) {
+        for (k = 0; k < colAmount; k++) {
+            grid[i][k] = messageArray[0]
+            messageArray.shift()
+        }
+    }
+    return grid;
+}
+function readEncryptedMessage(grid, keyword,keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
+
+    let orderedIndexs = new Array()
+    let keywordArraySorted = keyword.split("")
+    let keywordArray = keyword.split("")
+    keywordArraySorted.sort()
+    for (index = 0; index < keywordLength; index++) {
+        orderedIndexs.push(keywordArray.indexOf(keywordArraySorted[index]))
+    }
+
+    let text = ""
+    for (i = 0; i < colAmount; i++) {
+        for (k = 0; k < rowAmount; k++) {
+            text += grid[k][keywordArray.indexOf(keywordArraySorted[i])]
+        }
+    }
+    return text;
+}
+function populateGridDecrypt(grid, keyword, message, keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
+    let messageArray = message.split("")
+    let orderedIndexs = new Array()
+    let keywordArraySorted = keyword.split("")
+    let keywordArray = keyword.split("")
+    keywordArraySorted.sort()
+    for (index = 0; index < keywordLength; index++) {
+        orderedIndexs.push(keywordArray.indexOf(keywordArraySorted[index]))
+    }
+
+    for (i = 0; i < colAmount; i++) {
+        for (k = 0; k < rowAmount; k++) {
+            grid[k][keywordArray.indexOf(keywordArraySorted[i])] = messageArray[0]
+            messageArray.shift()
+        }
+    }
+    return grid;
+}
+function readDecryptedMessage(grid, keyword, keywordLength, messageLength) {
+    let colAmount = keywordLength;
+    let rowAmount = messageLength / colAmount;
+
+    let text = ""
+    for (k = 0; k < rowAmount; k++) {
+        for (i = 0; i < colAmount; i++) {
+            text += grid[k][i]
+        }
+    }
+    return text;
+}
+
 function cleanWord(word){
     return word.toLowerCase().replace(/[^a-z]/g, "")
 }
-/*=========================================================================================*/
+// #endregion
 
-function DisplayError(type) {
-    switch (type) {
-        case 1:
-            alert("Invalid Input")
-            break;
-        case 2:
-            alert("Message incorrect, is missing padding")
-            break;
-    }
-}
-
-
-
-
-
-/*===================== Blackjack Challenge========================*/
-
-
-
-
-
+// #region Blackjack
 const informationElement = document.getElementById("blackjackInfo")
 var players = []
 var cards = ["2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K", "A"]
@@ -260,7 +289,6 @@ function Card(value, suit, weight) {
             else labelContent = "x"
         }
         this.HTML = `<div class="row" > <span class="label ${labelClass}" id="Player${this.Owner.Id}Card${this.Owner.Hand.Cards.length}">${labelContent}</span></div >`;
-        console.log(`Player${this.Owner.Id}`)
         document.getElementById(`Player${this.Owner.Id}`).insertAdjacentHTML("beforeend", this.HTML)
         this.Element = document.getElementById(`Player${this.Owner.Id}Card${this.Owner.Hand.Cards.length}`)
     }
@@ -430,9 +458,25 @@ function standButton() {
 document.getElementById("exerciseSixDeal").addEventListener("click", dealButton)
 document.getElementById("exerciseSixHit").addEventListener("click", hitButton)
 document.getElementById("exerciseSixStand").addEventListener("click", standButton)
-/*==================================================================*/
+// #endregion
 
-/*UTILS*/
+
+
+
+/*UTILS*/
+function DisplayError(type) {
+    switch (type) {
+        case 1:
+            alert("Invalid Input")
+            break;
+        case 2:
+            alert("Message incorrect")
+            break;
+        case 4:
+            alert("The amount of characters in the message must be divisible by the amount in the keyword!")
+            break;
+    }
+}
 var shuffle = function (array) {
 
     var currentIndex = array.length;

@@ -204,8 +204,8 @@
                     <h4>Blackjack</h4>
                 </div>
                 <div class="col-md-3">
-                    <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' />
-                    <h4>Coming Soon</h4>
+                    <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSeven"  />
+                    <h4>Bubble Sorter</h4>
                 </div>
                 <div class="col-md-3">
                     <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' />
@@ -1254,7 +1254,148 @@ var shuffle = function (array) {
 
         </div>
     </div>
+    <div class="modal fade" id="exerciseSeven" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Bubble Sorter Challenge</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="row">
+                                        <div class="col-md-10 col-md-offset-2">
+                                            <button type="button" id="exerciseSevenGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                            <button type="button" id="exerciseSevenBubblesort" class="btn btn-primary btn-sm" style="width:100%">Bubble Sort!</button>
+                                            <button type="button" id="exerciseSevenBubblesortVisual" class="btn btn-primary btn-sm" style="width:100%">Bubble Sort Visual!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="h4" id="exerciseSevenDisplay">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
+                        <div class="row">
+                            <button type="button" class="btn btn-warning" id="exerciseSevenToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseSevenCode" style="display:none">
+                            <code class="language-js">
+function BubbleSort(array) {
+    let needsToBeSwapped = false; // Determines If Needs To Be Swapped Again
+    let timesToLoop = array.length - 1; // Gets the amount of times we need to loop
+    do { // do code once then use while loop
+        needsToBeSwapped = false; // Reset this value
+        for (i = 0; i < timesToLoop; i++) { // Loop Through Numbers
+            if (array[i] < array[i + 1]) {
+                let tmp = array[i] // makes tmp var to store value of current numbers
+                array[i] = array[i + 1] // Sets value of current number to next number 
+                array[i + 1] = tmp; // Sets value of next number to current number;
+                needsToBeSwapped = true; // Tells program needs to be swapped again
+            }
+        }
+        timesToLoop--; // Incremenet down so it knows how many numbers have already been swapped
+    }
+    while (needsToBeSwapped) // Runs code until this is false
+    return array;
+}
 
+function BubbleSortVisual(array,element) {
+    let needsToBeSwapped = false; // Determines If Needs To Be Swapped Again
+    let timesToLoop = array.length - 1; // Gets the amount of times we need to loop
+    do { // do code once then use while loop
+        needsToBeSwapped = false; // Reset this value
+        for (i = 0; i < timesToLoop; i++) { // Loop Through Numbers
+            if (array[i] < array[i + 1]) {
+                let tmp = array[i] // makes tmp var to store value of current numbers
+                array[i] = array[i + 1] // Sets value of current number to next number 
+                array[i + 1] = tmp; // Sets value of next number to current number;
+                needsToBeSwapped = true; // Tells program needs to be swapped again
+                setTimeout(function () { }, 250)
+                text = ""
+                for (i = 0; i < array.length; i++) {
+                    text += array[i] + ","
+                }
+                text = text.substr(0, text.length - 1)
+                numberDisplay.innerHTML = text
+            }
+        }
+        timesToLoop--; // Incremenet down so it knows how many numbers have already been swapped
+    }
+    while (needsToBeSwapped) // Runs code until this is false
+    return array;
+}
+
+let numberDisplay = document.getElementById("exerciseSevenDisplay")
+let numbers = []
+window.addEventListener("load", function () {
+    let text = ""
+    for (i = 1; i < 10; i++) {
+        number = Math.floor(Math.random() * 100) + 1;
+        numbers.push(number)
+        text += number + ","
+    }
+    text = text.substr(0, text.length - 1)
+    numberDisplay.innerHTML = text;
+})
+
+document.getElementById("exerciseSevenGenerate").addEventListener("click", function () {
+    numbers = []
+    let text = ""
+    for (i = 1; i < 10; i++) {
+        number = Math.floor(Math.random() * 100) + 1;
+        numbers.push(number)
+        text += number + ","
+    }
+    text = text.substr(0, text.length - 1)
+    numberDisplay.innerHTML = text;
+})
+
+document.getElementById("exerciseSevenBubblesort").addEventListener("click", function () {
+    let numbersSorted = BubbleSort(numbers)
+    text = ""
+    for (i = 0; i < numbersSorted.length; i++) {
+        text += numbersSorted[i] + ","
+    }
+    text = text.substr(0, text.length - 1)
+    numberDisplay.innerHTML = text;
+})
+
+document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click", function () {
+    let numbersSorted = BubbleSortVisual(numbers)
+    text = ""
+    for (i = 0; i < numbersSorted.length; i++) {
+        text += numbersSorted[i] + ","
+    }
+    text = text.substr(0, text.length - 1)
+    numberDisplay.innerHTML = text;
+})
+
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
     <!-- js -->
@@ -1276,6 +1417,7 @@ var shuffle = function (array) {
     <!-- Template Custom Javascript File -->
     <script src="Scripts/bootbox.all.min.js"></script>
     <script src="Scripts/custom.js"></script>
+    <script src="Scripts/BubbleSorter.js"></script>
     <script>
         SyntaxHighlighter.all();
     </script>

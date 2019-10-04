@@ -75,8 +75,8 @@
     <Content Include="Content\githubRepoWidget.min.js" />
     <Content Include="Content\prism.css" />
     <Content Include="Images\challenges\challenge2.png" />
+    <Content Include="Scripts\BubbleSorter.js" />
     <Content Include="Scripts\bootbox.all.min.js" />
-    <Content Include="Scripts\CompressionMethodChallenge.js" />
     <Content Include="Scripts\math.min.js" />
     <Content Include="Content\overwrite.css" />
     <Content Include="Content\simpletextrotator.css" />

@@ -74,6 +74,8 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\githubRepoWidget.min.js" />
     <Content Include="Content\prism.css" />
+    <Content Include="Images\challenges\challenge2.png" />
+    <Content Include="Scripts\CompressionMethodChallenge.js" />
     <Content Include="Scripts\math.min.js" />
     <Content Include="Content\overwrite.css" />
     <Content Include="Content\simpletextrotator.css" />
@@ -82,7 +84,6 @@
     <Content Include="Images\challenges\challenge1.png" />
     <Content Include="Images\challenges\challenge4.png" />
     <Content Include="Images\challenges\challenge3.png" />
-    <Content Include="Images\challenges\challenge2.png" />
     <Content Include="Images\about-img.jpg" />
     <Content Include="Images\tools\css.png" />
     <Content Include="Images\tools\html.png" />

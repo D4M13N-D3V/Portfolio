@@ -161,8 +161,8 @@ function encrypt() {
     if (message.length < 2) {
         DisplayError(2); return;
     }
-    if (messageLength % keywordLength != 0) {
-        DisplayError(4); return;
+    while (message.length % keywordLength != 0) {
+        message = message+"x"
     }
     let grid = createGrid(message, keyword, keywordLength, messageLength)
     grid = populateGridEncrypt(grid, message, keywordLength, messageLength);
@@ -242,7 +242,7 @@ function readDecryptedMessage(grid, keyword, keywordLength, messageLength) {
     }
     return text;
 }
-
+//removes everything but the letters
 function cleanWord(word){
     return word.toLowerCase().replace(/[^a-z]/g, "")
 }

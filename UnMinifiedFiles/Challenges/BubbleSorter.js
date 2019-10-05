@@ -4,7 +4,7 @@
     do { // do code once then use while loop
         needsToBeSwapped = false; // Reset this value
         for (i = 0; i < timesToLoop; i++) { // Loop Through Numbers
-            if (array[i] < array[i + 1]) {
+            if (array[i] > array[i + 1]) {
                 let tmp = array[i] // makes tmp var to store value of current numbers
                 array[i] = array[i + 1] // Sets value of current number to next number 
                 array[i + 1] = tmp; // Sets value of next number to current number;
@@ -23,7 +23,7 @@ function BubbleSortVisual(array,element) {
     do { // do code once then use while loop
         needsToBeSwapped = false; // Reset this value
         for (i = 0; i < timesToLoop; i++) { // Loop Through Numbers
-            if (array[i] < array[i + 1]) {
+            if (array[i] > array[i + 1]) {
                 let tmp = array[i] // makes tmp var to store value of current numbers
                 array[i] = array[i + 1] // Sets value of current number to next number 
                 array[i + 1] = tmp; // Sets value of next number to current number;

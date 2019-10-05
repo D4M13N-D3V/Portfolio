@@ -75,8 +75,17 @@
     <Content Include="Content\githubRepoWidget.min.js" />
     <Content Include="Content\prism.css" />
     <Content Include="Images\challenges\challenge2.png" />
-    <Content Include="Scripts\BubbleSorter.js" />
+    <Content Include="Scripts\Challenges\BubbleSorter.js" />
     <Content Include="Scripts\bootbox.all.min.js" />
+    <Content Include="Scripts\Challenges\Challenges.bundle.js" />
+    <Content Include="Scripts\Challenges\Challenges.min.js" />
+    <Content Include="Scripts\Challenges\ColumndrumCipher.js" />
+    <Content Include="Scripts\Challenges\FactorialCalculator.js" />
+    <Content Include="Scripts\Challenges\FizzBuzz.js" />
+    <Content Include="Scripts\Challenges\Blackjack.js" />
+    <Content Include="Scripts\Challenges\LeastGreatestMeanSumProductCalculation.js" />
+    <Content Include="Scripts\Challenges\PalindromeDetector.js" />
+    <Content Include="Scripts\Challenges\ViewCodeButtons.js" />
     <Content Include="Scripts\math.min.js" />
     <Content Include="Content\overwrite.css" />
     <Content Include="Content\simpletextrotator.css" />
@@ -114,7 +123,7 @@
     <Content Include="Images\tools\visualstudio.png" />
     <Content Include="index.html" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Challenges.js" />
+    <Content Include="Scripts\Challenges\Utils.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\github_load.js" />
     <Content Include="Scripts\grid.js" />
@@ -138,6 +147,7 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Images\Icons\site.webmanifest" />
+    <None Include="bundleconfig.json" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Damien-Ostler-Portfolio - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">

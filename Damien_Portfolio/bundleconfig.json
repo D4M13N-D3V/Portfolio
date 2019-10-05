@@ -1,0 +1,16 @@
+[
+  {
+    "outputFileName": "Scripts/Challenges/Challenges.js",
+    "inputFiles": [
+      "Scripts/Challenges/Blackjack.js",
+      "Scripts/Challenges/BubbleSorter.js",
+      "Scripts/Challenges/ColumndrumCipher.js",
+      "Scripts/Challenges/FactorialCalculator.js",
+      "Scripts/Challenges/FizzBuzz.js",
+      "Scripts/Challenges/LeastGreatestMeanSumProductCalculation.js",
+      "Scripts/Challenges/PalindromeDetector.js",
+      "Scripts/Challenges/Utils.js",
+      "Scripts/Challenges/ViewCodeButtons.js"
+    ]
+  }
+]

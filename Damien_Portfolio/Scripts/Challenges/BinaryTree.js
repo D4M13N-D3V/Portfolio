@@ -1,9 +1,7 @@
 ﻿function BinaryTree() {
     this.root = undefined;
-
     function Node(value, parent) {
         this.value = value;
-        this.parent = parent;
         this.left = null;
         this.right = null;
     }
@@ -41,14 +39,11 @@
         //throw error if the result WAS found because that means the value was in there twice
         if (!result.found) {
             //Check what side it goes on and then set its parent, and the parents left or right node depending.
-            console.log(result.side)
             if (result.side == "left") {
-                newNode.parent = result.parent;
-                newNode.parent.left = newNode
+                result.parent.left = newNode
             }
             else if (result.side == "right") {
-                newNode.parent = result.parent;
-                newNode.parent.right = newNode
+                result.parent.right = newNode
             }
         }
         else throw new Error("Invalid Argument ( Two Items Of Same Value )")
@@ -58,17 +53,44 @@
         return this.Traverse(value).found;
     }
 
-    this.Debug = function () {
-        console.log(this.root)
+    this.GetPrettyString = function () {
+        this.prettyString = ""
+        this.PrintPretty();
     }
 }
-Test()
-function Test() {
 
-    var testTree = new BinaryTree()
-    var numbers = [22,95,23,38,53,1,5,9,2,96]
-    for (i = 0; i < numbers.length; i++) {
-        testTree.Add(numbers[i])
+GeneratedNumbers = []
+GeneratedNumberOutput = document.getElementById("exerciseEightGeneratedNumbers")
+CreateBinaryTreeButton = document.getElementById("exerciseEightBinaryTree")
+GenerateNumberButton = document.getElementById("exerciseEightGenerate")
+JsonViewer = document.getElementById("jsonViewer")
+GenerateNumberButton.addEventListener("click", GenerateNumbers)
+CreateBinaryTreeButton.addEventListener("click", CreateBinaryTree)
+window.addEventListener("load", GenerateNumbers)
+
+
+function GenerateNumbers() {
+    GenerateNumbers = []
+    for (i = 0; i < 25; i++) {
+        do {
+            rdm = math.floor(math.random() * 100) + 1;
+        }
+        while (GeneratedNumbers.indexOf(rdm) != -1)
+        GeneratedNumbers.push(rdm)
     }
-    testTree.Debug()
+    var text = ""
+    for (i = 0; i < GeneratedNumbers.length; i++) text += GeneratedNumbers[i] + ","
+    text = text.substr(0, text.length - 1)
+    GeneratedNumberOutput.innerHTML = text;
+}
+
+function CreateBinaryTree() {
+    if (JsonViewer.childNodes.length>0) JsonViewer.removeChild(JsonViewer.childNodes[0])
+    var testTree = new BinaryTree()
+    for (i = 0; i < GeneratedNumbers.length; i++) {
+        testTree.Add(GeneratedNumbers[i])
+    }
+    var jsonViewer = new JSONViewer();
+    JsonViewer.appendChild(jsonViewer.getContainer());
+    jsonViewer.showJSON(JSON.parse(JSON.stringify(testTree.root)), -1, -1);
 }

@@ -10,7 +10,7 @@
 
     <link href="content/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="content/style.css" rel="stylesheet" media="screen">
-
+    <link href="Content/json-viewer.css" rel="stylesheet" />
     <!-- Custom Code Pen Image Hovers -->
     <link href="content/codepen-imagehovers.css" rel="stylesheet" media="screen">
     <link href="content/default.css" rel="stylesheet" media="screen">
@@ -117,8 +117,10 @@
                 </div>
             </div>
             <div class="row wow fadeInUp">
-                <div class="col-md-6 about-img">
-                    <img src="Images/about-img.jpg" alt="">
+                <div class="col-md-3 col-md-offset-2">
+                    <div class="row" style="padding-top:22.5%">
+                        <img src="Images/about-img.jpg" style="height:100%; width:100%" alt="">
+                    </div>
                 </div>
 
                 <div class="col-md-6 content">
@@ -131,7 +133,7 @@
                         in Unity3D to fullstack development for both web and non web applications in a proffessional setting.
                         I am currently studying at coder foundry to further my carreer and make sure that I am prepared.
                     </p>
-                    <button data-toggle="modal" data-target="#resume" class="btn-lg btn-secondary">Click Here To View Resume</button>
+                    <button data-toggle="modal" data-target="#resume" class="btn-lg btn-primary">Click Here To View Resume</button>
                     <ul>
                     </ul>
                 </div>
@@ -152,10 +154,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4 col-md-offset-2">
                     <img src="Images/projects/spectraldaze.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#spectralDazeInfo" />
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <img src="Images/projects/gta5.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#gta5Mod" />
                 </div>
 
@@ -182,7 +184,7 @@
                     <h4>Calculations</h4>
                 </div>
                 <div class="col-md-3">
-                    <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseTwo" />
+                    <img src="Images/challenges/challenge2.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseTwo" />
                     <h4>Factorial</h4>
                 </div>
                 <div class="col-md-3">
@@ -196,20 +198,20 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <img src="Images/challenges/challenge4.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseFive" />
-                    <h4>Columdrum Cipher</h4>
+                    <img src="Images/challenges/challenge5.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseFive" />
+                    <h4>Columnar Cipher</h4>
                 </div>
                 <div class="col-md-3">
-                    <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSix" />
+                    <img src="Images/challenges/challenge6.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSix" />
                     <h4>Blackjack</h4>
                 </div>
                 <div class="col-md-3">
-                    <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSeven" />
+                    <img src="Images/challenges/challenge7.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSeven" />
                     <h4>Bubble Sorter</h4>
                 </div>
                 <div class="col-md-3">
-                    <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseEight"  />
-                    <h4>Ecosystem</h4>
+                    <img src="Images/challenges/challenge8.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseEight" />
+                    <h4>Data Trees</h4>
                 </div>
             </div>
         </div>
@@ -814,7 +816,7 @@ function exerciseFour() {
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Columdrum Cipher Challenge</h2>
+                    <h2 class="modal-title">Columnar Cipher Challenge</h2>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -1420,14 +1422,24 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Ecosystem Simulation</h2>
+                    <h2 class="modal-title">Tree Data Structures</h2>
                 </div>
                 <div class="modal-body">
+                    <div class="row" style="padding-bottom:2%">
+                        <div class="col-md-4">
+                            <button type="button" id="exerciseEightGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                            <button type="button" id="exerciseEightBinaryTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Binary Tree</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <pre style="height:100%" id="exerciseEightGeneratedNumbers"></pre>
+                        </div>
+                    </div>
                     <div class="row">
-
                         <div class="col-md-12">
-                            <canvas id="ecosystem" style="height:100%;width:100%">
-                            </canvas>
+                            <div id="jsonViewer" style="text-align:left"></div>
                         </div>
                     </div>
                 </div>
@@ -1453,8 +1465,8 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
     <!-- js -->
-    <script src="https://unpkg.com/mathjs@6.2.2/dist/math.min.js"></script>
     <script src="Scripts/jquery.js"></script>
+    <script src="https://unpkg.com/mathjs@6.2.2/dist/math.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/wow.min.js"></script>
     <script src="Scripts/jquery.scrollTo.min.js"></script>
@@ -1465,15 +1477,15 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
     <script src="Scripts/math.min.js"></script>
     <script src="Scripts/prism.js"></script>
     <script src="Scripts/phaser.js"></script>
+    <script src="Scripts/json-viewer.js"></script>
     <!--Custom Temporary Example Github API Call-->
-    <script src="Scripts/github_load.js"></script>  
+    <script src="Scripts/github_load.js"></script>
     <!-- Challenges -->
     <script src="Scripts/Challenges/Challenges.min.js"></script>
-    <script src="Scripts/Challenges/Ecosystem.js"></script>
+    <script src="Scripts/Challenges/BinaryTree.js"></script>
     <!-- Template Custom Javascript File -->
     <script src="Scripts/bootbox.all.min.js"></script>
     <script src="Scripts/custom.js"></script>
-    <script src="Scripts/Challenges/BinaryTree.js"></script>
 </body>
 
 </html>

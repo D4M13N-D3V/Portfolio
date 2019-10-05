@@ -72,9 +72,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\default.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\githubRepoWidget.min.js" />
+    <Content Include="Content\json-viewer.css" />
     <Content Include="Content\prism.css" />
     <Content Include="Images\challenges\challenge2.png" />
+    <Content Include="Images\challenges\challenge5.png" />
+    <Content Include="Images\challenges\challenge6.png" />
+    <Content Include="Images\challenges\challenge7.png" />
+    <Content Include="Images\challenges\challenge8.png" />
     <Content Include="Scripts\Challenges\BubbleSorter.js" />
     <Content Include="Scripts\bootbox.all.min.js" />
     <Content Include="Scripts\Challenges\Challenges.bundle.js" />
@@ -87,6 +91,7 @@
     <Content Include="Scripts\Challenges\LeastGreatestMeanSumProductCalculation.js" />
     <Content Include="Scripts\Challenges\PalindromeDetector.js" />
     <Content Include="Scripts\Challenges\ViewCodeButtons.js" />
+    <Content Include="Scripts\json-viewer.js" />
     <Content Include="Scripts\math.min.js" />
     <Content Include="Content\overwrite.css" />
     <Content Include="Content\simpletextrotator.css" />

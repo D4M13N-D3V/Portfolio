@@ -35,3 +35,12 @@ var shuffle = function (array) {
     return array;
 
 };
+//removes everything but the letters
+function makeWordLettersOnly(word) {
+    return word.toLowerCase().replace(/[^a-z]/g, "")
+}
+
+//removes everything but the letters
+function makeWordNumbersOnly(word) {
+    return word.toLowerCase().replace(/[^0-9]/g, "")
+}

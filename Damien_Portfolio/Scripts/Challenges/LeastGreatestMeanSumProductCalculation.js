@@ -1,7 +1,7 @@
 ﻿
 //Add event listeners for the two buttons, didnt create variables as they were not refrenced anywhere else.
 document.getElementById("exerciseOneCalculateButton").addEventListener("click", exerciseOne);
-document.getElementById("exerciseOneGenerateButton").addEventListener("click", GenerateNumbers);
+document.getElementById("exerciseOneGenerateButton").addEventListener("click", ex1GenNum);
 
 //crate an constant array of the input fields so do not have to keep grabbing them.
 const exerciseOneInputs = [document.getElementById("exerciseOneInputOne"),
@@ -20,11 +20,11 @@ document.getElementById("exerciseOneOutputFive")]
 
 function exerciseOne() {
     //Create a array of the values of the inputs.
-    var inputs = [parseInt(exerciseOneInputs[0].value),
-                  parseInt(exerciseOneInputs[1].value),
-                  parseInt(exerciseOneInputs[2].value),
-                  parseInt(exerciseOneInputs[3].value),
-                  parseInt(exerciseOneInputs[4].value)];
+    var inputs = [parseInt(makeWordNumbersOnly(exerciseOneInputs[0].value)),
+                  parseInt(makeWordNumbersOnly(exerciseOneInputs[1].value)),
+                  parseInt(makeWordNumbersOnly(exerciseOneInputs[2].value)),
+                  parseInt(makeWordNumbersOnly(exerciseOneInputs[3].value)),
+                  parseInt(makeWordNumbersOnly(exerciseOneInputs[4].value))];
     inputs = BubbleSort(inputs) // Use my custom sorter from my challenge
     //Loop through values and make sure they arent undefined , nothing, or 0, if so display an error.
     for (i = 0; i < inputs.length; i++) {
@@ -48,7 +48,7 @@ function totalFunc(total, num) {
 function productFunc(total, num) {
     return total * num;
 }
-function GenerateNumbers() {
+function ex1GenNum() {
     //Loop through inputs and set the value to a random integer between 1 and 100
     for (i = 0; i < 5; i++) {
         exerciseOneInputs[i].value = Math.floor(Math.random() * 100) + 1;

@@ -319,8 +319,8 @@ exerciseFiveOutput.addEventListener("click", function () {
 document.getElementById("exerciseFiveEncrypt").addEventListener("click", encrypt)
 document.getElementById("exerciseFiveDecrypt").addEventListener("click", decrypt)
 function decrypt() {
-    let message = cleanWord(exerciseFiveInputOne.value);
-    let keyword = cleanWord(exerciseFiveInputTwo.value);
+    let message = makeWordLettersOnly(exerciseFiveInputOne.value);
+    let keyword = makeWordLettersOnly(exerciseFiveInputTwo.value);
     let keywordLength = keyword.length;
     let messageLength = message.length;
     //Make sure that the keyword is greater than two and the the message is greater then two
@@ -340,8 +340,8 @@ function decrypt() {
     exerciseFiveOutput.value = text;
 }
 function encrypt() {
-    let message = cleanWord(exerciseFiveInputOne.value);
-    let keyword = cleanWord(exerciseFiveInputTwo.value);
+    let message = makeWordLettersOnly(exerciseFiveInputOne.value);
+    let keyword = makeWordLettersOnly(exerciseFiveInputTwo.value);
     let keywordLength = keyword.length;
     let messageLength = message.length;
     //Make sure that the keyword is greater than two and the the message is greater then two
@@ -446,10 +446,6 @@ function readDecryptedMessage(grid, keyword, keywordLength, messageLength) {
     }
     return text;
 }
-//removes everything but the letters
-function cleanWord(word) {
-    return word.toLowerCase().replace(/[^a-z]/g, "")
-}
 //Create constants holding the HTML elements that are the inputs and outputs.
 const exerciseTwoInput = document.getElementById("exerciseTwoInput");
 const exerciseTwoOutputOne = document.getElementById("exerciseTwoOutputOne");
@@ -499,7 +495,7 @@ function exerciseThree() {
 
 //Add event listeners for the two buttons, didnt create variables as they were not refrenced anywhere else.
 document.getElementById("exerciseOneCalculateButton").addEventListener("click", exerciseOne);
-document.getElementById("exerciseOneGenerateButton").addEventListener("click", GenerateNumbers);
+document.getElementById("exerciseOneGenerateButton").addEventListener("click", ex1GenNum);
 
 //crate an constant array of the input fields so do not have to keep grabbing them.
 const exerciseOneInputs = [document.getElementById("exerciseOneInputOne"),
@@ -518,11 +514,11 @@ document.getElementById("exerciseOneOutputFive")]
 
 function exerciseOne() {
     //Create a array of the values of the inputs.
-    var inputs = [parseInt(exerciseOneInputs[0].value),
-                  parseInt(exerciseOneInputs[1].value),
-                  parseInt(exerciseOneInputs[2].value),
-                  parseInt(exerciseOneInputs[3].value),
-                  parseInt(exerciseOneInputs[4].value)];
+    var inputs = [parseInt(makeWordNumbersOnly(exerciseOneInputs[0].value)),
+                  parseInt(makeWordNumbersOnly(exerciseOneInputs[1].value)),
+                  parseInt(makeWordNumbersOnly(exerciseOneInputs[2].value)),
+                  parseInt(makeWordNumbersOnly(exerciseOneInputs[3].value)),
+                  parseInt(makeWordNumbersOnly(exerciseOneInputs[4].value))];
     inputs = BubbleSort(inputs) // Use my custom sorter from my challenge
     //Loop through values and make sure they arent undefined , nothing, or 0, if so display an error.
     for (i = 0; i < inputs.length; i++) {
@@ -546,7 +542,7 @@ function totalFunc(total, num) {
 function productFunc(total, num) {
     return total * num;
 }
-function GenerateNumbers() {
+function ex1GenNum() {
     //Loop through inputs and set the value to a random integer between 1 and 100
     for (i = 0; i < 5; i++) {
         exerciseOneInputs[i].value = Math.floor(Math.random() * 100) + 1;
@@ -558,7 +554,7 @@ const exerciseFourOutput = document.getElementById("exerciseFourOutput");
 //Add click event for calculate button
 document.getElementById("exerciseFourCalculate").addEventListener("click", exerciseFour)
 function exerciseFour() {
-    var word = exerciseFourInput.value;
+    var word = makeWordLettersOnly(exerciseFourInput.value);
     if (word.length)
         //compare the word to its self turned into an array , reversed, and then turned back into a string
         if (word === word.split("").reverse().join("")) {
@@ -568,6 +564,103 @@ function exerciseFour() {
             exerciseFourOutput.value = "The supplied world '" + word + "' is not an Palindrome!";
         }
 }   
+function BinaryTree() {
+    this.root = undefined;
+    function Node(value, parent) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+
+    this.Traverse = function(value) {
+        let found = this.root;
+        let side = "";
+        let parent = undefined;
+        //Loop until can no longer find the value or finds the value already existing
+        while (found && found.value !== value) {
+            parent = found;
+            //Checks to see if the value needs to go on left or right
+            if (value > found.value) {
+                side = 'right';
+                found = found.right;
+            }
+            else {
+                side = 'left';
+                found = found.left;
+            }
+        }
+        return { found: found, parent: parent, side: side}
+    }
+
+    this.Add = function (value) {
+        //The passed value was undefined and we can not take it.
+        if (typeof value === 'undefined') throw new Error("Invalid Argument ( Is Undefined )")
+        let newNode = new Node(value, this.root)
+        //Set this node as root if root doesnt exist yet
+        if (this.root == undefined) {
+            this.root = newNode
+            return;
+        }
+        let result = this.Traverse(value)
+        //throw error if the result WAS found because that means the value was in there twice
+        if (!result.found) {
+            //Check what side it goes on and then set its parent, and the parents left or right node depending.
+            if (result.side == "left") {
+                result.parent.left = newNode
+            }
+            else if (result.side == "right") {
+                result.parent.right = newNode
+            }
+        }
+        else throw new Error("Invalid Argument ( Two Items Of Same Value )")
+    }
+
+    this.Search = function (value) {
+        return this.Traverse(value).found;
+    }
+
+    this.GetPrettyString = function () {
+        this.prettyString = ""
+        this.PrintPretty();
+    }
+}
+
+GeneratedNumbers = []
+GeneratedNumberOutput = document.getElementById("exerciseEightGeneratedNumbers")
+CreateBinaryTreeButton = document.getElementById("exerciseEightBinaryTree")
+GenerateNumberButton = document.getElementById("exerciseEightGenerate")
+JsonViewer = document.getElementById("jsonViewer")
+GenerateNumberButton.addEventListener("click", GenerateNumbers)
+CreateBinaryTreeButton.addEventListener("click", CreateBinaryTree)
+window.addEventListener("load", GenerateNumbers)
+
+
+function GenerateNumbers() {
+    GeneratedNumbers = []
+    for (i = 0; i < 25; i++) {
+        let rdm = 0;
+        do {
+            rdm = math.floor(math.random() * 100) + 1;
+        }
+        while (GeneratedNumbers.indexOf(rdm) != -1)
+        GeneratedNumbers.push(rdm)
+    }
+    let text = ""
+    for (i = 0; i < GeneratedNumbers.length; i++) text += GeneratedNumbers[i] + ","
+    text = text.substr(0, text.length - 1)
+    GeneratedNumberOutput.innerHTML = text;
+}
+
+function CreateBinaryTree() {
+    if (JsonViewer.childNodes.length>0) JsonViewer.removeChild(JsonViewer.childNodes[0])
+    var testTree = new BinaryTree()
+    for (i = 0; i < GeneratedNumbers.length; i++) {
+        testTree.Add(GeneratedNumbers[i])
+    }
+    var jsonViewer = new JSONViewer();
+    JsonViewer.appendChild(jsonViewer.getContainer());
+    jsonViewer.showJSON(JSON.parse(JSON.stringify(testTree.root)), -1, -1);
+}
 let curError = undefined
 function DisplayError(type) {
     switch (type) {
@@ -605,7 +698,15 @@ var shuffle = function (array) {
     return array;
 
 };
+//removes everything but the letters
+function makeWordLettersOnly(word) {
+    return word.toLowerCase().replace(/[^a-z]/g, "")
+}
 
+//removes everything but the letters
+function makeWordNumbersOnly(word) {
+    return word.toLowerCase().replace(/[^0-9]/g, "")
+}
 
 oneCode = document.getElementById("exerciseOneCode")
 document.getElementById("exerciseOneToggle").addEventListener("click", function () {

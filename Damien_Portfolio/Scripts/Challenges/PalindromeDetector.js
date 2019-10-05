@@ -4,7 +4,7 @@ const exerciseFourOutput = document.getElementById("exerciseFourOutput");
 //Add click event for calculate button
 document.getElementById("exerciseFourCalculate").addEventListener("click", exerciseFour)
 function exerciseFour() {
-    var word = exerciseFourInput.value;
+    var word = makeWordLettersOnly(exerciseFourInput.value);
     if (word.length)
         //compare the word to its self turned into an array , reversed, and then turned back into a string
         if (word === word.split("").reverse().join("")) {

@@ -9,6 +9,7 @@
       "Scripts/Challenges/FizzBuzz.js",
       "Scripts/Challenges/LeastGreatestMeanSumProductCalculation.js",
       "Scripts/Challenges/PalindromeDetector.js",
+      "Scripts/Challenges/BinaryTree.js",
       "Scripts/Challenges/Utils.js",
       "Scripts/Challenges/ViewCodeButtons.js"
     ]

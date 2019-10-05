@@ -11,8 +11,8 @@ exerciseFiveOutput.addEventListener("click", function () {
 document.getElementById("exerciseFiveEncrypt").addEventListener("click", encrypt)
 document.getElementById("exerciseFiveDecrypt").addEventListener("click", decrypt)
 function decrypt() {
-    let message = cleanWord(exerciseFiveInputOne.value);
-    let keyword = cleanWord(exerciseFiveInputTwo.value);
+    let message = makeWordLettersOnly(exerciseFiveInputOne.value);
+    let keyword = makeWordLettersOnly(exerciseFiveInputTwo.value);
     let keywordLength = keyword.length;
     let messageLength = message.length;
     //Make sure that the keyword is greater than two and the the message is greater then two
@@ -32,8 +32,8 @@ function decrypt() {
     exerciseFiveOutput.value = text;
 }
 function encrypt() {
-    let message = cleanWord(exerciseFiveInputOne.value);
-    let keyword = cleanWord(exerciseFiveInputTwo.value);
+    let message = makeWordLettersOnly(exerciseFiveInputOne.value);
+    let keyword = makeWordLettersOnly(exerciseFiveInputTwo.value);
     let keywordLength = keyword.length;
     let messageLength = message.length;
     //Make sure that the keyword is greater than two and the the message is greater then two
@@ -137,8 +137,4 @@ function readDecryptedMessage(grid, keyword, keywordLength, messageLength) {
         }
     }
     return text;
-}
-//removes everything but the letters
-function cleanWord(word) {
-    return word.toLowerCase().replace(/[^a-z]/g, "")
 }

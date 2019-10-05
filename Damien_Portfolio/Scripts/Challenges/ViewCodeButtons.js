@@ -29,3 +29,13 @@ document.getElementById("exerciseSixToggle").addEventListener("click", function 
     if (sixCode.style.display == "none") sixCode.style.display = "block";
     else sixCode.style.display = "none"
 })
+sevenCode = document.getElementById("exerciseSevenCode")
+document.getElementById("exerciseSevenToggle").addEventListener("click", function () {
+    if (sevenCode.style.display == "none") sevenCode.style.display = "block";
+    else sevenCode.style.display = "none"
+})
+eightCode = document.getElementById("exerciseEightCode")
+document.getElementById("exerciseEightToggle").addEventListener("click", function () {
+    if (eightCode.style.display == "none") eightCode.style.display = "block";
+    else eightCode.style.display = "none"
+})

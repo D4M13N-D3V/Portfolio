@@ -70,15 +70,16 @@ window.addEventListener("load", GenerateNumbers)
 
 
 function GenerateNumbers() {
-    GenerateNumbers = []
+    GeneratedNumbers = []
     for (i = 0; i < 25; i++) {
+        let rdm = 0;
         do {
             rdm = math.floor(math.random() * 100) + 1;
         }
         while (GeneratedNumbers.indexOf(rdm) != -1)
         GeneratedNumbers.push(rdm)
     }
-    var text = ""
+    let text = ""
     for (i = 0; i < GeneratedNumbers.length; i++) text += GeneratedNumbers[i] + ","
     text = text.substr(0, text.length - 1)
     GeneratedNumberOutput.innerHTML = text;

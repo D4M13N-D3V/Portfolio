@@ -52,11 +52,6 @@
     this.Search = function (value) {
         return this.Traverse(value).found;
     }
-
-    this.GetPrettyString = function () {
-        this.prettyString = ""
-        this.PrintPretty();
-    }
 }
 
 GeneratedNumbers = []

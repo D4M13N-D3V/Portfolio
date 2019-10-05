@@ -463,7 +463,8 @@ function exerciseTwo() {
     string = string + "=" + total; // Add what the product is to the end of the string 
     exerciseTwoOutputTwo.innerHTML = math.floor(total); // Display just the number as the solution.
     exerciseTwoOutputOne.value = string; // Set the value of what shows the math behind the calculations.
-}
+}
+
 // Set the input and output fields as constants so dont have to constantly grab them
 const exerciseThreeInputOne = document.getElementById("exerciseThreeInputOne");
 const exerciseThreeInputTwo = document.getElementById("exerciseThreeInputTwo");
@@ -617,11 +618,6 @@ function BinaryTree() {
 
     this.Search = function (value) {
         return this.Traverse(value).found;
-    }
-
-    this.GetPrettyString = function () {
-        this.prettyString = ""
-        this.PrintPretty();
     }
 }
 

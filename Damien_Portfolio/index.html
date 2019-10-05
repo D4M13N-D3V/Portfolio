@@ -208,8 +208,8 @@
                     <h4>Bubble Sorter</h4>
                 </div>
                 <div class="col-md-3">
-                    <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' />
-                    <h4>Coming Soon</h4>
+                    <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseEight"  />
+                    <h4>Ecosystem</h4>
                 </div>
             </div>
         </div>
@@ -1414,6 +1414,42 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
             </div>
         </div>
     </div>
+    <div class="modal fade" id="exerciseEight" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Ecosystem Simulation</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <canvas id="ecosystem" style="height:100%;width:100%">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
+                        <div class="row">
+                            <button type="button" class="btn btn-warning" id="exerciseEightToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseEightCode" style="display:none">
+                            <code class="language-js">
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
     <!-- js -->
@@ -1428,13 +1464,16 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
     <script src="Scripts/stellar.js"></script>
     <script src="Scripts/math.min.js"></script>
     <script src="Scripts/prism.js"></script>
+    <script src="Scripts/phaser.js"></script>
     <!--Custom Temporary Example Github API Call-->
-    <script src="Scripts/github_load.js"></script>
+    <script src="Scripts/github_load.js"></script>  
     <!-- Challenges -->
     <script src="Scripts/Challenges/Challenges.min.js"></script>
+    <script src="Scripts/Challenges/Ecosystem.js"></script>
     <!-- Template Custom Javascript File -->
     <script src="Scripts/bootbox.all.min.js"></script>
     <script src="Scripts/custom.js"></script>
+    <script src="Scripts/Challenges/BinaryTree.js"></script>
 </body>
 
 </html>

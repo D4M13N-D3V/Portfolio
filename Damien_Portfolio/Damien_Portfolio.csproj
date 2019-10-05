@@ -80,6 +80,7 @@
     <Content Include="Scripts\Challenges\Challenges.bundle.js" />
     <Content Include="Scripts\Challenges\Challenges.min.js" />
     <Content Include="Scripts\Challenges\ColumndrumCipher.js" />
+    <Content Include="Scripts\Challenges\BinaryTree.js" />
     <Content Include="Scripts\Challenges\FactorialCalculator.js" />
     <Content Include="Scripts\Challenges\FizzBuzz.js" />
     <Content Include="Scripts\Challenges\Blackjack.js" />
@@ -131,6 +132,7 @@
     <Content Include="Scripts\jquery.nav.js" />
     <Content Include="Scripts\jquery.scrollTo.min.js" />
     <Content Include="Scripts\modernizr.custom.js" />
+    <Content Include="Scripts\phaser.js" />
     <Content Include="Scripts\prism.js" />
     <Content Include="Scripts\stellar.js" />
     <Content Include="Scripts\wow.min.js" />

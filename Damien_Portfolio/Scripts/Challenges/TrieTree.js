@@ -67,7 +67,7 @@ CreateTriTreeButton = document.getElementById("exerciseTriTreeTriTree")
 exerciseTriTreeNumberGenerateButton = document.getElementById("exerciseTriTreeGenerate")
 trieTreeSearchButton = document.getElementById("triTreeSearch")
 triTreeSearchOutput = document.getElementById("triTreeSearchResults")
-JsonViewer = document.getElementById("triTreeJSONViewer")
+triTreeJsonViewer = document.getElementById("triTreeJSONViewer")
 exerciseTriTreeNumberGenerateButton.addEventListener("click", generateTriTreeWords)
 CreateTriTreeButton.addEventListener("click", CreateTriTree)
 trieTreeSearchButton.addEventListener("click", SearchTriTree)
@@ -100,13 +100,13 @@ function generateTriTreeWords() {
 }
 
 function CreateTriTree() {
-    if (JsonViewer.childNodes.length > 0) JsonViewer.removeChild(JsonViewer.childNodes[0])
+    if (triTreeJsonViewer.childNodes.length > 0) triTreeJsonViewer.removeChild(triTreeJsonViewer.childNodes[0])
     triTreeTest = new TriTree()
     var words = generatedTriTreeNumberOutput.value.split(" ")
     for (i = 0; i < words.length; i++) {
         triTreeTest.addWord(words[i])
     }
     var jsonViewer = new JSONViewer();
-    JsonViewer.appendChild(jsonViewer.getContainer());
+    triTreeJsonViewer.appendChild(jsonViewer.getContainer());
     jsonViewer.showJSON(JSON.parse(JSON.stringify(triTreeTest.root)), -1, -1);
 }   

@@ -624,7 +624,7 @@ generatedBinaryTreeNumbers = []
 generatedBinaryTreeNumberOutput = document.getElementById("exerciseBinaryTreeGeneratedNumbers")
 CreateBinaryTreeButton = document.getElementById("exerciseBinaryTreeBinaryTree")
 exerciseBinaryTreeNumberGenerateButton = document.getElementById("exerciseBinaryTreeGenerate")
-JsonViewer = document.getElementById("jsonViewer")
+binaryTreejson = document.getElementById("jsonViewer")
 exerciseBinaryTreeNumberGenerateButton.addEventListener("click", generateBinaryTreeNumbers)
 CreateBinaryTreeButton.addEventListener("click", CreateBinaryTree)
 window.addEventListener("load", generateBinaryTreeNumbers)
@@ -647,13 +647,14 @@ function generateBinaryTreeNumbers() {
 }
 
 function CreateBinaryTree() {
-    if (JsonViewer.childNodes.length>0) JsonViewer.removeChild(JsonViewer.childNodes[0])
+    console.log("TET")
+    if (binaryTreejson.childNodes.length>0) binaryTreejson.removeChild(binaryTreejson.childNodes[0])
     var testTree = new BinaryTree()
     for (i = 0; i < generatedBinaryTreeNumbers.length; i++) {
         testTree.Add(generatedBinaryTreeNumbers[i])
     }
     var jsonViewer = new JSONViewer();
-    JsonViewer.appendChild(jsonViewer.getContainer());
+    binaryTreejson.appendChild(jsonViewer.getContainer());
     jsonViewer.showJSON(JSON.parse(JSON.stringify(testTree.root)), -1, -1);
 }
 let curError = undefined

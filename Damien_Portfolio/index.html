@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
 
     <link href="content/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="content/style.css" rel="stylesheet" media="screen">
     <link href="Content/json-viewer.css" rel="stylesheet" />
     <!-- Custom Code Pen Image Hovers -->
     <link href="content/codepen-imagehovers.css" rel="stylesheet" media="screen">
     <link href="content/default.css" rel="stylesheet" media="screen">
     <link href="Content/prism.css" rel="stylesheet" />
+    <link href="content/style.css" rel="stylesheet" media="screen">
     <link rel="icon" href="Images/Icons/favicon.ico" />
 </head>
 
@@ -211,7 +211,7 @@
                 </div>
                 <div class="col-md-3">
                     <img src="Images/challenges/challenge8.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseEight" />
-                    <h4>Data Trees</h4>
+                    <h4>Data Structures</h4>
                 </div>
             </div>
         </div>
@@ -1027,7 +1027,7 @@ function cleanWord(word) {
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 <p>
-                                    This was a demonstration of object oriented programming inside of javascript. I created 
+                                    This was a demonstration of object oriented programming inside of javascript. I created
                                     a five player game of black jack. In this application the other players will use a basic
                                     math problem to decide if they should hit or stand. The player then hits or stands. If
                                     the player hits and then busts, the game ends, if not it continues, if he stands the
@@ -1330,7 +1330,7 @@ function standButton() {
                             </div>
                             <div class="row">
                                 <p>
-                                    This challenge i used array manipulation to create a bubble sorter. The point of 
+                                    This challenge i used array manipulation to create a bubble sorter. The point of
                                     a bubble sorter is to swap value that are next to each other until the values are
                                     in numeric or alphabetical order.
                                 </p>
@@ -1453,46 +1453,213 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Tree Data Structures</h2>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h2 class="modal-title">Data Structures</h2>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-bottom:2%">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li class="active" id="binaryTreeTab"><a style="cursor:pointer">Binary Tree</a></li>
+                                <li id="blackRedTreeTab"><a style="cursor:pointer">Black Red Tree</a></li>
+                                <li id="trieTreeTab"><a style="cursor:pointer">Trie Tree</a></li>
+                                <li id="compressedTrieTreeTab"><a style="cursor:pointer">Compressed Trie Tree</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-body">
-                    <div class="row" style="padding-bottom:2%">
-                        <div class="col-md-4">
-                            <button type="button" id="exerciseEightGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
-                            <button type="button" id="exerciseEightBinaryTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
+                    <div id="binaryTreeContent" style="display:block">
+                        <div class="row" style="padding-bottom:2%">
+                            <div class="col-md-4">
+                                <button type="button" id="exerciseBinaryTreeGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                <button type="button" id="exerciseBinaryTreeBinaryTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Binary Tree</h4>
+                                <button type="button" class="btn btn-warning" id="exerciseBinaryTreeToggle">View Code</button>
+                            </div>
+                            <div class="col-md-4">
+                                <pre style="height:100%" id="exerciseBinaryTreeGeneratedNumbers"></pre>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <h4>Binary Tree</h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    This exercise i used object oriented node based tree data structures to create a binary tree. The objective
+                                    of a binary tree is to take a list of numbers and sort them in a specific way in order for quicker data
+                                    retrieval. This praticular tree puts lower numbers on the left,and higher numbers on the right.
+                                </p>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <pre style="height:100%" id="exerciseEightGeneratedNumbers"></pre>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="jsonViewer" style="text-align:left"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>
-                                This exercise i used object oriented node based tree data structures to create a binary tree. The objective
-                                of a binary tree is to take a list of numbers and sort them in a specific way in order for quicker data
-                                retrieval. This praticular tree puts lower numbers on the left,and higher numbers on the right.
-                            </p>
+                    <div id="blackRedTreeContent" style="display:none">
+                    </div>
+                    <div id="trieTreeContent" style="display:none">
+                        <div class="row" style="padding-bottom:2%">
+                            <div class="col-md-4">
+                                <button type="button" id="exerciseTriTreeGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                <button type="button" id="exerciseTriTreeTriTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
+                            </div>
+                            <div class="col-md-3">
+                                <h4>Trie Tree</h4>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-warning" id="exerciseTriTreeToggle">View Code</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-warning" id="triTreeSearch">Search</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+
+                                        <input class="form-control" type="text" value="Word To Search" id="triTreeSearchResults" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <textarea class="form-control" id="exerciseTriTreeGeneratedNumbers" value="testing test tested testful" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="put you word here with spaces inbetween">testing test tested testful</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    In this exercise i utilized a API to get a randomlly generated list of words. I then used the
+                                    tree data structure to create a Trie Tree for sorting words. The program creates a node tree
+                                    where each letter of the word branches off a parent equal to the previous letter. At the end of
+                                    the word a value is stored on its last node to indicate how many times that word appears. Each
+                                    node can only have a 26 children , 1 for each letter of the alphabet. I also created a function
+                                    to search the tree for words and return how many times it appears.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="triTreeJSONViewer" style="text-align:left"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="jsonViewer" style="text-align:left"></div>
-                        </div>
+                    <div id="compressedTrieTreeContent" style="display:none">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="col-md-5 col-md-offset-7">
                         <div class="row">
-                            <button type="button" class="btn btn-warning" id="exerciseEightToggle">View Code</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                     <div class="col-md-10 col-md-offset-1">
                         <div class="row">
-                            <pre id="exerciseEightCode" style="display:none">
+                            <pre id="exerciseTriTreeCode" style="display:none">
+                            <code class="language-js">
+function TriTree() {
+    this.root = null;
+    function Node(value) {
+        this.Value = value;
+        this.Occurances = 0;
+        this.Children = []
+    }
+
+    this.addWord = function (tmp) {
+        tmp = tmp.toLowerCase().split("")
+        curLetter = null
+        // make a root node if it does not exist
+        if (this.root == null) this.root = new Node("**ROOT**")
+        currentNode = this.root;
+        // loop trhough the letters of the word
+        for (letterIndex = 0; letterIndex < tmp.length; letterIndex++) {
+            curLetter = tmp[letterIndex]
+            // while the current nodes value isnt the current letter keep looping
+            while (currentNode.Value != curLetter) {
+                // loop trhough the current nodes children
+                for (k = 0; k < currentNode.Children.length; k++) {
+                    //check the child to see if it IS the current letter
+                    if (currentNode.Children[k].Value == curLetter) {
+                        // if it is then set the current node to that child and break the loop.
+                        currentNode = currentNode.Children[k];
+                        break;
+                    }
+                }
+                // check if the current nodes value is the current letter, if it is then we know that it found the node for that letter.
+                if (currentNode.Value != curLetter) {
+                    tmpNode = currentNode;
+                    currentNode = new Node(curLetter)
+                    tmpNode.Children.push(currentNode)
+                }
+            }
+        }
+        // Increment the occurances up to 1 on the last node so we know that the word is finished and can tell where the word ends in other functions
+        currentNode.Occurances += 1
+    }
+
+    this.Search = function (tmp) {
+        tmp = tmp.toLowerCase().split("")
+        curLetter = null
+        currentNode = this.root;
+        // loop through the letters of the word.
+        for (letterIndex = 0; letterIndex < tmp.length; letterIndex++) {
+            curLetter = tmp[letterIndex]
+            // loop through teh children
+            for (k = 0; k < currentNode.Children.length; k++) {
+                //check if the child value is equal to the current letter
+                if (currentNode.Children[k].Value == curLetter) {
+                    // set the current node to that child if it is the current letter
+                    currentNode = currentNode.Children[k];
+                    break;
+                }
+            }
+            // return 0 matches since the current node is the last node checked and the letter didnt exist where it should have
+            if (currentNode.Value != curLetter) return 0
+        }
+        // check and make sure that the last node checked had the value of the last letter, and then make sure thtat the occurances is greater than 0
+        if (currentNode.Value == curLetter && currentNode.Occurances > 0) return currentNode.Occurances;
+    }
+}
+generatedTriTreeWords = []
+generatedTriTreeNumberOutput = document.getElementById("exerciseTriTreeGeneratedNumbers")
+CreateTriTreeButton = document.getElementById("exerciseTriTreeTriTree")
+exerciseTriTreeNumberGenerateButton = document.getElementById("exerciseTriTreeGenerate")
+JsonViewer = document.getElementById("triTreeJSONViewer")
+exerciseTriTreeNumberGenerateButton.addEventListener("click", generateTriTreeWords)
+CreateTriTreeButton.addEventListener("click", CreateTriTree)
+window.addEventListener("load", generateTriTreeWords)
+
+
+function generateTriTreeWords() {
+
+    fetch("https://random-word-api.herokuapp.com/word?key=MHK8HDTO&number=25")
+        .then((resp) => resp.json()) // Transform the data into json
+        .then(function (data) {
+            generatedTriTreeWords = data.sort();
+        });
+
+    generatedTriTreeNumberOutput.innerHTML = generatedTriTreeWords.join(",");
+}
+
+function CreateTriTree() {
+    if (JsonViewer.childNodes.length > 0) JsonViewer.removeChild(JsonViewer.childNodes[0])
+    var testTree = new TriTree()
+    for (i = 0; i < generatedTriTreeWords.length; i++) {
+        testTree.addWord(generatedTriTreeWords[i])
+    }
+    var jsonViewer = new JSONViewer();
+    JsonViewer.appendChild(jsonViewer.getContainer());
+    jsonViewer.showJSON(JSON.parse(JSON.stringify(testTree.root)), -1, -1);
+}   
+                            </code>
+                        </pre>
+                            <pre id="exerciseBinaryTreeCode" style="display:none">
                             <code class="language-js">
 function BinaryTree() {
     this.root = undefined;
@@ -1549,6 +1716,43 @@ function BinaryTree() {
         return this.Traverse(value).found;
     }
 }
+
+generatedBinaryTreeNumbers = []
+generatedBinaryTreeNumberOutput = document.getElementById("exerciseBinaryTreeGeneratedNumbers")
+CreateBinaryTreeButton = document.getElementById("exerciseBinaryTreeBinaryTree")
+exerciseBinaryTreeNumberGenerateButton = document.getElementById("exerciseBinaryTreeGenerate")
+JsonViewer = document.getElementById("jsonViewer")
+exerciseBinaryTreeNumberGenerateButton.addEventListener("click", generateBinaryTreeNumbers)
+CreateBinaryTreeButton.addEventListener("click", CreateBinaryTree)
+window.addEventListener("load", generateBinaryTreeNumbers)
+
+
+function generateBinaryTreeNumbers() {
+    generatedBinaryTreeNumbers = []
+    for (i = 0; i < 25; i++) {
+        let rdm = 0;
+        do {
+            rdm = math.floor(math.random() * 100) + 1;
+        }
+        while (generatedBinaryTreeNumbers.indexOf(rdm) != -1)
+        generatedBinaryTreeNumbers.push(rdm)
+    }
+    let text = ""
+    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) text += generatedBinaryTreeNumbers[i] + ","
+    text = text.substr(0, text.length - 1)
+    generatedBinaryTreeNumberOutput.innerHTML = text;
+}
+
+function CreateBinaryTree() {
+    if (JsonViewer.childNodes.length>0) JsonViewer.removeChild(JsonViewer.childNodes[0])
+    var testTree = new BinaryTree()
+    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) {
+        testTree.Add(generatedBinaryTreeNumbers[i])
+    }
+    var jsonViewer = new JSONViewer();
+    JsonViewer.appendChild(jsonViewer.getContainer());
+    jsonViewer.showJSON(JSON.parse(JSON.stringify(testTree.root)), -1, -1);
+}
                             </code>
                         </pre>
                         </div>
@@ -1573,12 +1777,14 @@ function BinaryTree() {
     <script src="Scripts/prism.js"></script>
     <script src="Scripts/phaser.js"></script>
     <script src="Scripts/json-viewer.js"></script>
+    <script src="Scripts/bootbox.all.js"></script>
     <!--Custom Temporary Example Github API Call-->
     <script src="Scripts/github_load.js"></script>
     <!-- Challenges -->
     <script src="Scripts/Challenges/Challenges.min.js"></script>
+    <script src="Scripts/Challenges/TrieTree.js"></script>
+    <script src="Scripts/Challenges/DataStructureTabs.js"></script>
     <!-- Template Custom Javascript File -->
-    <script src="Scripts/bootbox.all.min.js"></script>
     <script src="Scripts/custom.js"></script>
 </body>
 

@@ -54,37 +54,37 @@
     }
 }
 
-GeneratedNumbers = []
-GeneratedNumberOutput = document.getElementById("exerciseEightGeneratedNumbers")
-CreateBinaryTreeButton = document.getElementById("exerciseEightBinaryTree")
-GenerateNumberButton = document.getElementById("exerciseEightGenerate")
+generatedBinaryTreeNumbers = []
+generatedBinaryTreeNumberOutput = document.getElementById("exerciseBinaryTreeGeneratedNumbers")
+CreateBinaryTreeButton = document.getElementById("exerciseBinaryTreeBinaryTree")
+exerciseBinaryTreeNumberGenerateButton = document.getElementById("exerciseBinaryTreeGenerate")
 JsonViewer = document.getElementById("jsonViewer")
-GenerateNumberButton.addEventListener("click", GenerateNumbers)
+exerciseBinaryTreeNumberGenerateButton.addEventListener("click", generateBinaryTreeNumbers)
 CreateBinaryTreeButton.addEventListener("click", CreateBinaryTree)
-window.addEventListener("load", GenerateNumbers)
+window.addEventListener("load", generateBinaryTreeNumbers)
 
 
-function GenerateNumbers() {
-    GeneratedNumbers = []
+function generateBinaryTreeNumbers() {
+    generatedBinaryTreeNumbers = []
     for (i = 0; i < 25; i++) {
         let rdm = 0;
         do {
             rdm = math.floor(math.random() * 100) + 1;
         }
-        while (GeneratedNumbers.indexOf(rdm) != -1)
-        GeneratedNumbers.push(rdm)
+        while (generatedBinaryTreeNumbers.indexOf(rdm) != -1)
+        generatedBinaryTreeNumbers.push(rdm)
     }
     let text = ""
-    for (i = 0; i < GeneratedNumbers.length; i++) text += GeneratedNumbers[i] + ","
+    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) text += generatedBinaryTreeNumbers[i] + ","
     text = text.substr(0, text.length - 1)
-    GeneratedNumberOutput.innerHTML = text;
+    generatedBinaryTreeNumberOutput.innerHTML = text;
 }
 
 function CreateBinaryTree() {
     if (JsonViewer.childNodes.length>0) JsonViewer.removeChild(JsonViewer.childNodes[0])
     var testTree = new BinaryTree()
-    for (i = 0; i < GeneratedNumbers.length; i++) {
-        testTree.Add(GeneratedNumbers[i])
+    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) {
+        testTree.Add(generatedBinaryTreeNumbers[i])
     }
     var jsonViewer = new JSONViewer();
     JsonViewer.appendChild(jsonViewer.getContainer());

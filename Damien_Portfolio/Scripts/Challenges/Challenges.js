@@ -325,10 +325,10 @@ function decrypt() {
     let messageLength = message.length;
     //Make sure that the keyword is greater than two and the the message is greater then two
     if (keyword.length < 2) {
-        DisplayError(1); return;
+        DisplayError(2); return;
     }
     if (message.length < 2) {
-        DisplayError(2); return;
+        DisplayError(3); return;
     }
     //Make sure that the division remainder of the message length and keyword length are 0 to ensure that the padding was added to the encrypted text.
     if (messageLength % keywordLength != 0) {
@@ -346,10 +346,10 @@ function encrypt() {
     let messageLength = message.length;
     //Make sure that the keyword is greater than two and the the message is greater then two
     if (keyword.length < 2) {
-        DisplayError(1); return;
+        DisplayError(2); return;
     }
     if (message.length < 2) {
-        DisplayError(2); return;
+        DisplayError(3); return;
     }
     // Add padding to make sure that the message length division remainder against keyword length is 0
     while (message.length % keywordLength != 0) {
@@ -463,8 +463,7 @@ function exerciseTwo() {
     string = string + "=" + total; // Add what the product is to the end of the string 
     exerciseTwoOutputTwo.innerHTML = math.floor(total); // Display just the number as the solution.
     exerciseTwoOutputOne.value = string; // Set the value of what shows the math behind the calculations.
-}
-
+} 
 // Set the input and output fields as constants so dont have to constantly grab them
 const exerciseThreeInputOne = document.getElementById("exerciseThreeInputOne");
 const exerciseThreeInputTwo = document.getElementById("exerciseThreeInputTwo");
@@ -621,37 +620,37 @@ function BinaryTree() {
     }
 }
 
-GeneratedNumbers = []
-GeneratedNumberOutput = document.getElementById("exerciseEightGeneratedNumbers")
-CreateBinaryTreeButton = document.getElementById("exerciseEightBinaryTree")
-GenerateNumberButton = document.getElementById("exerciseEightGenerate")
+generatedBinaryTreeNumbers = []
+generatedBinaryTreeNumberOutput = document.getElementById("exerciseBinaryTreeGeneratedNumbers")
+CreateBinaryTreeButton = document.getElementById("exerciseBinaryTreeBinaryTree")
+exerciseBinaryTreeNumberGenerateButton = document.getElementById("exerciseBinaryTreeGenerate")
 JsonViewer = document.getElementById("jsonViewer")
-GenerateNumberButton.addEventListener("click", GenerateNumbers)
+exerciseBinaryTreeNumberGenerateButton.addEventListener("click", generateBinaryTreeNumbers)
 CreateBinaryTreeButton.addEventListener("click", CreateBinaryTree)
-window.addEventListener("load", GenerateNumbers)
+window.addEventListener("load", generateBinaryTreeNumbers)
 
 
-function GenerateNumbers() {
-    GeneratedNumbers = []
+function generateBinaryTreeNumbers() {
+    generatedBinaryTreeNumbers = []
     for (i = 0; i < 25; i++) {
         let rdm = 0;
         do {
             rdm = math.floor(math.random() * 100) + 1;
         }
-        while (GeneratedNumbers.indexOf(rdm) != -1)
-        GeneratedNumbers.push(rdm)
+        while (generatedBinaryTreeNumbers.indexOf(rdm) != -1)
+        generatedBinaryTreeNumbers.push(rdm)
     }
     let text = ""
-    for (i = 0; i < GeneratedNumbers.length; i++) text += GeneratedNumbers[i] + ","
+    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) text += generatedBinaryTreeNumbers[i] + ","
     text = text.substr(0, text.length - 1)
-    GeneratedNumberOutput.innerHTML = text;
+    generatedBinaryTreeNumberOutput.innerHTML = text;
 }
 
 function CreateBinaryTree() {
     if (JsonViewer.childNodes.length>0) JsonViewer.removeChild(JsonViewer.childNodes[0])
     var testTree = new BinaryTree()
-    for (i = 0; i < GeneratedNumbers.length; i++) {
-        testTree.Add(GeneratedNumbers[i])
+    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) {
+        testTree.Add(generatedBinaryTreeNumbers[i])
     }
     var jsonViewer = new JSONViewer();
     JsonViewer.appendChild(jsonViewer.getContainer());
@@ -661,18 +660,50 @@ let curError = undefined
 function DisplayError(type) {
     switch (type) {
         case 1:
-            curError = bootbox.dialog({ message: "<span class='text-warning'>Invalid Input</span>", closeButton: false })
+            $("#exerciseOne").modal("hide")
+            bootbox.alert({
+                size: "small",
+                title: "Error",
+                message: "Invalid input, one of the inputs is not a number or equal to 0",
+                callback: function () {
+                    $("#exerciseOne").modal("show")
+                }
+            })
             break;
         case 2:
-            curError = bootbox.dialog({ message:"<span class='text-warning'>Message incorrect</span>",closeButton: false})
+            $("#exerciseFive").modal("hide")
+            bootbox.alert({
+                size: "small",
+                title: "Error",
+                message: "Keyword not long enough, needs to be more than two characters!",
+                callback: function () {
+                    $("#exerciseFive").modal("show")
+                }
+            })
+            break;
+        case 3:
+            $("#exerciseFive").modal("hide")
+            bootbox.alert({
+                size: "small",
+                title: "Error",
+                message: "Keyword not long enough, needs to be more than two characters!",
+                callback: function () {
+                    $("#exerciseFive").modal("show")
+                }
+            })
             break;
         case 4:
-            curError = bootbox.dialog({ message:"<span class='text-warning'>The amount of characters in the message must be divisible by the amount in the keyword!</span>",closeButton: false})
+            $("#exerciseFive").modal("hide")
+            bootbox.alert({
+                size: "small",
+                title: "Error",
+                message: "Message Incorrect , Missing Padding!",
+                callback: function () {
+                    $("#exerciseFive").modal("show")
+                }
+            })
             break;
     }
-    setTimeout(function () {
-        curError.modal('hide')
-    },1500)
 }
 var shuffle = function (array) {
 
@@ -705,42 +736,56 @@ function makeWordNumbersOnly(word) {
 }
 
 oneCode = document.getElementById("exerciseOneCode")
-document.getElementById("exerciseOneToggle").addEventListener("click", function () {
+twoCode = document.getElementById("exerciseTwoCode")
+threeCode = document.getElementById("exerciseThreeCode")
+fourCode = document.getElementById("exerciseFourCode")
+fiveCode = document.getElementById("exerciseFiveCode")
+sixCode = document.getElementById("exerciseSixCode")
+binaryTreeCode = document.getElementById("exerciseBinaryTreeCode")
+sevenCode = document.getElementById("exerciseSevenCode")
+triTreeCode = document.getElementById("exerciseTriTreeCode")
+document.getElementById("exerciseOneToggle").addEventListener("click", openOneCode)
+document.getElementById("exerciseTwoToggle").addEventListener("click", openTwoCode)
+document.getElementById("exerciseThreeToggle").addEventListener("click", openThreeCode)
+document.getElementById("exerciseFourToggle").addEventListener("click", openFourCode)
+document.getElementById("exerciseFiveToggle").addEventListener("click", openFiveCode)
+document.getElementById("exerciseSixToggle").addEventListener("click", openSixCode)
+document.getElementById("exerciseBinaryTreeToggle").addEventListener("click", openBinaryCode)
+document.getElementById("exerciseSevenToggle").addEventListener("click", openSevenCode)
+document.getElementById("exerciseTriTreeToggle").addEventListener("click", openTriCode)
+function openOneCode() {
     if (oneCode.style.display == "none") oneCode.style.display = "block";
     else oneCode.style.display = "none"
-})
-twoCode = document.getElementById("exerciseTwoCode")
-document.getElementById("exerciseTwoToggle").addEventListener("click", function () {
+}
+function openTwoCode() {
     if (twoCode.style.display == "none") twoCode.style.display = "block";
     else twoCode.style.display = "none"
-})
-threeCode = document.getElementById("exerciseThreeCode")
-document.getElementById("exerciseThreeToggle").addEventListener("click", function () {
+}
+function openThreeCode() {
     if (threeCode.style.display == "none") threeCode.style.display = "block";
     else threeCode.style.display = "none"
-})
-fourCode = document.getElementById("exerciseFourCode")
-document.getElementById("exerciseFourToggle").addEventListener("click", function () {
+}
+function openFourCode() {
     if (fourCode.style.display == "none") fourCode.style.display = "block";
     else fourCode.style.display = "none"
-})
-fiveCode = document.getElementById("exerciseFiveCode")
-document.getElementById("exerciseFiveToggle").addEventListener("click", function () {
+}
+function openFiveCode(){
     if (fiveCode.style.display == "none") fiveCode.style.display = "block";
     else fiveCode.style.display = "none"
-})
-sixCode = document.getElementById("exerciseSixCode")
-document.getElementById("exerciseSixToggle").addEventListener("click", function () {
+}
+function openSixCode(){
     if (sixCode.style.display == "none") sixCode.style.display = "block";
     else sixCode.style.display = "none"
-})
-sevenCode = document.getElementById("exerciseSevenCode")
-document.getElementById("exerciseSevenToggle").addEventListener("click", function () {
+}
+function openSevenCode(){
     if (sevenCode.style.display == "none") sevenCode.style.display = "block";
     else sevenCode.style.display = "none"
-})
-eightCode = document.getElementById("exerciseEightCode")
-document.getElementById("exerciseEightToggle").addEventListener("click", function () {
-    if (eightCode.style.display == "none") eightCode.style.display = "block";
-    else eightCode.style.display = "none"
-})
+}
+function openBinaryCode(){
+    if (binaryTreeCode.style.display == "none") binaryTreeCode.style.display = "block";
+    else binaryTreeCode.style.display = "none"
+}
+function openTriCode(){
+    if (triTreeCode.style.display == "none") triTreeCode.style.display = "block";
+    else triTreeCode.style.display = "none"
+}

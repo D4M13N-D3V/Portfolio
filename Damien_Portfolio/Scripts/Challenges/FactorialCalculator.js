@@ -15,4 +15,4 @@ function exerciseTwo() {
     string = string + "=" + total; // Add what the product is to the end of the string 
     exerciseTwoOutputTwo.innerHTML = math.floor(total); // Display just the number as the solution.
     exerciseTwoOutputOne.value = string; // Set the value of what shows the math behind the calculations.
-}
+} 

@@ -17,10 +17,10 @@ function decrypt() {
     let messageLength = message.length;
     //Make sure that the keyword is greater than two and the the message is greater then two
     if (keyword.length < 2) {
-        DisplayError(1); return;
+        DisplayError(2); return;
     }
     if (message.length < 2) {
-        DisplayError(2); return;
+        DisplayError(3); return;
     }
     //Make sure that the division remainder of the message length and keyword length are 0 to ensure that the padding was added to the encrypted text.
     if (messageLength % keywordLength != 0) {
@@ -38,10 +38,10 @@ function encrypt() {
     let messageLength = message.length;
     //Make sure that the keyword is greater than two and the the message is greater then two
     if (keyword.length < 2) {
-        DisplayError(1); return;
+        DisplayError(2); return;
     }
     if (message.length < 2) {
-        DisplayError(2); return;
+        DisplayError(3); return;
     }
     // Add padding to make sure that the message length division remainder against keyword length is 0
     while (message.length % keywordLength != 0) {

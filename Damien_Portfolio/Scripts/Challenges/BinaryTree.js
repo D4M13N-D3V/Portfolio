@@ -13,9 +13,9 @@
         //Loop until can no longer find the value or finds the value already existing
         while (found && found.value !== value) {
             parent = found;
-            //Checks to see if the value needs to go on left or right
+            //Checks to see if the value needs to go on l eft or right
             if (value > found.value) {
-                side = 'right';
+                side = 'right'; //test
                 found = found.right;
             }
             else {

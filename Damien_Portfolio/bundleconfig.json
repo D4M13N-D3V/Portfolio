@@ -12,7 +12,7 @@
       "Scripts/Challenges/BinaryTree.js",
       "Scripts/Challenges/Utils.js",
       "Scripts/Challenges/TrieTree.js",
-      "Scripts/Challenges/BinaryHeap.js",
+      //"Scripts/Challenges/BinaryHeap.js",
       "Scripts/Challenges/DataStructureTabs.js",
       "Scripts/Challenges/ViewCodeButtons.js"
     ]

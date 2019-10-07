@@ -12,7 +12,7 @@ function exerciseThree() {
     // Get the inputs
     var inputOne = exerciseThreeInputOne.value;
     var inputTwo = exerciseThreeInputTwo.value;
-    var text = "<p>"
+    var text = "<p>" // p
     //Loop through 1 to 100
     for (i = 1; i < 101; i++) {
         // Check the division remainder of the number and the first input and the second input. if 0 then Fizzbuzz

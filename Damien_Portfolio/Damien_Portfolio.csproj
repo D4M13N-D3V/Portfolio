@@ -82,10 +82,6 @@
     <Content Include="Scripts\bootbox.all.js" />
     <Content Include="Scripts\Challenges\BinaryHeap.js" />
     <Content Include="Scripts\Challenges\BubbleSorter.js" />
-    <Content Include="Scripts\Challenges\Challenges.js" />
-    <Content Include="Scripts\Challenges\Challenges.min.js">
-      <DependentUpon>Challenges.js</DependentUpon>
-    </Content>
     <Content Include="Scripts\Challenges\ColumndrumCipher.js" />
     <Content Include="Scripts\Challenges\BinaryTree.js" />
     <Content Include="Scripts\Challenges\DataStructureTabs.js" />

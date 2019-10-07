@@ -1876,9 +1876,9 @@ function Heap() {
         let currentParentNodeIndex = this.getParentIndex(currentNodeIndex)
         //make sure there is a root node
         if (this.Heap.length<1 ) {
-            this.Heap.push( newNode );
-            return
-        }
+                               this.Heap.push( newNode );
+                               return
+                               }
         //add node
         this.Heap.push( newNode )
         // loop until the priority is lower then the parent
@@ -1967,7 +1967,18 @@ function testHeap() {
     <!--Custom Temporary Example Github API Call-->
     <script src="Scripts/github_load.js"></script>
     <!-- Challenges -->
-    <script src="Scripts/Challenges/Challenges.min.js"></script>
+    <script src="Scripts/Challenges/ViewCodeButtons.js"></script>
+    <script src="Scripts/Challenges/BinaryTree.js"></script>
+    <script src="Scripts/Challenges/Blackjack.js"></script>
+    <script src="Scripts/Challenges/BubbleSorter.js"></script>
+    <script src="Scripts/Challenges/ColumndrumCipher.js"></script>
+    <script src="Scripts/Challenges/DataStructureTabs.js"></script>
+    <script src="Scripts/Challenges/FactorialCalculator.js"></script>
+    <script src="Scripts/Challenges/FizzBuzz.js"></script>
+    <script src="Scripts/Challenges/LeastGreatestMeanSumProductCalculation.js"></script>
+    <script src="Scripts/Challenges/PalindromeDetector.js"></script>
+    <script src="Scripts/Challenges/TrieTree.js"></script>
+    <script src="Scripts/Challenges/Utils.js"></script>
     <!-- Template Custom Javascript File -->
     <script src="Scripts/custom.js"></script>
 </body>

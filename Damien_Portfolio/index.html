@@ -444,30 +444,21 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Project : GTA 5 Roleplay Project</h2>
+                    <h2 class="modal-title">Project : GTA 5 Modification Project</h2>
                 </div>
-                <div class="row">
+                <div class="row" style="padding-left:2%; padding-right:2%">
                     <div class="col-md-6">
                         <h4>Summary</h4>
                         <p>
-                            This project was something that I had worked on for a few months but never finished. This was a massive .Net project that I was working on by my self for around
-                            3 months. This project was a modification for the game Grand Theft Auto 5's modification called FiveM. With this project I had to deploy asynchronous logic to get
-                            around alot of issues and deploy several systems to keep track of information. Within the project
+                            This project was a modification to run ontop of another modification for Grand Theft Auto : V. The modification had to take into account networking and validation of values not being
+                            manipulated. The project also used relation based databases for all of the data for the users information that was stored in a MySQL database and JSON documents. The project was created
+                            inside of .Net 4.5. You can click the repository information on the top right to view the repository.
                         </p>
                     </div>
                     <div class="col-md-6">
                         <br />
                         <ul class="list-group" id="gtaRepo" style="cursor:pointer; width:100%">
                         </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>
-                            I deployed relation based databases to manage all the users and content for the game. The platform we used was XAMP where we used PHP to create and interact with
-                            Web API on our website. We also had to create anti cheat percaussions and take into account the networking of the software. Everything for the project was created from the ground
-                            up. We event had to create our own database interaction library due to the game modification that we were using.
-                        </p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -513,20 +504,68 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-3">
-                            <input class="form-control" type="number" value="0" id="exerciseOneInputOne" />
-                            <input class="form-control" type="number" value="0" id="exerciseOneInputTwo" />
-                            <input class="form-control" type="number" value="0" id="exerciseOneInputThree" />
-                            <input class="form-control" type="number" value="0" id="exerciseOneInputFour" />
-                            <input class="form-control" type="number" value="0" id="exerciseOneInputFive" />
-                            <button type="button" id="exerciseOneGenerateButton" class="btn btn-primary btn-medium">Generate!</button>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  type="number" value="0" id="exerciseOneInputOne" style="width:100%"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  type="number" value="0" id="exerciseOneInputTwo" style="width:100%"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  type="number" value="0" id="exerciseOneInputThree" style="width:100%"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  type="number" value="0" id="exerciseOneInputFour" style="width:100%"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  type="number" value="0" id="exerciseOneInputFive" style="width:100%"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" id="exerciseOneGenerateButton" class="btn btn-primary btn-medium"  style="width:100%">Generate!</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-3">
-                            <input class="form-control" disabled type="text" value="Least [0]" placeholder="Least 0" id="exerciseOneOutputOne" />
-                            <input class="form-control" disabled type="text" value="Greatest [0]" placeholder="Greatest 0" id="exerciseOneOutputTwo" />
-                            <input class="form-control" disabled type="text" value="Mean [0]" placeholder="Mean 0" id="exerciseOneOutputThree" />
-                            <input class="form-control" disabled type="text" value="Sum [0]" placeholder="Sum 0" id="exerciseOneOutputFour" />
-                            <input class="form-control" disabled type="text" value="Product [0]" placeholder="Product 0" id="exerciseOneOutputFive" />
-                            <button type="button" id="exerciseOneCalculateButton" class="btn btn-primary btn-medium">Calculate!</button>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  disabled type="text" value="Least [0]" placeholder="Least 0" id="exerciseOneOutputOne" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  disabled type="text" value="Greatest [0]" placeholder="Greatest 0" id="exerciseOneOutputTwo" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  disabled type="text" value="Mean [0]" placeholder="Mean 0" id="exerciseOneOutputThree" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  disabled type="text" value="Sum [0]" placeholder="Sum 0" id="exerciseOneOutputFour" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control"  disabled type="text" value="Product [0]" placeholder="Product 0" id="exerciseOneOutputFive" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" id="exerciseOneCalculateButton" class="btn btn-primary btn-medium" style="width:100%">Calculate!</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <p>

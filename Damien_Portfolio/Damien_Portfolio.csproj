@@ -79,6 +79,7 @@
     <Content Include="Images\challenges\challenge6.png" />
     <Content Include="Images\challenges\challenge7.png" />
     <Content Include="Images\challenges\challenge8.png" />
+    <Content Include="Images\challenges\sumofallfears.png" />
     <Content Include="Scripts\bootbox.all.js" />
     <Content Include="Scripts\Challenges\BinaryHeap.js" />
     <Content Include="Scripts\Challenges\BubbleSorter.js" />
@@ -90,6 +91,7 @@
     <Content Include="Scripts\Challenges\Blackjack.js" />
     <Content Include="Scripts\Challenges\LeastGreatestMeanSumProductCalculation.js" />
     <Content Include="Scripts\Challenges\PalindromeDetector.js" />
+    <Content Include="Scripts\Challenges\SumOfAllFears.js" />
     <Content Include="Scripts\Challenges\TrieTree.js" />
     <Content Include="Scripts\Challenges\ViewCodeButtons.js" />
     <Content Include="Scripts\json-viewer.js" />

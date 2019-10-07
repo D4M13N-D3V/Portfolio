@@ -19,600 +19,617 @@
 </head>
 
 <body>
-        <!-- Navigation -->
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle nav</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle nav</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-                    <!-- Logo text or image -->
-                    <a class="navbar-brand" href="index.html">Damien Ostler</a>
+                <!-- Logo text or image -->
+                <a class="navbar-brand" href="index.html">Damien Ostler</a>
+
+            </div>
+            <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="current"><a href="#intro">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#challenges">Programming Challenges</a></li>
+                    <li><a href="#team">Familiar Tools</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- intro area -->
+    <section id="intro">
+        <div class="intro-container">
+            <div id="introCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+                <div class="carousel-inner" role="listbox">
+
+                    <!-- Slide 1 -->
+                    <div class="item active">
+                        <div class="carousel-background"><img src="Images/intro/1.jpg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animated fadeInDown">Damien Ostler</h2>
+                                <a href="#about" class="btn-get-started animated fadeInUp">Read More About Myself</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="item">
+                        <div class="carousel-background"><img src="Images/intro/2.jpg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animated fadeInDown">Examples of Work</h2>
+                                <a href="#portfolio" class="btn-get-started animated fadeInUp">View My Past Projects</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="item">
+                        <div class="carousel-background"><img src="Images/intro/3.jpg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animated fadeInDown">Contact</h2>
+                                <a href="#contact" class="btn-get-started animated fadeInUp">Get In Touch</a>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
-                <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="current"><a href="#intro">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#challenges">Programming Challenges</a></li>
-                        <li><a href="#team">Familiar Tools</a></li>
-                        <li><a href="#contact">Contact</a></li>
+
+                <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon fa fa-angle-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon fa fa-angle-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="home-section bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <div class="section-heading">
+                        <h2>About Me</h2>
+                        <div class="heading-line"></div>
+                        <p>Currently Learning With Coder Foundry</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow fadeInUp">
+                <div class="col-md-6 about-img">
+                    <div class="row">
+                        <img src="Images/about-img.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md-6 content">
+                    <h2>Damien Ostler</h2>
+                    <h3>.Net Software Developer and Full Stack Web Developer</h3>
+                    <p>
+                        I have been programming for years and always had a thing for creating modifications for games.
+                        Currently I am pursuing a career in software development and hope to lead that into a career
+                        focused in game development. Recently I have gone from working on my own projects creating games
+                        in Unity3D to fullstack development for both web and non web applications in a proffessional setting.
+                        I am currently studying at coder foundry to further my carreer and make sure that I am prepared.
+                    </p>
+                    <button data-toggle="modal" data-target="#resume" class="btn-lg btn-primary">Click Here To View Resume</button>
+                    <ul>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </div>
+    </section>
 
-        <!-- intro area -->
-        <section id="intro">
-            <div class="intro-container">
-                <div id="introCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-
-                    <div class="carousel-inner" role="listbox">
-
-                        <!-- Slide 1 -->
-                        <div class="item active">
-                            <div class="carousel-background"><img src="Images/intro/1.jpg" alt=""></div>
-                            <div class="carousel-container">
-                                <div class="carousel-content">
-                                    <h2 class="animated fadeInDown">Damien Ostler</h2>
-                                    <a href="#about" class="btn-get-started animated fadeInUp">Read More About Myself</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-                        <div class="item">
-                            <div class="carousel-background"><img src="Images/intro/2.jpg" alt=""></div>
-                            <div class="carousel-container">
-                                <div class="carousel-content">
-                                    <h2 class="animated fadeInDown">Examples of Work</h2>
-                                    <a href="#portfolio" class="btn-get-started animated fadeInUp">View My Past Projects</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3 -->
-                        <div class="item">
-                            <div class="carousel-background"><img src="Images/intro/3.jpg" alt=""></div>
-                            <div class="carousel-container">
-                                <div class="carousel-content">
-                                    <h2 class="animated fadeInDown">Contact</h2>
-                                    <a href="#contact" class="btn-get-started animated fadeInUp">Get In Touch</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon fa fa-angle-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-
-                    <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon fa fa-angle-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="home-section bg-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-8">
-                        <div class="section-heading">
-                            <h2>About Me</h2>
-                            <div class="heading-line"></div>
-                            <p>Currently Learning With Coder Foundry</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row wow fadeInUp">
-                    <div class="col-md-6 about-img">
-                        <div class="row">
-                            <img src="Images/about-img.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 content">
-                        <h2>Damien Ostler</h2>
-                        <h3>.Net Software Developer and Full Stack Web Developer</h3>
-                        <p>
-                            I have been programming for years and always had a thing for creating modifications for games.
-                            Currently I am pursuing a career in software development and hope to lead that into a career
-                            focused in game development. Recently I have gone from working on my own projects creating games
-                            in Unity3D to fullstack development for both web and non web applications in a proffessional setting.
-                            I am currently studying at coder foundry to further my carreer and make sure that I am prepared.
-                        </p>
-                        <button data-toggle="modal" data-target="#resume" class="btn-lg btn-primary">Click Here To View Resume</button>
-                        <ul>
-                        </ul>
+    <!-- Portfolio -->
+    <section id="portfolio" class="home-section bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <div class="section-heading">
+                        <h2>Projects</h2>
+                        <div class="heading-line"></div>
+                        <p>Projects I Have Worked On</p>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Unity Project</h4>
+                    <img src="Images/tools/Unity.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#spectralDazeInfo" />
+                </div>
+                <div class="col-md-4">
+                    <h4>Networking & Relation DBs</h4>
+                    <img src="Images/tools/clogo.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#gta5Mod" />
+                </div>
+                <div class="col-md-4">
+                    <h4>Blog</h4>
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
+                </div>
+            </div>
+            <div class="row" style="padding-top:10%">
+                <div class="col-md-4">
+                    <h4>Bug Tracker</h4>
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
+                </div>
+                <div class="col-md-4">
+                    <h4>Finance Portal</h4>
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
+                </div>
+                <div class="col-md-4">
+                    <h4>Xamerin Application</h4>
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Portfolio -->
-        <section id="portfolio" class="home-section bg-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-8">
-                        <div class="section-heading">
-                            <h2>Projects</h2>
-                            <div class="heading-line"></div>
-                            <p>Projects I Have Worked On</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <h4>Unity Project</h4>
-                        <img src="Images/tools/Unity.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#spectralDazeInfo" />
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Networking & Relation DBs</h4>
-                        <img src="Images/tools/clogo.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#gta5Mod" />
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Blog</h4>
-                        <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
-                    </div>
-                </div>
-                <div class="row" style="padding-top:10%">
-                    <div class="col-md-4">
-                        <h4>Bug Tracker</h4>
-                        <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Finance Portal</h4>
-                        <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Xamerin Application</h4>
-                        <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
+    <!--Challenges -->
+    <section id="challenges" class="home-section bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Challenges</h2>
+                        <div class="heading-line"></div>
+                        <p>Several Programming Challenges I Have Done.</p>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseOne" />
+                    <h4>Calculations</h4>
+                </div>
+                <div class="col-md-3">
+                    <img src="Images/challenges/challenge2.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseTwo" />
+                    <h4>Factorial</h4>
+                </div>
+                <div class="col-md-3">
+                    <img src="Images/challenges/challenge3.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseThree" />
+                    <h4>Fizz-Buzz</h4>
+                </div>
+                <div class="col-md-3">
+                    <img src="Images/challenges/challenge4.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseFour" />
+                    <h4>Palindromes</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="Images/challenges/challenge5.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseFive" />
+                    <h4>Columnar Cipher</h4>
+                </div>
+                <div class="col-md-3">
+                    <img src="Images/challenges/challenge6.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSix" />
+                    <h4>Blackjack</h4>
+                </div>
+                <div class="col-md-3">
+                    <img src="Images/challenges/challenge7.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSeven" />
+                    <h4>Bubble Sorter</h4>
+                </div>
+                <div class="col-md-3">
+                    <img src="Images/challenges/challenge8.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseEight" />
+                    <h4>Data Structures</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="Images/challenges/sumofallfears.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseNine" />
+                    <h4>Sum of all Fears</h4>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSix" />
+                    <h4>Coming Soon</h4>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSeven" />
+                    <h4>Coming Soon</h4>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseEight" />
+                    <h4>Coming Soon</h4>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!--Challenges -->
-        <section id="challenges" class="home-section bg-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-heading">
-                            <h2>Challenges</h2>
-                            <div class="heading-line"></div>
-                            <p>Several Programming Challenges I Have Done.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <img src="Images/challenges/challenge1.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseOne" />
-                        <h4>Calculations</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="Images/challenges/challenge2.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseTwo" />
-                        <h4>Factorial</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="Images/challenges/challenge3.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseThree" />
-                        <h4>Fizz-Buzz</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="Images/challenges/challenge4.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseFour" />
-                        <h4>Palindromes</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <img src="Images/challenges/challenge5.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseFive" />
-                        <h4>Columnar Cipher</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="Images/challenges/challenge6.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSix" />
-                        <h4>Blackjack</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="Images/challenges/challenge7.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSeven" />
-                        <h4>Bubble Sorter</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="Images/challenges/challenge8.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseEight" />
-                        <h4>Data Structures</h4>
+    <!-- Tools -->
+    <section id="team" class="home-section bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <div class="section-heading">
+                        <h2>Familiar Tools</h2>
+                        <div class="heading-line"></div>
+                        <p>Tools and languages I am familiar with.</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Tools -->
-        <section id="team" class="home-section bg-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-8">
-                        <div class="section-heading">
-                            <h2>Familiar Tools</h2>
-                            <div class="heading-line"></div>
-                            <p>Tools and languages I am familiar with.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3">
-                        <div class="box-team wow bounceInUp" data-wow-delay="0.1s"
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3">
+                    <div class="box-team wow bounceInUp" data-wow-delay="0.1s"
                         <a href="http://github.com/"><img src="Images/tools/git.png" alt="" class="image-hover2 img-round-square" /></a>
                         <h4>Github</h4>
                     </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="http://unity3d.com/"><img src="Images/tools/Unity.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>Unity3D</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.5s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="http://visualstudio.microsoft.com/"><img src="Images/tools/visualstudio.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>Visual Studio 2019</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.7s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="http://getbootstrap.com/"><img src="Images/tools/bootstrap-4.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>Bootstrap</h4>
-                        </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="http://unity3d.com/"><img src="Images/tools/Unity.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>Unity3D</h4>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="http://unrealengine.com/"><img src="Images/tools/Unreal.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>Unreal</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="http://lua.org/"><img src="Images/tools/Lua-Logo.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>LUA</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.5s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="http://mysql.com/"><img src="Images/tools/mysql.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>MySQL</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.7s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="https://en.wikipedia.org/wiki/.NET_Framework"><img src="Images/tools/clogo.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>Microsoft .Net</h4>
-                        </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.5s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="http://visualstudio.microsoft.com/"><img src="Images/tools/visualstudio.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>Visual Studio 2019</h4>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="https://www.w3schools.com/css/"><img src="Images/tools/css.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>CSS</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="http://javascript.org/"><img src="Images/tools/javascript.jpg" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>Javascript</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.5s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="https://www.w3schools.com/html/"><img src="Images/tools/html.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>HTML</h4>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.7s">
-                        <div class="box-team wow bounceInUp">
-                            <a href="https://jquery.com"><img src="Images/tools/jquery.png" alt="" class="image-hover2 img-round-square" /></a>
-                            <h4>JQuery</h4>
-                        </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.7s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="http://getbootstrap.com/"><img src="Images/tools/bootstrap-4.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>Bootstrap</h4>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="http://unrealengine.com/"><img src="Images/tools/Unreal.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>Unreal</h4>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="http://lua.org/"><img src="Images/tools/Lua-Logo.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>LUA</h4>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.5s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="http://mysql.com/"><img src="Images/tools/mysql.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>MySQL</h4>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.7s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="https://en.wikipedia.org/wiki/.NET_Framework"><img src="Images/tools/clogo.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>Microsoft .Net</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="https://www.w3schools.com/css/"><img src="Images/tools/css.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>CSS</h4>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.3s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="http://javascript.org/"><img src="Images/tools/javascript.jpg" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>Javascript</h4>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.5s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="https://www.w3schools.com/html/"><img src="Images/tools/html.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>HTML</h4>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-md-3" data-wow-delay="0.7s">
+                    <div class="box-team wow bounceInUp">
+                        <a href="https://jquery.com"><img src="Images/tools/jquery.png" alt="" class="image-hover2 img-round-square" /></a>
+                        <h4>JQuery</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Contact -->
-        <section id="contact" class="home-section bg-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-8">
-                        <div class="section-heading">
-                            <h2>Contact me</h2>
-                            <div class="heading-line"></div>
+    <!-- Contact -->
+    <section id="contact" class="home-section bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <div class="section-heading">
+                        <h2>Contact me</h2>
+                        <div class="heading-line"></div>
+                        <p>
+                            If you have any questions please contact me using the form below.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <div id="sendmessage">Your message has been sent. Thank you!</div>
+                    <div id="errormessage"></div>
+
+                    <form action="" method="post" class="form-horizontal contactForm" role="form">
+                        <div class="col-md-offset-2 col-md-8">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4"
+                                       data-msg="Please enter at least 4 chars" />
+                                <div class="validation"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-offset-2 col-md-8">
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email"
+                                       data-msg="Please enter a valid email" />
+                                <div class="validation"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-offset-2 col-md-8">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4"
+                                       data-msg="Please enter at least 8 chars of subject" />
+                                <div class="validation"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-offset-2 col-md-8">
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"
+                                          placeholder="Message"></textarea>
+                                <div class="validation"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-8">
+                                <button type="submit" class="btn btn-theme btn-lg btn-block">Send message</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Copyright &copy; Damien Ostler. All rights reserved.</p>
+                    <div class="credits">
+                        <!--
+                          All the links in the footer should remain intact.
+                          You can delete the links only if you purchased the pro version.
+                          Licensing information: https://bootstrapmade.com/license/
+                          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Alstar
+                        -->
+                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        <br />
+                        Modified by Damien Ostler
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Modals-->
+    <div class="modal fade" id="spectralDazeInfo" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Spectral Daze</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Summary</h4>
                             <p>
-                                If you have any questions please contact me using the form below.
+                                This project was a small prototype for a video game that I was working on within the Unity3D engine. I deployed tools for the designers on my team to be able
+                                to create things without knowing how to program. These tools included json based editor menus to be able to create items, characters, enemies, and dialogue without
+                                having to touch a line of code.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Demo Video</h4>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qcpTgqzyypk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <a href="https://youtu.be/qcpTgqzyypk" target="popup"><button class="btn-lg btn-primary">Click Here To Watch Video!</button></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                There werer also many gameplay systems that were implemented by me. I created systems for managing things like particles, lights, sounds and any other
+                                elements that would cosntantly being created and destroyed. I created a object pooling system from scratch to help ease performance spikes caused by unity deleting and creating items. I also deployed input systems and enemy AI systems that were able to be manipulated by changing values. Everything within the project was obsifcutated so you were able to test and use any system on its own
+                                without having to deploy the rest, making it extremely easy to update and work on them, and test to make sure they were working, without loading up everything else. This was a .NET project.
+                                Some of the tools I used were Rider, VS Studio, and Unity3D. Blender was used for the art.
                             </p>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-8">
-                        <div id="sendmessage">Your message has been sent. Thank you!</div>
-                        <div id="errormessage"></div>
-
-                        <form action="" method="post" class="form-horizontal contactForm" role="form">
-                            <div class="col-md-offset-2 col-md-8">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4"
-                                           data-msg="Please enter at least 4 chars" />
-                                    <div class="validation"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-offset-2 col-md-8">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email"
-                                           data-msg="Please enter a valid email" />
-                                    <div class="validation"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-offset-2 col-md-8">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4"
-                                           data-msg="Please enter at least 8 chars of subject" />
-                                    <div class="validation"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-offset-2 col-md-8">
-                                <div class="form-group">
-                                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"
-                                              placeholder="Message"></textarea>
-                                    <div class="validation"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-offset-2 col-md-8">
-                                    <button type="submit" class="btn btn-theme btn-lg btn-block">Send message</button>
-                                </div>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>Copyright &copy; Damien Ostler. All rights reserved.</p>
-                        <div class="credits">
-                            <!--
-                              All the links in the footer should remain intact.
-                              You can delete the links only if you purchased the pro version.
-                              Licensing information: https://bootstrapmade.com/license/
-                              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Alstar
-                            -->
-                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                            <br />
-                            Modified by Damien Ostler
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="https://github.com/DamienTehDemon/SpectralDazePublic" target="popup"><button style="width:100%" class="btn-lg btn-primary">Click Here To Visit Github Repository!</button></a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
-
-        <!--Modals-->    <!--Modals-->
-        <div class="modal fade" id="spectralDazeInfo" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Spectral Daze</h2>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4>Summary</h4>
-                                <p>
-                                    This project was a small prototype for a video game that I was working on within the Unity3D engine. I deployed tools for the designers on my team to be able
-                                    to create things without knowing how to program. These tools included json based editor menus to be able to create items, characters, enemies, and dialogue without
-                                    having to touch a line of code.
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <h4>Demo Video</h4>
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qcpTgqzyypk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <a href="https://youtu.be/qcpTgqzyypk" target="popup"><button class="btn-lg btn-primary">Click Here To Watch Video!</button></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>
-                                    There werer also many gameplay systems that were implemented by me. I created systems for managing things like particles, lights, sounds and any other
-                                    elements that would cosntantly being created and destroyed. I created a object pooling system from scratch to help ease performance spikes caused by unity deleting and creating items. I also deployed input systems and enemy AI systems that were able to be manipulated by changing values. Everything within the project was obsifcutated so you were able to test and use any system on its own
-                                    without having to deploy the rest, making it extremely easy to update and work on them, and test to make sure they were working, without loading up everything else. This was a .NET project.
-                                    Some of the tools I used were Rider, VS Studio, and Unity3D. Blender was used for the art.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="https://github.com/DamienTehDemon/SpectralDazePublic" target="popup"><button style="width:100%" class="btn-lg btn-primary">Click Here To Visit Github Repository!</button></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="gta5Mod" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">GTA 5 Modification Project</h2>
+    </div>
+    <div class="modal fade" id="gta5Mod" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">GTA 5 Modification Project</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Summary</h4>
+                            <p>
+                                This solution was a modification for Grand Theft Auto 5 running on top of another modification that made it possible to have player hosted dedicated servers for
+                                the game. The project deployed relation based databases to store information about the user and the different elements within the modification. I also had to take
+                                into account networking throughout the entire solution. The solution was split into two projects which were compiled into DLL's that the modification would use to run
+                                the code. There was also quite a few instances of validation to insure that people were not cheating and changing values on the client to manipulate the outcome on the
+                                server.
+                            </p>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>Summary</h4>
-                                <p>
-                                    This solution was a modification for Grand Theft Auto 5 running on top of another modification that made it possible to have player hosted dedicated servers for
-                                    the game. The project deployed relation based databases to store information about the user and the different elements within the modification. I also had to take
-                                    into account networking throughout the entire solution. The solution was split into two projects which were compiled into DLL's that the modification would use to run
-                                    the code. There was also quite a few instances of validation to insure that people were not cheating and changing values on the client to manipulate the outcome on the
-                                    server.
-                                </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="https://github.com/DamienTehDemon/Damiens-Roleplay-Project"><button style="width:100%" class="btn-lg btn-primary">Click Here To Visit Github Repository!</button></a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="resume" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Resume</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <object data="Content/resume.pdf" type="application/pdf" style="height:600px; width:100%">
+                                <a href="Content/resume.pdf">PDF couldnt Load Click To Download!</a>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="exerciseOne" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Calculations Challenge</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" type="number" value="0" id="exerciseOneInputOne" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" type="number" value="0" id="exerciseOneInputTwo" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" type="number" value="0" id="exerciseOneInputThree" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" type="number" value="0" id="exerciseOneInputFour" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" type="number" value="0" id="exerciseOneInputFive" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <button type="button" id="exerciseOneGenerateButton" class="btn btn-primary btn-medium" style="width:100%">Generate!</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="https://github.com/DamienTehDemon/Damiens-Roleplay-Project"><button style="width:100%" class="btn-lg btn-primary">Click Here To Visit Github Repository!</button></a></li>
+                        <div class="col-md-3">
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" disabled type="text" value="Least [0]" placeholder="Least 0" id="exerciseOneOutputOne" />
+                                </div>
                             </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" disabled type="text" value="Greatest [0]" placeholder="Greatest 0" id="exerciseOneOutputTwo" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" disabled type="text" value="Mean [0]" placeholder="Mean 0" id="exerciseOneOutputThree" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" disabled type="text" value="Sum [0]" placeholder="Sum 0" id="exerciseOneOutputFour" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" disabled type="text" value="Product [0]" placeholder="Product 0" id="exerciseOneOutputFive" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <button type="button" id="exerciseOneCalculateButton" class="btn btn-primary btn-medium" style="width:100%">Calculate!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                The objective of this challenge was to take input from the user, five numbers, and make calculations based off of them. The
+                                calculations being made would be the sum of all of the numbers, the product of all the numbers, the mean of all the numbers,
+                                the greatest number of the 5, and the lowest number of the 5.
+                            </p>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="modal fade" id="resume" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Resume</h2>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <object data="Content/resume.pdf" type="application/pdf" style="height:600px; width:100%">
-                                    <a href="Content/resume.pdf">PDF couldnt Load Click To Download!</a>
-                                </object>
+                        <div class="col-md-5 col-md-offset-7">
+                            <div class="row">
+                                <button type="button" class="btn btn-warning" id="exerciseOneToggle">View Code</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!--Exercise Modals-->
-        <div class="modal fade" id="exerciseOne" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Calculations Challenge</h2>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="number" value="0" id="exerciseOneInputOne" style="width:100%" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="number" value="0" id="exerciseOneInputTwo" style="width:100%" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="number" value="0" id="exerciseOneInputThree" style="width:100%" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="number" value="0" id="exerciseOneInputFour" style="width:100%" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="number" value="0" id="exerciseOneInputFive" style="width:100%" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <button type="button" id="exerciseOneGenerateButton" class="btn btn-primary btn-medium" style="width:100%">Generate!</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" disabled type="text" value="Least [0]" placeholder="Least 0" id="exerciseOneOutputOne" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" disabled type="text" value="Greatest [0]" placeholder="Greatest 0" id="exerciseOneOutputTwo" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" disabled type="text" value="Mean [0]" placeholder="Mean 0" id="exerciseOneOutputThree" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" disabled type="text" value="Sum [0]" placeholder="Sum 0" id="exerciseOneOutputFour" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" disabled type="text" value="Product [0]" placeholder="Product 0" id="exerciseOneOutputFive" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <button type="button" id="exerciseOneCalculateButton" class="btn btn-primary btn-medium" style="width:100%">Calculate!</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <p>
-                                    The objective of this challenge was to take input from the user, five numbers, and make calculations based off of them. The
-                                    calculations being made would be the sum of all of the numbers, the product of all the numbers, the mean of all the numbers,
-                                    the greatest number of the 5, and the lowest number of the 5.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <div class="col-md-5 col-md-offset-7">
-                                <div class="row">
-                                    <button type="button" class="btn btn-warning" id="exerciseOneToggle">View Code</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="row">
-                                    <pre id="exerciseOneCode" style="display:none">
-                                    <code class="language-js">    
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="row">
+                                <pre id="exerciseOneCode" style="display:none">
+                                <code class="language-js">    
 //Add event listeners for the two buttons, didnt create variables as they were not refrenced anywhere else.
 document.getElementById("exerciseOneCalculateButton").addEventListener("click", exerciseOne);
 document.getElementById("exerciseOneGenerateButton").addEventListener("click", GenerateNumbers);
@@ -670,67 +687,67 @@ function GenerateNumbers() {
 }
                             </code>
                         </pre>
-                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
-        <div class="modal fade" id="exerciseTwo" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Factorial Challenge</h2>
+    </div>
+    <div class="modal fade" id="exerciseTwo" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Factorial Challenge</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" type="number" value="0" id="exerciseTwoInput" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <button type="button" id="exerciseTwoCalculate" class="btn btn-primary btn-medium" style="width:100%">Run!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="exerciseTwoOutputOne" rows="3" disabled></textarea>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <h4 class="text-warning" id="exerciseTwoOutputTwo">0000</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                The objective of this exercise was to take the input of a number from the user and calculate the
+                                factorial of that number and display it.
+                            </p>
+                        </div>
                     </div>
-                    <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
                         <div class="row">
-                            <div class="col-md-2">
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="number" value="0" id="exerciseTwoInput" style="width:100%" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <button type="button" id="exerciseTwoCalculate" class="btn btn-primary btn-medium" style="width:100%">Run!</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <textarea class="form-control" id="exerciseTwoOutputOne" rows="3" disabled></textarea>
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <h4 class="text-warning" id="exerciseTwoOutputTwo">0000</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <p>
-                                    The objective of this exercise was to take the input of a number from the user and calculate the
-                                    factorial of that number and display it.
-                                </p>
-                            </div>
+                            <button type="button" class="btn btn-warning" id="exerciseTwoToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div class="col-md-5 col-md-offset-7">
-                            <div class="row">
-                                <button type="button" class="btn btn-warning" id="exerciseTwoToggle">View Code</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="row">
-                                <pre id="exerciseTwoCode" style="display:none">
-                                <code class="language-js">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseTwoCode" style="display:none">
+                            <code class="language-js">
 //Create constants holding the HTML elements that are the inputs and outputs.
 const exerciseTwoInput = document.getElementById("exerciseTwoInput");
 const exerciseTwoOutputOne = document.getElementById("exerciseTwoOutputOne");
@@ -765,69 +782,69 @@ function exerciseTwo() {
  
                         </code>
                         </pre>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="exerciseThree" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Fizz-Buzz Challenge</h2>
+    </div>
+    <div class="modal fade" id="exerciseThree" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Fizz-Buzz Challenge</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" type="number" value="0" id="exerciseThreeInputOne" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" type="number" value="0" id="exerciseThreeInputTwo" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <button type="button" id="exerciseThreeCalculate" class="btn btn-primary btn-medium" style="width:100%">Run!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" id="exerciseThreeOutput">
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                The objective of this exercise was to loop and display the numbers one
+                                to one hundread. The program takes the input and replacecs multiples of
+                                the first number with fizz, and multiples of the second number with
+                                buzz. If it is a multiple of both it replaces it with FizzBuzz.
+                            </p>
+                        </div>
                     </div>
-                    <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+
+                    <div class="col-md-5 col-md-offset-7">
                         <div class="row">
-                            <div class="col-md-2">
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="number" value="0" id="exerciseThreeInputOne" style="width:100%" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="number" value="0" id="exerciseThreeInputTwo" style="width:100%" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <button type="button" id="exerciseThreeCalculate" class="btn btn-primary btn-medium" style="width:100%">Run!</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" id="exerciseThreeOutput">
-                            </div>
-                            <div class="col-md-4">
-                                <p>
-                                    The objective of this exercise was to loop and display the numbers one
-                                    to one hundread. The program takes the input and replacecs multiples of
-                                    the first number with fizz, and multiples of the second number with
-                                    buzz. If it is a multiple of both it replaces it with FizzBuzz.
-                                </p>
-                            </div>
+                            <button type="button" class="btn btn-warning" id="exerciseThreeToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
-
                     </div>
-                    <div class="modal-footer">
-
-                        <div class="col-md-5 col-md-offset-7">
-                            <div class="row">
-                                <button type="button" class="btn btn-warning" id="exerciseThreeToggle">View Code</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="row">
-                                <pre id="exerciseThreeCode" style="display:none">
-                                <code class="language-js">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseThreeCode" style="display:none">
+                            <code class="language-js">
 // Set the input and output fields as constants so dont have to constantly grab them
 const exerciseThreeInputOne = document.getElementById("exerciseThreeInputOne");
 const exerciseThreeInputTwo = document.getElementById("exerciseThreeInputTwo");
@@ -857,60 +874,60 @@ function exerciseThree() {
 }
                                 </code>
                         </pre>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="exerciseFour" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Palindrome Detector Challenge</h2>
+    </div>
+    <div class="modal fade" id="exerciseFour" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Palindrome Detector Challenge</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" value="bob" id="exerciseFourInput" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <button type="button" id="exerciseFourCalculate" class="btn btn-primary btn-medium" style="width:100%">Run!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="exerciseFourOutput" rows="3" disabled></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                The objective of this exercise was to take the input from the user and then
+                                decide if the word provided was a palindrome or not.
+                            </p>
+                        </div>
                     </div>
-                    <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
                         <div class="row">
-                            <div class="col-md-2">
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="text" value="bob" id="exerciseFourInput" style="width:100%" />
-                                    </div>
-                                </div>
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <button type="button" id="exerciseFourCalculate" class="btn btn-primary btn-medium" style="width:100%">Run!</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <textarea class="form-control" id="exerciseFourOutput" rows="3" disabled></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <p>
-                                    The objective of this exercise was to take the input from the user and then
-                                    decide if the word provided was a palindrome or not.
-                                </p>
-                            </div>
+                            <button type="button" class="btn btn-warning" id="exerciseFourToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div class="col-md-5 col-md-offset-7">
-                            <div class="row">
-                                <button type="button" class="btn btn-warning" id="exerciseFourToggle">View Code</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="row">
-                                <pre id="exerciseFourCode" style="display:none">
-                                <code class="language-js">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseFourCode" style="display:none">
+                            <code class="language-js">
 //Get constants for inputs and outputs so i dont have to keep grabbing them
 const exerciseFourInput = document.getElementById("exerciseFourInput");
 const exerciseFourOutput = document.getElementById("exerciseFourOutput");
@@ -929,82 +946,82 @@ function exerciseFour() {
 }
                                 </code>
                         </pre>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="exerciseFive" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Columnar Cipher Challenge</h2>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-10 col-md-offset-1">
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" value="zebra" id="exerciseFiveInputOne" style="width:100%" />
-                                            </div>
-                                        </div>
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" value="attack at dawn" id="exerciseFiveInputTwo" style="width:100%" />
-                                            </div>
+    </div>
+    <div class="modal fade" id="exerciseFive" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Columnar Cipher Challenge</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" value="zebra" id="exerciseFiveInputOne" style="width:100%" />
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-10 col-md-offset-1">
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-12">
-                                                <button type="button" id="exerciseFiveEncrypt" class="btn btn-primary btn-sm" style="width:100%">Encrypt!</button>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-12">
-                                                <button type="button" id="exerciseFiveDecrypt" class="btn btn-primary btn-sm" style="width:100%">Decrypt!</button>
-                                            </div>
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" value="attack at dawn" id="exerciseFiveInputTwo" style="width:100%" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="row" style="padding-top:2%">
-                                    <div class="col-md-12">
-                                        <textarea class="form-control" id="exerciseFiveOutput" rows="5" value="Click To Copy Contents"></textarea>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <button type="button" id="exerciseFiveEncrypt" class="btn btn-primary btn-sm" style="width:100%">Encrypt!</button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <button type="button" id="exerciseFiveDecrypt" class="btn btn-primary btn-sm" style="width:100%">Decrypt!</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1" style="padding-top:5%">
-                                <p>
-                                    This was a demonstration of 2D array usage and manipulation. The way the cipher works is that you take
-                                    a key word and a message. You write the message from left to right and top to bottom. You then sort the
-                                    columns alphabetically and read them off from top to bottom alphabetically. This is the encrypted message.
-                                    To decrypt it you do the reverse.
-                                </p>
+                        <div class="col-md-6">
+                            <div class="row" style="padding-top:2%">
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="exerciseFiveOutput" rows="5" value="Click To Copy Contents"></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div class="col-md-5 col-md-offset-7">
-                            <div class="row">
-                                <button type="button" class="btn btn-warning" id="exerciseFiveToggle">View Code</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1" style="padding-top:5%">
+                            <p>
+                                This was a demonstration of 2D array usage and manipulation. The way the cipher works is that you take
+                                a key word and a message. You write the message from left to right and top to bottom. You then sort the
+                                columns alphabetically and read them off from top to bottom alphabetically. This is the encrypted message.
+                                To decrypt it you do the reverse.
+                            </p>
                         </div>
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="row">
-                                <pre id="exerciseFiveCode" style="display:none">
-                                <code class="language-js">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
+                        <div class="row">
+                            <button type="button" class="btn btn-warning" id="exerciseFiveToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseFiveCode" style="display:none">
+                            <code class="language-js">
 //Create Constants For Input And Output
 const exerciseFiveInputOne = document.getElementById("exerciseFiveInputTwo");
 const exerciseFiveInputTwo = document.getElementById("exerciseFiveInputOne");
@@ -1151,83 +1168,83 @@ function cleanWord(word) {
 }
                                 </code>
                         </pre>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="exerciseSix" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Blackjack Challenge</h2>
-                    </div>
-                    <div class="modal-body">
+    </div>
+    <div class="modal fade" id="exerciseSix" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Blackjack Challenge</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
                         <div class="row">
-                            <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
-                                    <p>
-                                        This was a demonstration of object oriented programming inside of javascript. I created
-                                        a five player game of black jack. In this application the other players will use a basic
-                                        math problem to decide if they should hit or stand. The player then hits or stands. If
-                                        the player hits and then busts, the game ends, if not it continues, if he stands the
-                                        game ends. At the end of the game the application does the math and show who lost to
-                                        the dealer, who busted, and who won.
-                                    </p>
+                            <div class="col-md-10 col-md-offset-1">
+                                <p>
+                                    This was a demonstration of object oriented programming inside of javascript. I created
+                                    a five player game of black jack. In this application the other players will use a basic
+                                    math problem to decide if they should hit or stand. The player then hits or stands. If
+                                    the player hits and then busts, the game ends, if not it continues, if he stands the
+                                    game ends. At the end of the game the application does the math and show who lost to
+                                    the dealer, who busted, and who won.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <button type="button" id="exerciseSixDeal" class="btn btn-primary btn-sm" style="width:50%; display:inline-grid">Deal!</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <button type="button" id="exerciseSixHit" class="btn btn-success btn-sm" style="width:50%; display:none">Hit!</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <button type="button" id="exerciseSixStand" class="btn btn-warning btn-sm" style="width:50%; display:none">Stand!</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <button type="button" id="exerciseSixDeal" class="btn btn-primary btn-sm" style="width:50%; display:inline-grid">Deal!</button>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <button type="button" id="exerciseSixHit" class="btn btn-success btn-sm" style="width:50%; display:none">Hit!</button>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <button type="button" id="exerciseSixStand" class="btn btn-warning btn-sm" style="width:50%; display:none">Stand!</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" id="Player4">
-                                    <div class="row"><span class="label label-warning">Dealer</span></div>
-                                </div>
-                                <div class="col-md-3" id="Player0">
-                                    <div class="row"><span class="label label-info">You</span></div>
-                                </div>
-                                <div class="col-md-3" id="Player1">
-                                    <div class="row"><span class="label label-primary">Player</span></div>
-                                </div>
+                            <div class="col-md-3" id="Player4">
+                                <div class="row"><span class="label label-warning">Dealer</span></div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-3 col-md-offset-4" id="Player2">
-                                    <div class="row"><span class="label label-primary">Player</span></div>
-                                </div>
-                                <div class="col-md-3 col-md-offset-1" id="Player3">
-                                    <div class="row"><span class="label label-primary">Player</span></div>
-                                </div>
+                            <div class="col-md-3" id="Player0">
+                                <div class="row"><span class="label label-info">You</span></div>
+                            </div>
+                            <div class="col-md-3" id="Player1">
+                                <div class="row"><span class="label label-primary">Player</span></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-4" id="Player2">
+                                <div class="row"><span class="label label-primary">Player</span></div>
+                            </div>
+                            <div class="col-md-3 col-md-offset-1" id="Player3">
+                                <div class="row"><span class="label label-primary">Player</span></div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div class="col-md-5 col-md-offset-7">
-                            <div class="row">
-                                <button type="button" class="btn btn-warning" id="exerciseSixToggle">View Code</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
+                        <div class="row">
+                            <button type="button" class="btn btn-warning" id="exerciseSixToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="row">
-                                <pre id="exerciseSixCode" style="display:none">
-                                <code class="language-js">
+                    </div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseSixCode" style="display:none">
+                            <code class="language-js">
 const informationElement = document.getElementById("blackjackInfo")
 const playerCount = 6;
 var players = []
@@ -1445,75 +1462,75 @@ function standButton() {
 }
                                 </code>
                             </pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="exerciseSeven" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Bubble Sorter Challenge</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <button type="button" id="exerciseSevenGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <button type="button" id="exerciseSevenBubblesort" class="btn btn-primary btn-sm" style="width:100%">Bubble Sort!</button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <button type="button" id="exerciseSevenBubblesortVisual" class="btn btn-primary btn-sm" style="width:100%">Bubble Sort Visual!</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="h4" id="exerciseSevenDisplay">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <p>
+                                        This challenge i used array manipulation to create a bubble sorter. The point of
+                                        a bubble sorter is to swap value that are next to each other until the values are
+                                        in numeric or alphabetical order.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-            </div>
-        </div>
-        <div class="modal fade" id="exerciseSeven" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Bubble Sorter Challenge</h2>
-                    </div>
-                    <div class="modal-body">
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-10 col-md-offset-1">
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-12">
-                                                <button type="button" id="exerciseSevenGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-12">
-                                                <button type="button" id="exerciseSevenBubblesort" class="btn btn-primary btn-sm" style="width:100%">Bubble Sort!</button>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-12">
-                                                <button type="button" id="exerciseSevenBubblesortVisual" class="btn btn-primary btn-sm" style="width:100%">Bubble Sort Visual!</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-10 col-md-offset-1">
-                                        <div class="h4" id="exerciseSevenDisplay">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-10 col-md-offset-1">
-                                        <p>
-                                            This challenge i used array manipulation to create a bubble sorter. The point of
-                                            a bubble sorter is to swap value that are next to each other until the values are
-                                            in numeric or alphabetical order.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            <button type="button" class="btn btn-warning" id="exerciseSevenToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div class="col-md-5 col-md-offset-7">
-                            <div class="row">
-                                <button type="button" class="btn btn-warning" id="exerciseSevenToggle">View Code</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="row">
-                                <pre id="exerciseSevenCode" style="display:none">
-                                <code class="language-js">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseSevenCode" style="display:none">
+                            <code class="language-js">
 function BubbleSort(array) {
     let needsToBeSwapped = false; // Determines If Needs To Be Swapped Again
     let timesToLoop = array.length - 1; // Gets the amount of times we need to loop
@@ -1606,66 +1623,171 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
 
                             </code>
                         </pre>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="exerciseEight" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <h2 class="modal-title">Data Structures</h2>
+    </div>
+    <div class="modal fade" id="exerciseEight" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h2 class="modal-title">Data Structures</h2>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-bottom:2%">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li class="active" id="binaryTreeTab"><a style="cursor:pointer">Binary Tree</a></li>
+                                <li id="binaryHeapTab" style="display:none"><a style="cursor:pointer">Binary Heap</a></li>
+                                <li id="trieTreeTab"><a style="cursor:pointer">Trie Tree</a></li>
+                                <li><a style="cursor:pointer">Coming Soon</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div id="binaryTreeContent" style="display:block">
+                        <div class="row" style="padding-bottom:2%">
+                            <div class="col-md-4">
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <button type="button" id="exerciseBinaryTreeGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <button type="button" id="exerciseBinaryTreeBinaryTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <h4>Binary Tree</h4>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-warning" id="exerciseBinaryTreeToggle">View Code</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <pre style="height:100%" id="exerciseBinaryTreeGeneratedNumbers"></pre>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row" style="padding-bottom:2%">
+                        <div class="row">
                             <div class="col-md-12">
-                                <ul class="nav nav-tabs">
-                                    <li class="active" id="binaryTreeTab"><a style="cursor:pointer">Binary Tree</a></li>
-                                    <li id="binaryHeapTab" style="display:none"><a style="cursor:pointer">Binary Heap</a></li>
-                                    <li id="trieTreeTab"><a style="cursor:pointer">Trie Tree</a></li>
-                                    <li><a style="cursor:pointer">Coming Soon</a></li>
-                                </ul>
+                                <p>
+                                    This exercise i used object oriented node based tree data structures to create a binary tree. The objective
+                                    of a binary tree is to take a list of numbers and sort them in a specific way in order for quicker data
+                                    retrieval. This praticular tree puts lower numbers on the left,and higher numbers on the right.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="jsonViewer" style="text-align:left"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-body">
-                        <div id="binaryTreeContent" style="display:block">
-                            <div class="row" style="padding-bottom:2%">
-                                <div class="col-md-4">
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <button type="button" id="exerciseBinaryTreeGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <button type="button" id="exerciseBinaryTreeBinaryTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
-                                        </div>
+                    <div id="trieTreeContent" style="display:none">
+                        <div class="row" style="padding-bottom:2%">
+                            <div class="col-md-4">
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <button type="button" id="exerciseTriTreeGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <h4>Binary Tree</h4>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <button type="button" class="btn btn-warning" id="exerciseBinaryTreeToggle">View Code</button>
-                                        </div>
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-12">
+                                        <button type="button" id="exerciseTriTreeTriTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Trie Tree</h4>
+                                <div class="row" style="padding-top:2%">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <input class="form-control" type="text" value="Word To Search" id="triTreeSearchResults" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
                                     <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <pre style="height:100%" id="exerciseBinaryTreeGeneratedNumbers"></pre>
+                                        <div class="col-md-11">
+                                            <button type="button" class="btn btn-warning" id="exerciseTriTreeToggle" style="width:100%">View Code</button>
                                         </div>
+                                    </div>
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-11">
+                                            <button type="button" class="btn btn-warning" id="triTreeSearch" style="width:100%">Search</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10 col-md-offset-1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <textarea class="form-control" id="exerciseTriTreeGeneratedNumbers" value="testing test tested testful" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="put you word here with spaces inbetween">testing test tested testful</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    In this exercise i utilized a API to get a randomlly generated list of words. I then used the
+                                    tree data structure to create a Trie Tree for sorting words. The program creates a node tree
+                                    where each letter of the word branches off a parent equal to the previous letter. At the end of
+                                    the word a value is stored on its last node to indicate how many times that word appears. Each
+                                    node can only have a 26 children , 1 for each letter of the alphabet. I also created a function
+                                    to search the tree for words and return how many times it appears.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="triTreeJSONViewer" style="text-align:left"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="binaryHeapContent" style="display:none">
+                        <div class="row" style="padding-bottom:2%">
+                            <div class="col-md-4">
+                                <button type="button" id="exerciseBinaryHeapGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                <button type="button" id="exerciseBinaryHeapBinaryHeap" class="btn btn-primary btn-sm" style="width:100%">Create Heap!</button>
+                                <button type="button" id="exerciseBinaryHeapNext" class="btn btn-primary btn-sm" style="width:100%">Next In Heap!</button>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Max Binary Heap BROKEN</h4>
+                                <button type="button" class="btn btn-warning" id="exerciseBinaryHeapToggle">View Code</button>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <pre style="height:100%" id="binaryHeapGeneratedNumbers"></pre>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <pre style="height:100%" id="binaryHeapedNumbers"></pre>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-4">
+                                        <pre style="height:100%" id="binaryNextNumber"></pre>
                                     </div>
                                 </div>
                             </div>
@@ -1678,47 +1800,29 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
                                     </p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div id="jsonViewer" style="text-align:left"></div>
-                                </div>
-                            </div>
                         </div>
                         <div id="trieTreeContent" style="display:none">
                             <div class="row" style="padding-bottom:2%">
                                 <div class="col-md-4">
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <button type="button" id="exerciseTriTreeGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-12">
-                                            <button type="button" id="exerciseTriTreeTriTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
-                                        </div>
-                                    </div>
+                                    <button type="button" id="exerciseTriTreeGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                    <button type="button" id="exerciseTriTreeTriTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <h4>Trie Tree</h4>
-                                    <div class="row" style="padding-top:2%">
-                                        <div class="col-md-10 col-md-offset-1">
-                                            <input class="form-control" type="text" value="Word To Search" id="triTreeSearchResults" />
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button type="button" class="btn btn-warning" id="exerciseTriTreeToggle">View Code</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="button" class="btn btn-warning" id="triTreeSearch">Search</button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="row">
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-11">
-                                                <button type="button" class="btn btn-warning" id="exerciseTriTreeToggle" style="width:100%">View Code</button>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-11">
-                                                <button type="button" class="btn btn-warning" id="triTreeSearch" style="width:100%">Search</button>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-10 col-md-offset-1">
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+
+                                            <input class="form-control" type="text" value="Word To Search" id="triTreeSearchResults" />
                                         </div>
                                     </div>
                                 </div>
@@ -1746,105 +1850,18 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
                                 </div>
                             </div>
                         </div>
-                        <div id="binaryHeapContent" style="display:none">
-                            <div class="row" style="padding-bottom:2%">
-                                <div class="col-md-4">
-                                    <button type="button" id="exerciseBinaryHeapGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
-                                    <button type="button" id="exerciseBinaryHeapBinaryHeap" class="btn btn-primary btn-sm" style="width:100%">Create Heap!</button>
-                                    <button type="button" id="exerciseBinaryHeapNext" class="btn btn-primary btn-sm" style="width:100%">Next In Heap!</button>
-                                </div>
-                                <div class="col-md-4">
-                                    <h4>Max Binary Heap BROKEN</h4>
-                                    <button type="button" class="btn btn-warning" id="exerciseBinaryHeapToggle">View Code</button>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="row">
-                                        <div class="col-md-10 col-md-offset-1">
-                                            <pre style="height:100%" id="binaryHeapGeneratedNumbers"></pre>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-10 col-md-offset-1">
-                                            <pre style="height:100%" id="binaryHeapedNumbers"></pre>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 col-md-offset-4">
-                                            <pre style="height:100%" id="binaryNextNumber"></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>
-                                            This exercise i used object oriented node based tree data structures to create a binary tree. The objective
-                                            of a binary tree is to take a list of numbers and sort them in a specific way in order for quicker data
-                                            retrieval. This praticular tree puts lower numbers on the left,and higher numbers on the right.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="trieTreeContent" style="display:none">
-                                <div class="row" style="padding-bottom:2%">
-                                    <div class="col-md-4">
-                                        <button type="button" id="exerciseTriTreeGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
-                                        <button type="button" id="exerciseTriTreeTriTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h4>Trie Tree</h4>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <button type="button" class="btn btn-warning" id="exerciseTriTreeToggle">View Code</button>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <button type="button" class="btn btn-warning" id="triTreeSearch">Search</button>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="padding-top:2%">
-                                            <div class="col-md-12">
-
-                                                <input class="form-control" type="text" value="Word To Search" id="triTreeSearchResults" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-10 col-md-offset-1">
-                                        <textarea class="form-control" id="exerciseTriTreeGeneratedNumbers" value="testing test tested testful" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="put you word here with spaces inbetween">testing test tested testful</textarea>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>
-                                            In this exercise i utilized a API to get a randomlly generated list of words. I then used the
-                                            tree data structure to create a Trie Tree for sorting words. The program creates a node tree
-                                            where each letter of the word branches off a parent equal to the previous letter. At the end of
-                                            the word a value is stored on its last node to indicate how many times that word appears. Each
-                                            node can only have a 26 children , 1 for each letter of the alphabet. I also created a function
-                                            to search the tree for words and return how many times it appears.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div id="triTreeJSONViewer" style="text-align:left"></div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
+                        <div class="row">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div class="col-md-5 col-md-offset-7">
-                            <div class="row">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="row">
-                                <pre id="exerciseTriTreeCode" style="display:none">
-                                <code class="language-js">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseTriTreeCode" style="display:none">
+                            <code class="language-js">
 function TriTree() {
     this.root = null;
     function Node(value) {
@@ -1941,8 +1958,8 @@ function CreateTriTree() {
 }   
                             </code>
                         </pre>
-                                <pre id="exerciseBinaryTreeCode" style="display:none">
-                                <code class="language-js">
+                            <pre id="exerciseBinaryTreeCode" style="display:none">
+                            <code class="language-js">
 function BinaryTree() {
     this.root = undefined;
     function Node(value, parent) {
@@ -2037,8 +2054,8 @@ function CreateBinaryTree() {
 }
                             </code>
                         </pre>
-                                <pre id="exerciseBinaryHeapCode" style="display:none">
-                                <code class="language-js">
+                            <pre id="exerciseBinaryHeapCode" style="display:none">
+                            <code class="language-js">
 function Node(value,priority) {
     this.Value = value;
     this.Priority = priority
@@ -2138,12 +2155,141 @@ function testHeap() {
 }
                             </code>
                         </pre>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="modal fade" id="exerciseNine" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Sum of all Fears</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <button type="button" id="exerciseNineGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" placeholder="Number To Check" id="exerciseNineNumberToCheck" />
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+                                            <button type="button" id="exerciseNineCheck" class="btn btn-primary btn-sm" style="width:100%">Check!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <textarea class="form-control" id="exerciseNineGeneratedNumbers" disabled name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="put you word here with spaces inbetween">52,32,35,66,11,23,12,59</textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top:2%">
+                        <div class="col-md-10 col-md-offset-1">
+                            <p>
+                                The goal of this challenge was to take an array of numbers and check and see if any two of the numbers adds up
+                                to the number provided. This is called the sum of all fears. The way I acomplished this was by using two nested for
+                                loops and looping through the numbers, skipping the number from the first loop inside of the second, then returning false
+                                if it is never found and true if it is.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
+                        <div class="row">
+                            <button type="button" class="btn btn-warning" id="exerciseNineToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseNineCode" style="display:none">
+                            <code class="language-js">
+                                
+function SumOfAllFears( array, number ) {
+    for (i = 0; i < array.length; i++) {
+        for (k = 0; k < array.length; k++) {
+            if (k != i && array[i] + array[k] == number) return { Found: true, numberOne: array[i], numberTwo: array[k] };
+        }
+    }
+    return { Found:false };
+}
+
+let sumOfAllFearsNumberDisplay = document.getElementById("exerciseNineGeneratedNumbers")
+let sumOfAllFearsNumberToCheck = document.getElementById("exerciseNineNumberToCheck")
+let sumOfAllFearsNumbers = []
+window.addEventListener("load", function () {
+    let text = ""
+    for (i = 1; i < 10; i++) {
+        number = Math.floor(Math.random() * 100) + 1;
+        sumOfAllFearsNumbers.push(number)
+        text += number + ","
+    }
+    text = text.substr(0, text.length - 1)
+    sumOfAllFearsNumberDisplay.innerHTML = text;
+})
+
+document.getElementById("exerciseNineGenerate").addEventListener("click", function () {
+    sumOfAllFearsNumbers = []
+    let text = ""
+    for (i = 1; i < 10; i++) {
+        number = Math.floor(Math.random() * 100) + 1;
+        sumOfAllFearsNumbers.push(number)
+        text += number + ","
+    }
+    text = text.substr(0, text.length - 1)
+    sumOfAllFearsNumberDisplay.innerHTML = text;
+})
+
+
+document.getElementById("exerciseNineCheck").addEventListener("click", function () {
+    let text = "No match!"
+    let result = SumOfAllFears(sumOfAllFearsNumbers, parseInt(sumOfAllFearsNumberToCheck.value))
+    console.log(result.Found)
+    if (result.Found==true) text = "Found match ( " + result.numberOne + "," + result.numberTwo + " )!"
+    $("#exerciseNine").modal("hide")
+    bootbox.alert({
+        size: "small",
+        title: "Error",
+        message: text,
+        callback: function () {
+            $("#exerciseNine").modal("show")
+        }
+    })
+})
+
+nineCode = document.getElementById("exerciseNineCode")
+document.getElementById("exerciseNineToggle").addEventListener("click", function () {
+    if (nineCode.style.display == "none") nineCode.style.display = "block";
+    else nineCode.style.display = "none"
+})
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
     <!-- js -->
@@ -2174,6 +2320,7 @@ function testHeap() {
     <script src="Scripts/Challenges/PalindromeDetector.js"></script>
     <script src="Scripts/Challenges/TrieTree.js"></script>
     <script src="Scripts/Challenges/Utils.js"></script>
+    <script src="Scripts/Challenges/SumOfAllFears.js"></script>
     <!-- Template Custom Javascript File -->
     <script src="Scripts/custom.js"></script>
 </body>

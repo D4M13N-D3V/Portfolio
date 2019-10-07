@@ -15,13 +15,12 @@ function exerciseThree() {
     var text = "<p>" // p
     //Loop through 1 to 100
     for (i = 1; i < 101; i++) {
-        // Check the division remainder of the number and the first input and the second input. if 0 then Fizzbuzz
-        if (i % inputOne == 0 && i % inputTwo == 0) { text = text + "<span class='h4' style='color:red'>FizzBuzz</span>, " }
-        // Check the division remainder of the number and the second input. if 0 then Buzz
-        else if (i % inputTwo == 0) { text = text + "<span class='h5' style='color:green'>Buzz</span>, " }
-        // Check the division remainder of the number and the first input . if 0 then Fizz
-        else if (i % inputOne == 0) { text = text + "<span class='h5' style='color:blue'>Fizz</span>, " }
-        else { text = text + "<span class='text-secondary'>" + i + "</span>, " }
+        let fizz = i % inputOne == 0
+        let buzz = i % inputTwo == 0;
+        if (!fizz && !buzz) text = text + "<span class='h4' style='color:red'>FizzBuzz</span>, "
+        else if (!buzz) text = text + "<span class='h5' style='color:green'>Buzz</span>, " 
+        else if (!fizz) text = text + "<span class='h5' style='color:blue'>Fizz</span>, "
+        else text = text + "<span class='text-secondary'>" + i + "</span>, " 
     }
     text = text.substr(0, text.length - 2) + "</p>"
     exerciseThreeOutput.insertAdjacentHTML("beforeend", text)

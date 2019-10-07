@@ -154,14 +154,32 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-md-offset-2">
-                    <img src="Images/projects/spectraldaze.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#spectralDazeInfo" />
+                <div class="col-md-4">
+                    <h4>Unity Project</h4>
+                    <img src="Images/tools/Unity.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#spectralDazeInfo" />
                 </div>
                 <div class="col-md-4">
-                    <img src="Images/projects/gta5.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#gta5Mod" />
+                    <h4>Networking & Relation DBs</h4>
+                    <img src="Images/tools/clogo.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#gta5Mod" />
                 </div>
-
-
+                <div class="col-md-4">
+                    <h4>Blog</h4>
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
+                </div>
+            </div>
+            <div class="row" style="padding-top:10%">
+                <div class="col-md-4">
+                    <h4>Bug Tracker</h4>
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
+                </div>
+                <div class="col-md-4">
+                    <h4>Finance Portal</h4>
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
+                </div>
+                <div class="col-md-4">
+                    <h4>Xamerin Application</h4>
+                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' />
+                </div>
             </div>
         </div>
     </section>
@@ -403,7 +421,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Project : Spectral Daze</h2>
+                    <h2 class="modal-title">Spectral Daze</h2>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -418,7 +436,7 @@
                         <div class="col-md-6">
                             <h4>Demo Video</h4>
                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qcpTgqzyypk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <a href="https://youtu.be/qcpTgqzyypk" target="popup"><button>Click Here To Watch Video!</button></a>
+                            <a href="https://youtu.be/qcpTgqzyypk" target="popup"><button class="btn-lg btn-primary">Click Here To Watch Video!</button></a>
                         </div>
                     </div>
                     <div class="row">
@@ -429,6 +447,11 @@
                                 without having to deploy the rest, making it extremely easy to update and work on them, and test to make sure they were working, without loading up everything else. This was a .NET project.
                                 Some of the tools I used were Rider, VS Studio, and Unity3D. Blender was used for the art.
                             </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="https://github.com/DamienTehDemon/SpectralDazePublic" target="popup"><button style = "width:100%" class="btn-lg btn-primary">Click Here To Visit Github Repository!</button></a>
                         </div>
                     </div>
                 </div>
@@ -444,21 +467,25 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Project : GTA 5 Modification Project</h2>
+                    <h2 class="modal-title">GTA 5 Modification Project</h2>
                 </div>
-                <div class="row" style="padding-left:2%; padding-right:2%">
-                    <div class="col-md-6">
-                        <h4>Summary</h4>
-                        <p>
-                            This project was a modification to run ontop of another modification for Grand Theft Auto : V. The modification had to take into account networking and validation of values not being
-                            manipulated. The project also used relation based databases for all of the data for the users information that was stored in a MySQL database and JSON documents. The project was created
-                            inside of .Net 4.5. You can click the repository information on the top right to view the repository.
-                        </p>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Summary</h4>
+                            <p>
+                                This solution was a modification for Grand Theft Auto 5 running on top of another modification that made it possible to have player hosted dedicated servers for
+                                the game. The project deployed relation based databases to store information about the user and the different elements within the modification. I also had to take
+                                into account networking throughout the entire solution. The solution was split into two projects which were compiled into DLL's that the modification would use to run 
+                                the code. There was also quite a few instances of validation to insure that people were not cheating and changing values on the client to manipulate the outcome on the
+                                server.
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <br />
-                        <ul class="list-group" id="gtaRepo" style="cursor:pointer; width:100%">
-                        </ul>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="https://github.com/DamienTehDemon/Damiens-Roleplay-Project"><button style="width:100%" class="btn-lg btn-primary">Click Here To Visit Repository!</button></a></li>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -2135,8 +2162,6 @@ function testHeap() {
     <script src="Scripts/phaser.js"></script>
     <script src="Scripts/json-viewer.js"></script>
     <script src="Scripts/bootbox.all.js"></script>
-    <!--Custom Temporary Example Github API Call-->
-    <script src="Scripts/github_load.js"></script>
     <!-- Challenges -->
     <script src="Scripts/Challenges/ViewCodeButtons.js"></script>
     <script src="Scripts/Challenges/BinaryTree.js"></script>

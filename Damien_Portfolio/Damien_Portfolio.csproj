@@ -132,7 +132,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Challenges\Utils.js" />
     <Content Include="Scripts\custom.js" />
-    <Content Include="Scripts\github_load.js" />
     <Content Include="Scripts\grid.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.nav.js" />

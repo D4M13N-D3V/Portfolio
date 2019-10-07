@@ -1,7 +1,6 @@
 
 
 
-
 (function ($) {
 
   // Back to top button

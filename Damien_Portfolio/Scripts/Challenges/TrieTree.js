@@ -76,6 +76,18 @@ window.addEventListener("load", generateTriTreeWords)
 var triTreeTest = null
 
 function SearchTriTree() {
+    if (triTreeTest == null) {
+        $("#exerciseEight").modal("hide")
+        bootbox.alert({
+            size: "small",
+            title: "Error",
+            message: "You did not generate a Trie Tree yet!",
+            callback: function () {
+                $("#exerciseEight").modal("show")
+            }
+        })
+        return;
+    }
     $("#exerciseEight").modal("hide")
     bootbox.alert({
         size: "small",

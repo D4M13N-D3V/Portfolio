@@ -79,7 +79,7 @@ function SearchTriTree() {
     $("#exerciseEight").modal("hide")
     bootbox.alert({
         size: "small",
-        title: "Results",
+        title: "Results", 
         message: triTreeTest.Search(triTreeSearchOutput.value) + " Occurances of '" + triTreeSearchOutput.value + "' were found!",
         callback: function () {
             $("#exerciseEight").modal("show")
@@ -90,10 +90,10 @@ function SearchTriTree() {
 
 function generateTriTreeWords() {
 
-    fetch("https://random-word-api.herokuapp.com/word?key=MHK8HDTO&number=25")
+    fetch("https://random-word-api.herokuapp.com/word?key=jecgaa&number=25")
         .then((resp) => resp.json()) // Transform the data into json
-        .then(function (data) {
-            generatedTriTreeWords = data.sort();
+        .then(function (responseData) {
+            generatedTriTreeWords = responseData.sort();
         });
 
     generatedTriTreeNumberOutput.value = generatedTriTreeWords.join(" ");

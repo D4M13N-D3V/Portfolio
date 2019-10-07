@@ -26,7 +26,7 @@ function decrypt() {
     if (messageLength % keywordLength != 0) {
         DisplayError(4); return;
     }
-    let grid = createGrid(message, keyword, keywordLength, messageLength)
+    let grid = createGrid(message, keyword, keywordLength, messageLength)   
     grid = populateGridDecrypt(grid, keyword, message, keywordLength, messageLength);
     let text = readDecryptedMessage(grid, keyword, keywordLength, messageLength)
     exerciseFiveOutput.value = text;

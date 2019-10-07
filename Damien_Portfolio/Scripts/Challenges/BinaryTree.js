@@ -84,7 +84,7 @@ function CreateBinaryTree() {
     console.log("TET")
     if (binaryTreejson.childNodes.length>0) binaryTreejson.removeChild(binaryTreejson.childNodes[0])
     var testTree = new BinaryTree()
-    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) {
+    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) { 
         testTree.Add(generatedBinaryTreeNumbers[i])
     }
     var jsonViewer = new JSONViewer();

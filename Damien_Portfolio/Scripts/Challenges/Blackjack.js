@@ -87,7 +87,7 @@ function Player(id, user, dealer) {
     this.User = user;
     this.Dealer = dealer
     this.Hand = new PlayerHand(this)
-    this.Id = id
+    this.Id = id 
 }
 /*=========*/
 

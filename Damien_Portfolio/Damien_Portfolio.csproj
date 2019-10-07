@@ -80,6 +80,7 @@
     <Content Include="Images\challenges\challenge7.png" />
     <Content Include="Images\challenges\challenge8.png" />
     <Content Include="Scripts\bootbox.all.js" />
+    <Content Include="Scripts\Challenges\BinaryHeap.js" />
     <Content Include="Scripts\Challenges\BubbleSorter.js" />
     <Content Include="Scripts\Challenges\Challenges.js" />
     <Content Include="Scripts\Challenges\Challenges.min.js">

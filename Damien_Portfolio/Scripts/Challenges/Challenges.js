@@ -87,7 +87,7 @@ function Player(id, user, dealer) {
     this.User = user;
     this.Dealer = dealer
     this.Hand = new PlayerHand(this)
-    this.Id = id
+    this.Id = id 
 }
 /*=========*/
 
@@ -334,7 +334,7 @@ function decrypt() {
     if (messageLength % keywordLength != 0) {
         DisplayError(4); return;
     }
-    let grid = createGrid(message, keyword, keywordLength, messageLength)
+    let grid = createGrid(message, keyword, keywordLength, messageLength)   
     grid = populateGridDecrypt(grid, keyword, message, keywordLength, messageLength);
     let text = readDecryptedMessage(grid, keyword, keywordLength, messageLength)
     exerciseFiveOutput.value = text;
@@ -650,7 +650,7 @@ function CreateBinaryTree() {
     console.log("TET")
     if (binaryTreejson.childNodes.length>0) binaryTreejson.removeChild(binaryTreejson.childNodes[0])
     var testTree = new BinaryTree()
-    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) {
+    for (i = 0; i < generatedBinaryTreeNumbers.length; i++) { 
         testTree.Add(generatedBinaryTreeNumbers[i])
     }
     var jsonViewer = new JSONViewer();
@@ -735,6 +735,303 @@ function makeWordLettersOnly(word) {
 function makeWordNumbersOnly(word) {
     return word.toLowerCase().replace(/[^0-9]/g, "")
 }
+function TriTree() {
+    this.root = null;
+    function Node(value) {
+        this.Value = value;
+        this.Occurances = 0;
+        this.Children = []
+    }
+
+    this.addWord = function (tmp) {
+        tmp = tmp.toLowerCase().split("")
+        curLetter = null
+        // make a root node if it does not exist
+        if (this.root == null) this.root = new Node("**ROOT**")
+        currentNode = this.root;
+        // loop trhough the letters of the word
+        for (letterIndex = 0; letterIndex < tmp.length; letterIndex++) {
+            curLetter = tmp[letterIndex]
+            // while the current nodes value isnt the current letter keep looping
+            while (currentNode.Value != curLetter) {
+                // loop trhough the current nodes children
+                for (k = 0; k < currentNode.Children.length; k++) {
+                    //check the child to see if it IS the current letter
+                    if (currentNode.Children[k].Value == curLetter) {
+                        // if it is then set the current node to that child and break the loop.
+                        currentNode = currentNode.Children[k];
+                        break;
+                    }
+                }
+                // check if the current nodes value is the current letter, if it is then we know that it found the node for that letter.
+                if (currentNode.Value != curLetter) {
+                    tmpNode = currentNode;
+                    currentNode = new Node(curLetter)
+                    tmpNode.Children.push(currentNode)
+                }
+            }
+        }
+        // Increment the occurances up to 1 on the last node so we know that the word is finished and can tell where the word ends in other functions
+        currentNode.Occurances += 1
+    }
+
+    this.Search = function (tmp) {
+        tmp = tmp.toLowerCase().split("")
+        curLetter = null
+        currentNode = this.root;
+        // loop through the letters of the word.
+        for (letterIndex = 0; letterIndex < tmp.length; letterIndex++) {
+            curLetter = tmp[letterIndex]
+            // loop through teh children
+            for (k = 0; k < currentNode.Children.length; k++) {
+                //check if the child value is equal to the current letter
+                if (currentNode.Children[k].Value == curLetter) {
+                    // set the current node to that child if it is the current letter
+                    currentNode = currentNode.Children[k];
+                    break;
+                }
+            }
+            // return 0 matches since the current node is the last node checked and the letter didnt exist where it should have
+            if (currentNode.Value != curLetter) return 0
+        }
+        // check and make sure that the last node checked had the value of the last letter, and then make sure thtat the occurances is greater than 0
+        if (currentNode.Value == curLetter && currentNode.Occurances > 0) return currentNode.Occurances;
+    }
+}
+generatedTriTreeWords = []
+generatedTriTreeNumberOutput = document.getElementById("exerciseTriTreeGeneratedNumbers")
+CreateTriTreeButton = document.getElementById("exerciseTriTreeTriTree")
+exerciseTriTreeNumberGenerateButton = document.getElementById("exerciseTriTreeGenerate")
+trieTreeSearchButton = document.getElementById("triTreeSearch")
+triTreeSearchOutput = document.getElementById("triTreeSearchResults")
+triTreeJsonViewer = document.getElementById("triTreeJSONViewer")
+exerciseTriTreeNumberGenerateButton.addEventListener("click", generateTriTreeWords)
+CreateTriTreeButton.addEventListener("click", CreateTriTree)
+trieTreeSearchButton.addEventListener("click", SearchTriTree)
+window.addEventListener("load", generateTriTreeWords)
+
+var triTreeTest = null
+
+function SearchTriTree() {
+    $("#exerciseEight").modal("hide")
+    bootbox.alert({
+        size: "small",
+        title: "Results", 
+        message: triTreeTest.Search(triTreeSearchOutput.value) + " Occurances of '" + triTreeSearchOutput.value + "' were found!",
+        callback: function () {
+            $("#exerciseEight").modal("show")
+        }
+    })
+    
+}
+
+function generateTriTreeWords() {
+
+    fetch("https://random-word-api.herokuapp.com/word?key=jecgaa&number=25")
+        .then((resp) => resp.json()) // Transform the data into json
+        .then(function (responseData) {
+            generatedTriTreeWords = responseData.sort();
+        });
+
+    generatedTriTreeNumberOutput.value = generatedTriTreeWords.join(" ");
+}
+
+function CreateTriTree() {
+    if (triTreeJsonViewer.childNodes.length > 0) triTreeJsonViewer.removeChild(triTreeJsonViewer.childNodes[0])
+    triTreeTest = new TriTree()
+    var words = generatedTriTreeNumberOutput.value.split(" ")
+    for (i = 0; i < words.length; i++) {
+        triTreeTest.addWord(words[i])
+    }
+    var jsonViewer = new JSONViewer();
+    triTreeJsonViewer.appendChild(jsonViewer.getContainer());
+    jsonViewer.showJSON(JSON.parse(JSON.stringify(triTreeTest.root)), -1, -1);
+}   
+function Node(value,priority) {
+    this.Value = value;
+    this.Priority = priority
+}
+/* Forumlas For Getting Information From The Heaps
+ *  Parent = (index-2)/2
+ *  Left Child = Index*2+1
+ *  Right Child = Index*2+2
+ */
+function Heap() {
+    this.Heap = []
+
+    this.getRightChildIndex = function(index) { return math.floor(2 * index + 1) }
+    this.getLeftChildIndex = function (index) { return math.floor(2 * index + 2) }
+    this.getParentIndex = function (index) { return math.floor((index - 1) / 2) }
+    this.hasLeftChild = function (index) { return getLeftChildIndex(index) < size; }
+    this.hasRightChild = function (index) { return getRightChildIndex(index) < size; }
+    this.hasParent = function (index) { return getParentIndex(index) >= 0; }
+    this.leftChild = function (index) { return this.Heap[getLeftChildIndex(index)] }
+    this.rightChild = function (index) { return this.Heap[getRightChildIndex(index)] }
+    this.parent = function (index) { return this.Heap[getParentIndex(index)] }
+
+    this.Swap = function(indexOne, indexTwo){
+        temp = this.Heap[indexOne]
+        this.Heap[indexOne] = this.Heap[indexTwo]
+        this.Heap[indexTwo] = temp;
+    }
+
+    this.Insert = function(value, priority){
+        let newNode = new Node(value, priority)
+        let currentNodeIndex = this.Heap.length
+        let currentParentNodeIndex = this.getParentIndex(currentNodeIndex)
+        //make sure there is a root node
+        if (this.Heap.length<1 ) {
+            this.Heap.push( newNode );
+            return
+        }
+        //add node
+        this.Heap.push( newNode )
+        // loop until the priority is lower then the parent
+        while (this.Heap[currentNodeIndex].Priority < this.Heap[currentParentNodeIndex].Priority) {
+            var tmp = currentParentNodeIndex
+            currentParentNodeIndex = this.getParentIndex(currentNodeIndex)
+            currentNodeIndex = tmp;
+            this.Swap(currentNodeIndex, currentParentNodeIndex)
+        }
+        console.log(this.Heap)
+    }
+
+    this.Remove = function () {
+        let toRemove = this.Heap.shift()
+        this.Heap.unshift(this.Heap.pop())
+        currentNodeIndex = 0
+        found = true
+        // Loop until found
+        while (found) {
+            found = false
+            //get the lowest child
+            lowestChild = this.getLowestChild(currentNodeIndex);
+            //make sure hcild exists
+            if (lowestChild != -1) {
+                found = true
+                //swap places
+                this.Swap(currentNodeIndex, lowestChild)
+                // set current node to the new child
+                currentNodeIndex = lowestChild
+            }
+        }
+        return toRemove;
+    }
+
+    this.getLowestChild = function (index) {
+        let leftChildIndex = this.getLeftChildIndex(index)
+        let rightChildIndex = this.getRightChildIndex(index)
+        let hasLeftChild = false
+        let hasRightChild = false
+        if (this.Heap[leftChildIndex] != undefined) hasLeftChild = true
+        if (this.Heap[rightChildIndex] != undefined) hasRightChild = true
+        if (hasLeftChild == true && hasRightChild == false) return leftChildIndex
+        if (hasLeftChild == false && hasRightChild == true) return rightChildIndex
+        if (hasLeftChild == true && hasRightChild == true) {
+            if (this.Heap[leftChildIndex].Priority > this.Heap[rightChildIndex].Priority) return leftChildIndex
+            else return rightChildIndex
+        }
+        return -1
+    }   
+}
+binaryHeapGeneratedNumbers = []
+binaryHeapGenerateButton = document.getElementById("exerciseBinaryHeapGenerate")
+binaryHeapHeapButton = document.getElementById("exerciseBinaryHeapBinaryHeap")
+binaryHeapNextButton = document.getElementById("exerciseBinaryHeapNext")
+binaryHeapGeneratedNumberOutput = document.getElementById("binaryHeapGeneratedNumbers")
+binaryHeapGeneratedHeapedNumbersOutput = document.getElementById("binaryHeapedNumbers")
+binaryHeapNextNumberInHeapOutput = document.getElementById("binaryNextNumber")
+window.addEventListener("load", generateBinaryHeapNumbers)
+binaryHeapGenerateButton.addEventListener("click", generateBinaryHeapNumbers)
+binaryHeapHeapButton.addEventListener("click", createHeap)
+binaryHeapNextButton.addEventListener("click", nextNumberInHeap)
+
+var binaryHeapTest = null
+
+function generateBinaryHeapNumbers() {
+    binaryHeapGeneratedNumbers = []
+    for (i = 0; i < 25; i++) {
+        let rdm = 0;
+        do {
+            rdm = math.floor(math.random() * 100) + 1;
+        }
+        while (binaryHeapGeneratedNumbers.indexOf(rdm) != -1)
+        binaryHeapGeneratedNumbers.push(rdm)
+    }
+    let text = ""
+    for (i = 0; i < binaryHeapGeneratedNumbers.length; i++) text += binaryHeapGeneratedNumbers[i] + ","
+    text = text.substr(0, text.length - 1)
+    binaryHeapGeneratedNumberOutput.innerHTML = text;
+}
+
+function createHeap() {
+    binaryHeapTest = new Heap()
+    let text = ""
+    //numbers = shuffle(numbers)
+    for (i = 0; i < numbers.length; i++) {
+        binaryHeapTest.Insert(numbers[i], numbers[i])
+    }
+    for (i = 0; i < binaryHeapTest.Heap.length; i++) text += binaryHeapTest.Heap[i].Priority + ","
+    text = text.substr(0, text.length - 1)
+    binaryHeapGeneratedHeapedNumbersOutput.innerHTML = text;
+}
+
+function nextNumberInHeap() {
+    let text = binaryHeapTest.Remove().Priority;
+    binaryHeapNextNumberInHeapOutput.innerHTML = text;
+    text = ""
+    for (i = 0; i < binaryHeapTest.Heap.length; i++) text += binaryHeapTest.Heap[i].Priority + ","
+    text = text.substr(0, text.length - 1)
+    binaryHeapGeneratedHeapedNumbersOutput.innerHTML = text;
+}
+let binaryTreeTab = document.getElementById("binaryTreeTab")
+let binaryHeapTab = document.getElementById("binaryHeapTab")
+let trieTreeTab = document.getElementById("trieTreeTab")
+
+let binaryTreeContent = document.getElementById("binaryTreeContent")
+let binaryHeapContent = document.getElementById("binaryHeapContent")
+let trieTreeContent = document.getElementById("trieTreeContent")
+
+binaryTreeTab.addEventListener("click", openBinaryTreeTab)
+binaryHeapTab.addEventListener("click", openbinaryHeapTab)
+trieTreeTab.addEventListener("click", openTrieTreeTab)
+
+var currentTab = binaryTreeTab;
+var currentContent = binaryTreeContent;
+
+function openBinaryTreeTab() {
+    currentTab.classList.remove("active")
+    currentContent.style.display = "none"
+    binaryTreeTab.classList.add("active")
+    binaryTreeContent.style.display = "block"
+    currentTab = binaryTreeTab;
+    currentContent = binaryTreeContent;
+    document.getElementById("exerciseTriTreeCode").style.display = "none"
+    document.getElementById("exerciseBinaryTreeCode").style.display = "none"
+    document.getElementById("exerciseBinaryHeapCode").style.display = "none"
+}
+function openTrieTreeTab() {
+    currentTab.classList.remove("active")
+    currentContent.style.display = "none"
+    trieTreeTab.classList.add("active")
+    trieTreeContent.style.display = "block"
+    currentTab = trieTreeTab;
+    currentContent = trieTreeContent;
+    document.getElementById("exerciseTriTreeCode").style.display = "none"
+    document.getElementById("exerciseBinaryTreeCode").style.display = "none"
+    document.getElementById("exerciseBinaryHeapCode").style.display = "none"
+}
+function openbinaryHeapTab() {
+    currentTab.classList.remove("active")
+    currentContent.style.display = "none"
+    binaryHeapTab.classList.add("active")
+    binaryHeapContent.style.display = "block"
+    currentTab = binaryHeapTab;
+    currentContent = binaryHeapContent;
+    document.getElementById("exerciseTriTreeCode").style.display = "none"
+    document.getElementById("exerciseBinaryTreeCode").style.display = "none"
+    document.getElementById("exerciseBinaryHeapCode").style.display = "none"
+}
 
 oneCode = document.getElementById("exerciseOneCode")
 twoCode = document.getElementById("exerciseTwoCode")
@@ -745,6 +1042,7 @@ sixCode = document.getElementById("exerciseSixCode")
 binaryTreeCode = document.getElementById("exerciseBinaryTreeCode")
 sevenCode = document.getElementById("exerciseSevenCode")
 triTreeCode = document.getElementById("exerciseTriTreeCode")
+heapCode = document.getElementById("exerciseBinaryHeapCode")
 document.getElementById("exerciseOneToggle").addEventListener("click", openOneCode)
 document.getElementById("exerciseTwoToggle").addEventListener("click", openTwoCode)
 document.getElementById("exerciseThreeToggle").addEventListener("click", openThreeCode)
@@ -754,6 +1052,7 @@ document.getElementById("exerciseSixToggle").addEventListener("click", openSixCo
 document.getElementById("exerciseBinaryTreeToggle").addEventListener("click", openBinaryCode)
 document.getElementById("exerciseSevenToggle").addEventListener("click", openSevenCode)
 document.getElementById("exerciseTriTreeToggle").addEventListener("click", openTriCode)
+document.getElementById("exerciseBinaryHeapToggle").addEventListener("click", openHeapCode)
 function openOneCode() {
     if (oneCode.style.display == "none") oneCode.style.display = "block";
     else oneCode.style.display = "none"
@@ -786,7 +1085,11 @@ function openBinaryCode(){
     if (binaryTreeCode.style.display == "none") binaryTreeCode.style.display = "block";
     else binaryTreeCode.style.display = "none"
 }
-function openTriCode(){
+function openTriCode() {
     if (triTreeCode.style.display == "none") triTreeCode.style.display = "block";
     else triTreeCode.style.display = "none"
+}
+function openHeapCode() {
+    if (heapCode.style.display == "none") heapCode.style.display = "block";
+    else heapCode.style.display = "none"
 }

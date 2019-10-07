@@ -1,17 +1,14 @@
 ﻿let binaryTreeTab = document.getElementById("binaryTreeTab")
-let blackRedTreeTab = document.getElementById("blackRedTreeTab")
+let binaryHeapTab = document.getElementById("binaryHeapTab")
 let trieTreeTab = document.getElementById("trieTreeTab")
-let compressedTrieTreeTab = document.getElementById("compressedTrieTreeTab")
 
 let binaryTreeContent = document.getElementById("binaryTreeContent")
-let blackRedTreeContent = document.getElementById("blackRedTreeContent")
+let binaryHeapContent = document.getElementById("binaryHeapContent")
 let trieTreeContent = document.getElementById("trieTreeContent")
-let compressedTrieTreeContent = document.getElementById("compressedTrieTreeContent")
 
 binaryTreeTab.addEventListener("click", openBinaryTreeTab)
-blackRedTreeTab.addEventListener("click", openblackRedTreeTab)
+binaryHeapTab.addEventListener("click", openbinaryHeapTab)
 trieTreeTab.addEventListener("click", openTrieTreeTab)
-compressedTrieTreeTab.addEventListener("click", openCompressedTrieTab)
 
 var currentTab = binaryTreeTab;
 var currentContent = binaryTreeContent;
@@ -25,6 +22,7 @@ function openBinaryTreeTab() {
     currentContent = binaryTreeContent;
     document.getElementById("exerciseTriTreeCode").style.display = "none"
     document.getElementById("exerciseBinaryTreeCode").style.display = "none"
+    document.getElementById("exerciseBinaryHeapCode").style.display = "none"
 }
 function openTrieTreeTab() {
     currentTab.classList.remove("active")
@@ -35,24 +33,16 @@ function openTrieTreeTab() {
     currentContent = trieTreeContent;
     document.getElementById("exerciseTriTreeCode").style.display = "none"
     document.getElementById("exerciseBinaryTreeCode").style.display = "none"
+    document.getElementById("exerciseBinaryHeapCode").style.display = "none"
 }
-function openCompressedTrieTab() {
+function openbinaryHeapTab() {
     currentTab.classList.remove("active")
     currentContent.style.display = "none"
-    compressedTrieTreeTab.classList.add("active")
-    compressedTrieTreeContent.style.display = "block"
-    currentTab = compressedTrieTreeTab;
-    currentContent = compressedTrieTreeContent;
+    binaryHeapTab.classList.add("active")
+    binaryHeapContent.style.display = "block"
+    currentTab = binaryHeapTab;
+    currentContent = binaryHeapContent;
     document.getElementById("exerciseTriTreeCode").style.display = "none"
     document.getElementById("exerciseBinaryTreeCode").style.display = "none"
-}
-function openblackRedTreeTab() {
-    currentTab.classList.remove("active")
-    currentContent.style.display = "none"
-    blackRedTreeTab.classList.add("active")
-    blackRedTreeContent.style.display = "block"
-    currentTab = blackRedTreeTab;
-    currentContent = blackRedTreeContent;
-    document.getElementById("exerciseTriTreeCode").style.display = "none"
-    document.getElementById("exerciseBinaryTreeCode").style.display = "none"
+    document.getElementById("exerciseBinaryHeapCode").style.display = "none"
 }

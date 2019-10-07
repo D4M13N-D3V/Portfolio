@@ -1462,9 +1462,10 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
                         <div class="col-md-12">
                             <ul class="nav nav-tabs">
                                 <li class="active" id="binaryTreeTab"><a style="cursor:pointer">Binary Tree</a></li>
-                                <li id="blackRedTreeTab"><a style="cursor:pointer">Black Red Tree</a></li>
+                                <!---->
+                                <li id="binaryHeapTab" style="display:none"><a style="cursor:pointer">Binary Heap</a></li>
                                 <li id="trieTreeTab"><a style="cursor:pointer">Trie Tree</a></li>
-                                <li id="compressedTrieTreeTab"><a style="cursor:pointer">Compressed Trie Tree</a></li>
+                                <li><a style="cursor:pointer">Coming Soon</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1498,8 +1499,6 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
                                 <div id="jsonViewer" style="text-align:left"></div>
                             </div>
                         </div>
-                    </div>
-                    <div id="blackRedTreeContent" style="display:none">
                     </div>
                     <div id="trieTreeContent" style="display:none">
                         <div class="row" style="padding-bottom:2%">
@@ -1550,7 +1549,93 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
                             </div>
                         </div>
                     </div>
-                    <div id="compressedTrieTreeContent" style="display:none">
+                    <div id="binaryHeapContent" style="display:none">
+                        <div class="row" style="padding-bottom:2%">
+                            <div class="col-md-4">
+                                <button type="button" id="exerciseBinaryHeapGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                <button type="button" id="exerciseBinaryHeapBinaryHeap" class="btn btn-primary btn-sm" style="width:100%">Create Heap!</button>
+                                <button type="button" id="exerciseBinaryHeapNext" class="btn btn-primary btn-sm" style="width:100%">Next In Heap!</button>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Max Binary Heap BROKEN</h4>
+                                <button type="button" class="btn btn-warning" id="exerciseBinaryHeapToggle">View Code</button>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <pre style="height:100%" id="binaryHeapGeneratedNumbers"></pre>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <pre style="height:100%" id="binaryHeapedNumbers"></pre>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-4">
+                                        <pre style="height:100%" id="binaryNextNumber"></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>
+                                        This exercise i used object oriented node based tree data structures to create a binary tree. The objective
+                                        of a binary tree is to take a list of numbers and sort them in a specific way in order for quicker data
+                                        retrieval. This praticular tree puts lower numbers on the left,and higher numbers on the right.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="trieTreeContent" style="display:none">
+                            <div class="row" style="padding-bottom:2%">
+                                <div class="col-md-4">
+                                    <button type="button" id="exerciseTriTreeGenerate" class="btn btn-primary btn-sm" style="width:100%">Generate!</button>
+                                    <button type="button" id="exerciseTriTreeTriTree" class="btn btn-primary btn-sm" style="width:100%">Create Tree!</button>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4>Trie Tree</h4>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button type="button" class="btn btn-warning" id="exerciseTriTreeToggle">View Code</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="button" class="btn btn-warning" id="triTreeSearch">Search</button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-top:2%">
+                                        <div class="col-md-12">
+
+                                            <input class="form-control" type="text" value="Word To Search" id="triTreeSearchResults" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <textarea class="form-control" id="exerciseTriTreeGeneratedNumbers" value="testing test tested testful" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="put you word here with spaces inbetween">testing test tested testful</textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>
+                                        In this exercise i utilized a API to get a randomlly generated list of words. I then used the
+                                        tree data structure to create a Trie Tree for sorting words. The program creates a node tree
+                                        where each letter of the word branches off a parent equal to the previous letter. At the end of
+                                        the word a value is stored on its last node to indicate how many times that word appears. Each
+                                        node can only have a 26 children , 1 for each letter of the alphabet. I also created a function
+                                        to search the tree for words and return how many times it appears.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="triTreeJSONViewer" style="text-align:left"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1755,6 +1840,107 @@ function CreateBinaryTree() {
 }
                             </code>
                         </pre>
+                            <pre id="exerciseBinaryHeapCode" style="display:none">
+                            <code class="language-js">
+function Node(value,priority) {
+    this.Value = value;
+    this.Priority = priority
+}
+/* Forumlas For Getting Information From The Heaps
+ *  Parent = (index-2)/2
+ *  Left Child = Index*2+1
+ *  Right Child = Index*2+2
+ */
+function Heap() {
+    this.Heap = []
+
+    this.getRightChildIndex = function(index) { return math.floor(2 * index + 1) }
+    this.getLeftChildIndex = function (index) { return math.floor(2 * index + 2) }
+    this.getParentIndex = function (index) { return math.floor((index - 1) / 2) }
+    this.hasLeftChild = function (index) { return getLeftChildIndex(index) < size; }
+    this.hasRightChild = function (index) { return getRightChildIndex(index) < size; }
+    this.hasParent = function (index) { return getParentIndex(index) >= 0; }
+    this.leftChild = function (index) { return this.Heap[getLeftChildIndex(index)] }
+    this.rightChild = function (index) { return this.Heap[getRightChildIndex(index)] }
+    this.parent = function (index) { return this.Heap[getParentIndex(index)] }
+
+    this.Swap = function(indexOne, indexTwo){
+        temp = this.Heap[indexOne]
+        this.Heap[indexOne] = this.Heap[indexTwo]
+        this.Heap[indexTwo] = temp;
+    }
+
+    this.Insert = function(value, priority){
+        let newNode = new Node(value, priority)
+        let currentNodeIndex = this.Heap.length
+        let currentParentNodeIndex = this.getParentIndex(currentNodeIndex)
+        //make sure there is a root node
+        if (this.Heap.length<1 ) {
+            this.Heap.push( newNode );
+            return
+        }
+        //add node
+        this.Heap.push( newNode )
+        // loop until the priority is lower then the parent
+        while (this.Heap[currentNodeIndex].Priority < this.Heap[currentParentNodeIndex].Priority) {
+            var tmp = currentParentNodeIndex
+            currentParentNodeIndex = this.getParentIndex(currentNodeIndex)
+            currentNodeIndex = tmp;
+            this.Swap(currentNodeIndex, currentParentNodeIndex)
+        }
+    }
+
+    this.Remove = function () {
+        let toRemove = this.Heap.shift()
+        this.Heap.unshift(this.Heap.pop())
+        currentNodeIndex = 0
+        found = true
+        // Loop until found
+        while (found) {
+            found = false
+            //get the lowest child
+            lowestChild = this.getLowestChild(currentNodeIndex);
+            //make sure hcild exists
+            if (lowestChild != -1) {
+                found = true
+                //swap places
+                this.Swap(currentNodeIndex, lowestChild)
+                // set current node to the new child
+                currentNodeIndex = lowestChild
+            }
+        }
+        return toRemove;
+    }
+
+    this.getLowestChild = function (index) {
+        let leftChildIndex = this.getLeftChildIndex(index)
+        let rightChildIndex = this.getRightChildIndex(index)
+        let hasLeftChild = false
+        let hasRightChild = false
+        if (this.Heap[leftChildIndex] != undefined) hasLeftChild = true
+        if (this.Heap[rightChildIndex] != undefined) hasRightChild = true
+        if (hasLeftChild == true && hasRightChild == false) return leftChildIndex
+        if (hasLeftChild == false && hasRightChild == true) return rightChildIndex
+        if (hasLeftChild == true && hasRightChild == true) {
+            if (this.Heap[leftChildIndex].Priority > this.Heap[rightChildIndex].Priority) return leftChildIndex
+            else return rightChildIndex
+        }
+        return -1
+    }   
+}
+
+testHeap()
+function testHeap() {
+    var tmpHeap = new Heap(9)
+    var numbers = [100, 19, 36, 17, 3, 25, 1, 2, 7]
+    //numbers = shuffle(numbers)
+    for (i = 0; i < numbers.length; i++) {
+        tmpHeap.Insert(numbers[i],numbers[i])
+    }
+    tmpHeap.Remove()
+}
+                            </code>
+                        </pre>
                         </div>
                     </div>
                 </div>
@@ -1782,8 +1968,6 @@ function CreateBinaryTree() {
     <script src="Scripts/github_load.js"></script>
     <!-- Challenges -->
     <script src="Scripts/Challenges/Challenges.min.js"></script>
-    <script src="Scripts/Challenges/TrieTree.js"></script>
-    <script src="Scripts/Challenges/DataStructureTabs.js"></script>
     <!-- Template Custom Javascript File -->
     <script src="Scripts/custom.js"></script>
 </body>

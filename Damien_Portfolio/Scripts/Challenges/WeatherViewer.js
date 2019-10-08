@@ -24,6 +24,9 @@ function HandleGeolocation() {
                 var n = d.getHours();
                 for (i = 1; i < 5; i++) {
                     let time = timeConverter(data.hourly.data[i].time)
+                    let modTime = parseInt(time.split(" ")[3]);
+                    let timeString = modTime+":00 AM"
+                    if (modTime > 12) timeString = modTime - 12+":00 PM";
                     html += `<div class="col-md-3" id="hourOneWeather">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -32,7 +35,7 @@ function HandleGeolocation() {
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h4>${time.split(" ")[3]}:00</h4>
+                                        <h4>${timeString}</h4>
                                         <p>Feels Like ${data.hourly.data[i].apparentTemperature}°F</p>
                                         <p>(${data.hourly.data[i].apparentTemperature}°F)</p>
                                     </div>
@@ -41,7 +44,7 @@ function HandleGeolocation() {
                 }
                 hourlyElement.innerHTML = html
                 weatherIconElement.innerHTML = `<img src='Images/challenges/weatherIcons/${data.hourly.data[0].icon}.png'></img>`
-                dayElement.innerHTML = '<h2>Today</h2>'
+                dayElement.innerHTML = '<h1>Today</h1>'
                 summaryElement.innerHTML = `<h1>${data.hourly.data[0].summary}</h1>`
                 tempElement.innerHTML = `<h6>Tempature</h6><p>${data.hourly.data[0].temperature}°F</p>`
                 apparentTempElement.innerHTML = `<h6>Feels Like</h6><p>${data.hourly.data[0].apparentTemperature}°F</p>`

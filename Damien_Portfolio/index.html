@@ -237,8 +237,8 @@
                     <h4>Sum of all Fears</h4>
                 </div>
                 <div class="col-md-3">
-                    <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSix" />
-                    <h4>Coming Soon</h4>
+                    <img src="Images/challenges/weather.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseTen" />
+                    <h4>API Implementation</h4>
                 </div>
                 <div class="col-md-3">
                     <img src="https://www.theramblehotel.com/wp-content/uploads/2017/11/dummy-800x800.jpg" alt="" class="image-hover2 img-round-square" style='cursor: pointer;' data-toggle="modal" data-target="#exerciseSeven" />
@@ -2289,7 +2289,164 @@ document.getElementById("exerciseNineToggle").addEventListener("click", function
             </div>
         </div>
     </div>
-    
+    <div class="modal fade" id="exerciseTen" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Dark Sky API Implementation</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12" id="weatherContent">
+                            <div class="row">
+                                <div class="col-md-12" id="dayDisplay">
+                                    <h3></h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4" id="Summary">
+                                    Summary
+                                </div>
+                                <div class="col-md-4" id="weatherIcon">
+                                    <div class="row">
+                                        <img src="https://icons-for-free.com/iconfiles/png/512/cloud+day+forecast+lightning+shine+storm+sun+weather+icon-1320183295537909806.png" style="width:100%; height:100%" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12" id="temp">
+                                            Tempature
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12" id="apparentTemp">
+                                            Apparent Tempature
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3" id="humidity">
+                                    Humidity
+                                </div>
+                                <div class="col-md-3" id="dewPoint">
+                                    Dew Point
+                                </div>
+                                <div class="col-md-3" id="precipitation">
+                                    Precipitation
+                                </div>
+                                <div class="col-md-3" id="windSpeed">
+                                    Wind Speed
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row" id="hourlyWeather">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-5 col-md-offset-7">
+                        <div class="row">
+                            <button type="button" class="btn btn-warning" id="exerciseTenToggle">View Code</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <pre id="exerciseTenCode" style="display:none">
+                            <code class="language-js">                               
+const hourlyElement = document.getElementById("hourlyWeather")
+const dayElement = document.getElementById("dayDisplay")
+const summaryElement = document.getElementById("Summary")
+const weatherIconElement = document.getElementById("weatherIcon")
+const tempElement = document.getElementById("temp")
+const apparentTempElement = document.getElementById("apparentTemp")
+const humidityElement = document.getElementById("humidity")
+const dewPointElement = document.getElementById("dewPoint")
+const precipitationElement = document.getElementById("precipitation")
+const windSpeedElement = document.getElementById("windSpeed")
+window.addEventListener("load", HandleGeolocation)
+
+function HandleGeolocation() {
+
+    function success(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/aea2b7d88300e94b43ae169bc9aef033/${latitude},${longitude}`)
+            .then((resp) => resp.json()) // Transform the data into json
+            .then(function (data) {
+                let html = ''
+                var d = new Date();
+                var n = d.getHours();
+                for (i = 1; i < 5; i++) {
+                    let time = timeConverter(data.hourly.data[i].time)
+                    html += `<div class="col-md-3" id="hourOneWeather">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4>${time.split(" ")[3]}:00</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img src='Images/challenges/weatherIcons/${data.hourly.data[i].icon}.png'></img>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h5>${data.hourly.data[i].temperature}</h5>
+                                    </div>
+                                </div>
+                             </div>`
+                }
+                hourlyElement.innerHTML = html
+                weatherIconElement.innerHTML = `<img src='Images/challenges/weatherIcons/${data.hourly.data[0].icon}.png'></img>`
+                dayElement.innerHTML = '<h2>Today</h2>'
+                summaryElement.innerHTML = `<h1>${data.hourly.data[0].summary}</h1>`
+                tempElement.innerHTML = `<h6>Tempature</h6><p>${data.hourly.data[0].temperature}°F</p>`
+                apparentTempElement.innerHTML = `<h6>Feels Like</h6><p>${data.hourly.data[0].apparentTemperature}°F</p>`
+                humidityElement.innerHTML = `<h6>Humidity</h6><p>${data.hourly.data[0].humidity*100}%</p>`
+                dewPointElement.innerHTML = `<h6>Dew Point</h6><p>${data.hourly.data[0].dewPoint}°F</p>`
+                precipitationElement.innerHTML = `<h6>Precipitation</h6><p>Chance ${data.hourly.data[0].precipProbability}%</p>`
+                windSpeedElement.innerHTML = `<h6>Wind Speed</h6><p>${data.hourly.data[0].windSpeed} mph</p>`
+            });
+    }
+
+    function timeConverter(UNIX_timestamp) {
+        var a = new Date(UNIX_timestamp * 1000);
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        var year = a.getFullYear();
+        var month = months[a.getMonth()];
+        var date = a.getDate();
+        var hour = a.getHours();
+        var min = a.getMinutes();
+        var sec = a.getSeconds();
+        var time = date + ' ' + month + ' ' + year + ' ' + hour + ' ' + min+' '+sec;
+        return time;
+    }
+
+    function error() {
+        status.textContent = 'Unable to retrieve your location';
+    }
+
+    if (!navigator.geolocation) {
+        status.textContent = 'Geolocation is not supported by your browser';
+    } else {
+        status.textContent = 'Locating…';
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+}
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
     <!-- js -->
@@ -2321,6 +2478,7 @@ document.getElementById("exerciseNineToggle").addEventListener("click", function
     <script src="Scripts/Challenges/TrieTree.js"></script>
     <script src="Scripts/Challenges/Utils.js"></script>
     <script src="Scripts/Challenges/SumOfAllFears.js"></script>
+    <script src="Scripts/Challenges/WeatherViewer.js"></script>
     <!-- Template Custom Javascript File -->
     <script src="Scripts/custom.js"></script>
 </body>

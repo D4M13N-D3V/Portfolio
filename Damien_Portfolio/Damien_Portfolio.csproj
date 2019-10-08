@@ -80,6 +80,17 @@
     <Content Include="Images\challenges\challenge7.png" />
     <Content Include="Images\challenges\challenge8.png" />
     <Content Include="Images\challenges\sumofallfears.png" />
+    <Content Include="Images\challenges\weather.png" />
+    <Content Include="Images\challenges\weatherIcons\clear-day.png" />
+    <Content Include="Images\challenges\weatherIcons\clear-night.png" />
+    <Content Include="Images\challenges\weatherIcons\cloudy.png" />
+    <Content Include="Images\challenges\weatherIcons\fog.png" />
+    <Content Include="Images\challenges\weatherIcons\partly-cloudy-day.png" />
+    <Content Include="Images\challenges\weatherIcons\partly-cloudy-night.png" />
+    <Content Include="Images\challenges\weatherIcons\rain.png" />
+    <Content Include="Images\challenges\weatherIcons\sleet.png" />
+    <Content Include="Images\challenges\weatherIcons\snow.png" />
+    <Content Include="Images\challenges\weatherIcons\wind.png" />
     <Content Include="Scripts\bootbox.all.js" />
     <Content Include="Scripts\Challenges\BinaryHeap.js" />
     <Content Include="Scripts\Challenges\BubbleSorter.js" />
@@ -94,6 +105,7 @@
     <Content Include="Scripts\Challenges\SumOfAllFears.js" />
     <Content Include="Scripts\Challenges\TrieTree.js" />
     <Content Include="Scripts\Challenges\ViewCodeButtons.js" />
+    <Content Include="Scripts\Challenges\WeatherViewer.js" />
     <Content Include="Scripts\json-viewer.js" />
     <Content Include="Scripts\math.min.js" />
     <Content Include="Content\overwrite.css" />

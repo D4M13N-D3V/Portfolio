@@ -9,6 +9,7 @@ binaryTreeCode = document.getElementById("exerciseBinaryTreeCode")
 sevenCode = document.getElementById("exerciseSevenCode")
 triTreeCode = document.getElementById("exerciseTriTreeCode")
 heapCode = document.getElementById("exerciseBinaryHeapCode")
+tenCode = document.getElementById("exerciseTenCode")
 document.getElementById("exerciseOneToggle").addEventListener("click", openOneCode)
 document.getElementById("exerciseTwoToggle").addEventListener("click", openTwoCode)
 document.getElementById("exerciseThreeToggle").addEventListener("click", openThreeCode)
@@ -19,6 +20,7 @@ document.getElementById("exerciseBinaryTreeToggle").addEventListener("click", op
 document.getElementById("exerciseSevenToggle").addEventListener("click", openSevenCode)
 document.getElementById("exerciseTriTreeToggle").addEventListener("click", openTriCode)
 document.getElementById("exerciseBinaryHeapToggle").addEventListener("click", openHeapCode)
+document.getElementById("exerciseTenToggle").addEventListener("click", openTenCode)
 function openOneCode() {
     if (oneCode.style.display == "none") oneCode.style.display = "block";
     else oneCode.style.display = "none"
@@ -58,4 +60,8 @@ function openTriCode() {
 function openHeapCode() {
     if (heapCode.style.display == "none") heapCode.style.display = "block";
     else heapCode.style.display = "none"
+}
+function openTenCode() {
+    if (tenCode.style.display == "none") tenCode.style.display = "block";
+    else tenCode.style.display = "none"
 } 

@@ -56,3 +56,4 @@ document.getElementById("exerciseNineToggle").addEventListener("click", function
     if (nineCode.style.display == "none") nineCode.style.display = "block";
     else nineCode.style.display = "none"
 })
+

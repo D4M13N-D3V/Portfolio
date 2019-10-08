@@ -33,7 +33,8 @@ function HandleGeolocation() {
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h4>${time.split(" ")[3]}:00</h4>
-                                        <p>${data.hourly.data[i].temperature}°F</p>
+                                        <p>Feels Like ${data.hourly.data[i].apparentTemperature}°F</p>
+                                        <p>(${data.hourly.data[i].apparentTemperature}°F)</p>
                                     </div>
                                 </div>
                              </div>`

@@ -8,9 +8,9 @@ function exerciseFour() {
     if (word.length)
         //compare the word to its self turned into an array , reversed, and then turned back into a string
         if (word === word.split("").reverse().join("")) {
-            exerciseFourOutput.value = "The supplied world '" + word + "' is an Palindrome!";
+            exerciseFourOutput.value = "The supplied word '" + word + "' is an Palindrome!";
         }
         else {
-            exerciseFourOutput.value = "The supplied world '" + word + "' is not an Palindrome!";
+            exerciseFourOutput.value = "The supplied word '" + word + "' is not an Palindrome!";
         }
 }   

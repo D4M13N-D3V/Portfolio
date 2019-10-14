@@ -1537,7 +1537,7 @@ function BubbleSort(array) {
     do { // do code once then use while loop
         needsToBeSwapped = false; // Reset this value
         for (i = 0; i < timesToLoop; i++) { // Loop Through Numbers
-            if (array[i] < array[i + 1]) {
+            if (array[i] < array[i + 1]) { // telling it to swap if the one to tghe right of it is greater then and keep doing until sorted
                 let tmp = array[i] // makes tmp var to store value of current numbers
                 array[i] = array[i + 1] // Sets value of current number to next number 
                 array[i + 1] = tmp; // Sets value of next number to current number;

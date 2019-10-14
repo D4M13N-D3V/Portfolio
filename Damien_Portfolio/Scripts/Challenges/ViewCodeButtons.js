@@ -45,7 +45,8 @@ function openSixCode(){
     if (sixCode.style.display == "none") sixCode.style.display = "block";
     else sixCode.style.display = "none"
 }
-function openSevenCode(){
+function openSevenCode() {
+
     if (sevenCode.style.display == "none") sevenCode.style.display = "block";
     else sevenCode.style.display = "none"
 }

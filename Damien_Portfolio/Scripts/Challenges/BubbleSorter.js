@@ -87,9 +87,3 @@ document.getElementById("exerciseSevenBubblesortVisual").addEventListener("click
     text = text.substr(0, text.length - 1)
     numberDisplay.innerHTML = text;
 })
-
-sevenCode = document.getElementById("exerciseSevenCode")
-document.getElementById("exerciseSevenToggle").addEventListener("click", function () {
-    if (sevenCode.style.display == "none") sevenCode.style.display = "block";
-    else sevenCode.style.display = "none"
-})

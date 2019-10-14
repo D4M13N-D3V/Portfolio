@@ -122,7 +122,6 @@
     <Content Include="Images\Icons\android-chrome-512x512.png" />
     <Content Include="Images\Icons\apple-touch-icon.png" />
     <Content Include="Images\Icons\favicon-16x16.png" />
-    <Content Include="Images\Icons\favicon-32x32.png" />
     <Content Include="Images\Icons\favicon.ico" />
     <Content Include="Images\tools\javascript.jpg" />
     <Content Include="Images\tools\jquery.png" />

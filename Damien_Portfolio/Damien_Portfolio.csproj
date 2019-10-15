@@ -91,6 +91,7 @@
     <Content Include="Images\challenges\weatherIcons\sleet.png" />
     <Content Include="Images\challenges\weatherIcons\snow.png" />
     <Content Include="Images\challenges\weatherIcons\wind.png" />
+    <Content Include="Images\projects\Blog.png" />
     <Content Include="Scripts\bootbox.all.js" />
     <Content Include="Scripts\Challenges\BinaryHeap.js" />
     <Content Include="Scripts\Challenges\BubbleSorter.js" />

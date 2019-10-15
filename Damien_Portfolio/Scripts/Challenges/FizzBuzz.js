@@ -9,7 +9,6 @@ window.addEventListener("load", exerciseThree)
 function exerciseThree() {
     // Clears the output
     exerciseThreeOutput.innerHTML = ""
-    var rows = []
     // Get the inputs
     var inputOne = exerciseThreeInputOne.value;
     var inputTwo = exerciseThreeInputTwo.value;

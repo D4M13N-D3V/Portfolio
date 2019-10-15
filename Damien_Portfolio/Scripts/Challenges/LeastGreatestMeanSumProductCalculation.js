@@ -10,6 +10,7 @@ document.getElementById("exerciseOneInputThree"),
 document.getElementById("exerciseOneInputFour"),
 document.getElementById("exerciseOneInputFive")]
 
+
 //create an constant array of the output fields so do not have to keep grabbing them.
 const exerciseOneOutputs = [document.getElementById("exerciseOneOutputOne"),
 document.getElementById("exerciseOneOutputTwo"),
@@ -54,3 +55,5 @@ function ex1GenNum() {
         exerciseOneInputs[i].value = Math.floor(Math.random() * 100) + 1;
     }
 }
+
+

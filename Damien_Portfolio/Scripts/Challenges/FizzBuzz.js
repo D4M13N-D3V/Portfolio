@@ -1,6 +1,7 @@
 ﻿// Set the input and output fields as constants so dont have to constantly grab them
 const exerciseThreeInputOne = document.getElementById("exerciseThreeInputOne");
 const exerciseThreeInputTwo = document.getElementById("exerciseThreeInputTwo");
+
 const exerciseThreeOutput = document.getElementById("exerciseThreeOutput");
 // Add event listener for the calculate button.
 document.getElementById("exerciseThreeCalculate").addEventListener("click", exerciseThree)

@@ -1,5 +1,7 @@
 ﻿//Create constants holding the HTML elements that are the inputs and outputs.
 const exerciseTwoInput = document.getElementById("exerciseTwoInput");
+
+
 const exerciseTwoOutputOne = document.getElementById("exerciseTwoOutputOne");
 const exerciseTwoOutputTwo = document.getElementById("exerciseTwoOutputTwo");
 document.getElementById("exerciseTwoCalculate").addEventListener("click", exerciseTwo)

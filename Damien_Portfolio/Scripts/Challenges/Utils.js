@@ -1,4 +1,10 @@
-﻿let curError = undefined
+﻿$("#exerciseNineNumberToCheck,#exerciseOneInputOne,#exerciseOneInputTwo,#exerciseOneInputThree,#exerciseOneInputFour,#exerciseOneInputFive,#exerciseThreeInputOne, #exerciseThreeInputTwo, #exerciseTwoInput").keypress(function (e) {
+    if (!(e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+        return false
+    }
+})
+
+let curError = undefined
 function DisplayError(type) {
     switch (type) {
         case 1:

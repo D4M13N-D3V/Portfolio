@@ -250,7 +250,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4>Blog</h4>
-                    <a href="https://damiensblog.azurewebsites.net/" target="_blank"><img src="/Images/projects/Blog.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' /></a>
+                    <img src="/Images/projects/Blog.png" alt="" class="image-hover2 img-round-square" style='cursor: pointer; height:100%; width:100%;' data-toggle="modal" data-target="#blog" />
                 </div>
                 <div class="col-md-4">
                     <h4>Bug Tracker</h4>
@@ -436,6 +436,72 @@
     </footer>
 
     <!--Modals-->
+    <div class="modal fade" id="blog" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">ASP.Net MVC 5 Blog</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Summary</h4>
+                            <p>
+                                This was a project that I worked on by my self. My goal was to create a platform that you could
+                                run a blog off of. I wanted it to be able to be configured for anybody to use with as little
+                                effort as possible. I used MVC 5 to accomplish a quick and easy start, along with bootstrap
+                                template for the front end, and deployed a SQL database in order to be able to save and pull
+                                data effeciently.
+                            </p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <h4>Features</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>User Managment Panel</li>
+                                        <li>Several roles such as modeartor, writer, and administrator</li>
+                                        <li>Front Page Publishing Option</li>
+                                        <li>Working Subscription Email List</li>
+                                        <li>Working "Contact Me" Form</li>
+                                        <li>Threaded comments</li>
+                                        <li>Gravatar Support</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>Rich Text Formatted Comments</li>
+                                        <li>Rich Text Formatted Posts With File Uploads</li>
+                                        <li>Editable Detailed Profile Pages</li>
+                                        <li>Third Party Logins</li>
+                                        <li>In-Depth Search Feature</li>
+                                        <li>Profile pages</li>
+                                        <li>Rich Text Formatting For Posts</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="https://github.com/DamienTehDemon/Blog" target="popup"><button style="width:100%" class="btn-lg btn-primary">Click Here To Visit Repository!</button></a></li>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="https://damiensblog.azurewebsites.net/" target="popup"><button style="width:100%" class="btn-lg btn-primary">Click Here To View Demo!</button></a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="modal fade" id="spectralDazeInfo" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
